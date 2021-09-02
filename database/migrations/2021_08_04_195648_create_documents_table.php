@@ -15,21 +15,15 @@ class CreateDocumentsTable extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
+            $table->string('categoria');
+            $table->string('subcategoria');
+
             $table->foreignId('user_id')
             ->nullable()
             ->constrained('users')
             ->onDelete('no action')
             ->onUpdate('cascade');
-            $table->foreignId('categories_id')
-            ->nullable()
-            ->constrained('categories')
-            ->onDelete('no action')
-            ->onUpdate('cascade');
-            $table->foreignId('subcategories_id')
-            ->nullable()
-            ->constrained('subcategories')
-            ->onDelete('no action')
-            ->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
