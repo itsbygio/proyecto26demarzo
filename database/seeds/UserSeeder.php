@@ -12,26 +12,30 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'nombre' =>'administrador',
-            'rol'=>'administrador',
+            'nombre' =>'Administrador',
+            'rol'=>'ad',
+            'nrol'=>'Administrador',
             'email' =>'administrador@inst26demarzo.com',
             'password' => Hash::make('administrador12345'),  
         ]);
         DB::table('users')->insert([
-            'nombre' =>'coordinador',
-            'rol'=>'coordinador',
+            'nombre' =>'Coordinador',
+            'rol'=>'co',
+            'nrol'=>'coordinador',
             'email' =>'coordinador@inst26demarzo.com',
             'password' => Hash::make('coordinador12345'),  
         ]);
         DB::table('users')->insert([
-            'nombre' =>'secretaria',
-            'rol'=>'secretaria',
+            'nombre' =>'Secretaria de rectoria',
+            'rol'=>'sr',
+            'nrol'=>'secretaria de rectoria',
             'email' =>'secretaria@inst26demarzo.com',
             'password' => Hash::make('secretaria12345'),  
         ]);
         DB::table('users')->insert([
-            'nombre' =>'archivo',
-            'rol'=>'archivo',
+            'nombre' =>'Archivo',
+            'nrol'=>'archivo',
+            'rol'=>'ar',
             'email' =>'archivo@inst26demarzo.com',
             'password' => Hash::make('archivo12345'),  
         ]);

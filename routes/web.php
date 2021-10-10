@@ -21,6 +21,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/crear/usuario', 'UsuarioController@crear');
+Route::get('/listar/usuarios', 'UsuarioController@listar');
+Route::get('/editar/usuario/{id}', 'UsuarioController@edit');
+Route::get('/crear/documento', 'DocumentosController@crear');
+Route::get('/perfildelusuario', 'UsuarioController@perfildelusuario');
 
 
 
