@@ -24,9 +24,9 @@
 </head>
 <body>
     <div id="app" >
-        <nav  class="navbar navbar-expand-md navbar-light bg-light shadow-sm" style="background-color:#A19E9C;">
+        <nav  style="background-color:#c62828;" class="navbar navbar-expand-md  shadow-sm" >
             <div class="container">
-                <a   style="color:dark "class="navbar-brand" href="{{ url('/') }}">
+                <a   style="color:white "class="navbar-brand" href="{{ url('/') }}">
                   {{ config('app.name', 'Laravel') }} 
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

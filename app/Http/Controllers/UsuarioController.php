@@ -24,7 +24,8 @@ class UsuarioController extends Controller
     public function crear()
     {
         return view('usuarios.crear',[
-            'crear_usuario'=>'active'
+            'crear_usuario'=>'active',
+            'prueba'=>'esto es una prueba'
         ]);
     }
     public function listar(){

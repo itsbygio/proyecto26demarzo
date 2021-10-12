@@ -18,11 +18,11 @@
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav style="background-color:#c62828; color:" class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a style="color:white" class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <!--
       <li class="nav-item d-none d-sm-inline-block">
@@ -65,7 +65,7 @@
       <li class="nav-item dropdown" >
   <!-- <img src="{{asset('img/logo.png')}}">   <li class="nav-link nav-item dropdown" data-toggle="dropdown"> Miguel Ocampo <i class="fas fa-chevron-circle-down"></i></li>!-->
 
-        <a class="nav-link"  data-toggle="dropdown" href="#">
+        <a style="color:white" class="nav-link"  data-toggle="dropdown" href="#">
         <img src="{{asset('img/logo.png')}}" width="25px" height="25px"> <span class="ml-1"> {{ Auth::user()->nombre }} </span>
         <i  class="fas fa-sort-down ml-1"></i>
 
@@ -98,8 +98,8 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
+        <a style="color:white" class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i  class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
      
@@ -108,7 +108,7 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-light-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/home" class="brand-link">
       <img src="{{asset('img/logo.png') }}" alt="SGD26DEMARZO" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -148,6 +148,12 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+               <li class="nav-item">
+                <a href="/home" class="nav-link @if(isset($home)) {{$home}} @endif">
+                <i class="fas fa-home mr-3"></i>
+                        <p>Home</p>
+                </a>
+              </li>
                <li class="nav-item">
                 <a href="/perfildelusuario" class="nav-link @if(isset($perfil_user)) {{$perfil_user}} @endif">
                 <i class="fas fa-user mr-3"></i>
