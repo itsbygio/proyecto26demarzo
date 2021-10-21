@@ -19,13 +19,29 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*usuarios*/
 Route::get('/crear/usuario', 'UsuarioController@crear');
 Route::get('/listar/usuarios', 'UsuarioController@listar');
 Route::get('/editar/usuario/{id}', 'UsuarioController@edit');
-Route::get('/crear/documento', 'DocumentosController@crear');
 Route::get('/perfildelusuario', 'UsuarioController@perfildelusuario');
+/*Fin usuarios*/
+
+/*documentos*/
+Route::get('/crear/documento', 'DocumentosController@crear');
+/*Fin documentos*/
+
+/*docentes*/
+Route::get('/crear/docente', 'DocentesController@crear');
+Route::get('/editar/docente/{id}', 'DocentesController@editar');
+Route::get('/listar/docentes', 'DocentesController@listar');
+/*Fin docentes*/
 
 
+/*Estudiantes*/
+Route::get('/crear/estudiante', 'EstudiantesController@crear');
+Route::get('/editar/estudiante', 'EstudiantesController@editar');
+Route::get('/listar/estudiantes', 'EstudiantesController@listar');
 
+/*Fin estudiantes*/

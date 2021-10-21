@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container ">
-<h4 class="ml-4"><i class="fas fa-list mr-3"></i>Listar usuarios del sistema</h4><br>
+<h4 class="ml-4"><i class="fas fa-list mr-3"></i>Listar docentes del sistema</h4><br>
    <div class="ml-4 mr-4">
     <table id="table_id" class="table table-striped table-bordered" style="width:100%">
         
@@ -14,7 +14,6 @@
                  <th>Apellidos</th>
                  <th>cedula</th>
                  <th>Email</th>
-                 <th>rol</th>
                  <th>Opciones</th>
 
              </tr>
@@ -22,12 +21,11 @@
          <tbody  >
         <tr>
             <td>1</td>
-            <td>Miguel</td>
-            <td>Ocampo</td>
-            <td>1096254476</td>
-            <td>miguelocampoc@gmail.com</td>
-            <td>Administrador</td>
-            <td style="text-align:center"><a href="/editar/usuario/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button></td>
+            <td>Richard</td>
+            <td>Ardila Cruz</td>
+            <td>123456789</td>
+            <td>Rich_ac91@hotmail.com</td>
+            <td style="text-align:center"><a href="/editar/docente/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button></td>
         </tr>
 
         

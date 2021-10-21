@@ -183,6 +183,52 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item @if(isset($listar_docentes)) menu-open  @endif @if(isset($crear_docente) ) menu-open @endif  ">
+            <a href="#" class="nav-link  @if(isset($crear_docente)) {{$crear_docente}} @endif @if(isset($listar_docentes) ) {{$listar_docentes}} @endif ">
+              <i class="fas fa-users mr-3"></i>
+              <p>
+                Gestionar Docentes
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/crear/docente" class="nav-link @if(isset($crear_docente)) {{$crear_docente}} @endif">
+                <i class="fas fa-user-plus mr-3"></i>
+                  <p>Crear docente</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/listar/docentes" class="nav-link @if(isset($listar_docentes)) {{$listar_docentes}} @endif">
+                <i class="fas fa-list mr-3"></i>
+                  <p>Listar docentes</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item @if(isset($crear_estudiante)) menu-open  @endif @if(isset($listar_estudiantes) ) menu-open @endif  ">
+            <a href="#" class="nav-link  @if(isset($crear_estudiante)) {{$crear_estudiante}} @endif @if(isset($listar_estudiantes) ) {{$listar_estudiantes}} @endif ">
+              <i class="fas fa-users mr-3"></i>
+              <p>
+                Gestionar Estudiantes
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/crear/estudiante" class="nav-link @if(isset($crear_estudiante)) {{$crear_estudiante}} @endif">
+                <i class="fas fa-user-plus mr-3"></i>
+                  <p>Crear estudiante</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/listar/estudiantes" class="nav-link @if(isset($listar_estudiantes)) {{$listar_estudiantes}} @endif">
+                <i class="fas fa-list mr-3"></i>
+                  <p>Listar estudiantes</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           <!--
           <li class="nav-item @if(isset($crear_documento)) menu-open  @endif">
             <a href="#" class="nav-link  ">
