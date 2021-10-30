@@ -12,7 +12,7 @@
 @endif
 
 <h4 class="ml-3"><i class="fas fa-user-edit"></i>
-Editar Docente </h4><br>
+Editar docente </h4><br>
  <div class="row ml-3 mr-3">
      <div class="col-md-4 mb-4">
      <p>Nombre:</p>
@@ -29,7 +29,7 @@ Editar Docente </h4><br>
         @enderror
      </div>
      <div class="col-xl-4  mb-4">
-        <p>Cedula :</p>
+        <p>Cedula de ciudadania :</p>
         <input  id="cedula"  name="cedula" type="text" class="form-control" value="{{old('cedula')}}">
         @error('cedula')
         <div  style="color:red;">{{ $message }}*</div>

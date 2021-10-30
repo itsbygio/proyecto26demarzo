@@ -11,12 +11,12 @@ li{
 
       <div class="row ml-3">
 
-          <div class="col-md-4">
+          <div class="col-md-4 ">
               <div class="row">
                     <div class="col-md-2">
                        <h2 class="mt-3"> GU </h2> 
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-10  ">
                         Gestionar Usuarios:
                         <ul >
                             <li ><a href="/crear/usuario">Crear Usuario</a></li>
@@ -25,21 +25,7 @@ li{
                     </div>
             </div>
           </div>
-          <!--
-          <div class="col-md-4">
-          <div class="row">
-                    <div class="col-md-2">
-                       <h2 class="mt-3"> GD </h2> 
-                    </div>
-                    <div class="col-md-10">
-                        Gestionar Documentos:
-                        <ul >
-                            <li ><a href="/crear/documento">Crear Documento</a></li>
-                        </ul>
-                    </div>
-            </div>
-          </div>
-         !-->
+  
          <div class="col-md-4">
               <div class="row">
                     <div class="col-md-2">
@@ -64,6 +50,24 @@ li{
                         <ul >
                             <li ><a href="/crear/estudiante">Crear Estudiante</a></li>
                             <li> <a href="/listar/estudiantes">Listar Estudiantes</a></li>
+                        </ul>
+                    </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+              <br>
+              <div class="row">
+                    <div class="col-md-2">
+                       <h2 class="mt-3 "> GD </h2> 
+                    </div>
+                    <div class="col-md-10">
+                      Gestion documental:
+                        <ul >
+                        <li ><a href="/crear/documento">Crear Documento</a></li>
+                            <li> <a href="/listar/documentos">Listar Documentos</a></li>
+                            <li> <a href="/consultar/documentos">Consultar Documentos</a></li>
+                            <li> <a href="/estadisticas/documentos">Generar Estadistica</a></li>
                         </ul>
                     </div>
             </div>

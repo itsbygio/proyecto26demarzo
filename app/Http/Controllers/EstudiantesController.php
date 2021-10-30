@@ -16,8 +16,8 @@ class EstudiantesController extends Controller
             'listar_estudiantes'=>'active'
         ]);
     }
-    public  function  editar(){
-        return view('estudiantes.listar',[
+    public  function  editar($id){
+        return view('estudiantes.editar',[
             'listar_estudiantes'=>'active'
         ]);
     }

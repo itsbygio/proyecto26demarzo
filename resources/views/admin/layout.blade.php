@@ -12,6 +12,8 @@
   <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
    <link rel="stylesheet" href="{{asset('/adminlte/plugins/fontawesome-free/css/all.min.css') }}">
    <link rel="stylesheet" href="{{asset('/lightbox/dist/css/lightbox.min.css') }}">
+   @yield('styles')
+
 <title>SGD26DEMARZO</title>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -229,9 +231,8 @@
               </li>
             </ul>
           </li>
-          <!--
-          <li class="nav-item @if(isset($crear_documento)) menu-open  @endif">
-            <a href="#" class="nav-link  ">
+          <li class="nav-item @if(isset($crear_documento)) menu-open  @endif @if(isset($listar_documentos)) menu-open @endif @if(isset($consultar_documentos)) menu-open @endif  @if(isset($generar_estadisticas)) menu-open @endif">
+            <a href="#" class="nav-link    @if(isset($crear_documento)) {{$crear_documento}}  @endif @if(isset($listar_documentos)) {{$listar_documentos}} @endif @if(isset($consultar_documentos)) {{$consultar_documentos}} @endif  @if(isset($generar_estadisticas)) {{$generar_estadisticas}} @endif   ">
             <i class="fas fa-folder-open mr-3"></i>
               <p>
                 Gestion documental
@@ -245,10 +246,26 @@
                 <p>Crear documento</p>
                 </a>
               </li>
-
+              <li class="nav-item">
+                <a href="/listar/documentos" class="nav-link @if(isset($listar_documentos)) {{$listar_documentos}} @endif">
+                <i class="fas fa-list mr-3"></i>
+                <p>Listar documentos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/consultar/documentos" class="nav-link @if(isset($consultar_documentos)) {{$consultar_documentos}} @endif">
+                <i class="far fa-circle mr-3"></i>
+                <p>Consultar documentos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/estadisticas/documentos" class="nav-link @if(isset($generar_estadisticas)) {{$generar_estadisticas}} @endif">
+                <i class="far fa-circle  mr-3"></i>
+                <p>Generar estadistica</p>
+                </a>
+              </li>
             </ul>
           </li>
-          !-->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

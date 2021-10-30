@@ -30,6 +30,10 @@ Route::get('/perfildelusuario', 'UsuarioController@perfildelusuario');
 
 /*documentos*/
 Route::get('/crear/documento', 'DocumentosController@crear');
+Route::get('/listar/documentos', 'DocumentosController@listar');
+Route::get('/estadisticas/documentos', 'DocumentosController@estadisticas');
+Route::get('/consultar/documentos', 'DocumentosController@consultar');
+
 /*Fin documentos*/
 
 /*docentes*/
@@ -41,7 +45,7 @@ Route::get('/listar/docentes', 'DocentesController@listar');
 
 /*Estudiantes*/
 Route::get('/crear/estudiante', 'EstudiantesController@crear');
-Route::get('/editar/estudiante', 'EstudiantesController@editar');
+Route::get('/editar/estudiante/{id}', 'EstudiantesController@editar');
 Route::get('/listar/estudiantes', 'EstudiantesController@listar');
 
 /*Fin estudiantes*/
