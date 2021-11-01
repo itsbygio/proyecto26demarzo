@@ -12,7 +12,6 @@
            
             <div class="card">
   
-                <div  id="loginheader"style="color:dark" class="card-header border-bottom-0"><strong>INICIAR SESIÓN</strong></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

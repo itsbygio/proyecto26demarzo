@@ -37412,7 +37412,32 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\migue\\SI26DEMARZO\\resources\\js\\components\\Example.js: Support for the experimental syntax 'jsx' isn't currently enabled (6:9):\n\n\u001b[0m \u001b[90m 4 |\u001b[39m \u001b[36mfunction\u001b[39m \u001b[33mExample\u001b[39m() {\u001b[0m\n\u001b[0m \u001b[90m 5 |\u001b[39m     \u001b[36mreturn\u001b[39m (\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m         \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"container\"\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 7 |\u001b[39m             \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"row justify-content-center\"\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 8 |\u001b[39m                 \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"col-md-8\"\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 9 |\u001b[39m                     \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"card\"\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\nAdd @babel/preset-react (https://git.io/JfeDR) to the 'presets' section of your Babel config to enable transformation.\nIf you want to leave it as-is, add @babel/plugin-syntax-jsx (https://git.io/vb4yA) to the 'plugins' section to enable parsing.\n    at Parser._raise (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:798:17)\n    at Parser.raiseWithData (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:791:17)\n    at Parser.expectOnePlugin (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:3272:18)\n    at Parser.parseExprAtom (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:11514:20)\n    at Parser.parseExprSubscripts (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:11081:23)\n    at Parser.parseUpdate (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:11061:21)\n    at Parser.parseMaybeUnary (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:11039:23)\n    at Parser.parseExprOps (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:10882:23)\n    at Parser.parseMaybeConditional (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:10856:23)\n    at Parser.parseMaybeAssign (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:10814:21)\n    at C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:10776:39\n    at Parser.allowInAnd (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:12595:12)\n    at Parser.parseMaybeAssignAllowIn (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:10776:17)\n    at Parser.parseParenAndDistinguishExpression (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:11779:28)\n    at Parser.parseExprAtom (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:11410:23)\n    at Parser.parseExprSubscripts (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:11081:23)\n    at Parser.parseUpdate (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:11061:21)\n    at Parser.parseMaybeUnary (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:11039:23)\n    at Parser.parseExprOps (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:10882:23)\n    at Parser.parseMaybeConditional (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:10856:23)\n    at Parser.parseMaybeAssign (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:10814:21)\n    at Parser.parseExpressionBase (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:10754:23)\n    at C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:10748:39\n    at Parser.allowInAnd (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:12589:16)\n    at Parser.parseExpression (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:10748:17)\n    at Parser.parseReturnStatement (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:13174:28)\n    at Parser.parseStatementContent (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:12844:21)\n    at Parser.parseStatement (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:12796:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:13385:25)\n    at Parser.parseBlockBody (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:13376:10)\n    at Parser.parseBlock (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:13360:10)\n    at Parser.parseFunctionBody (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:12245:24)\n    at Parser.parseFunctionBodyAndFinish (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:12229:10)\n    at C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:13518:12\n    at Parser.withSmartMixTopicForbiddingContext (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:12566:14)\n    at Parser.parseFunction (C:\\Users\\migue\\SI26DEMARZO\\node_modules\\@babel\\parser\\lib\\index.js:13517:10)");
+/*
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function Example() {
+    return (
+        <div className="container">
+            <div className="row justify-content-center">
+                <div className="col-md-8">
+                    <div className="card">
+                        <div className="card-header">Example Component</div>
+
+                        <div className="card-body">I'm an example component!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Example;
+
+if (document.getElementById('example')) {
+    ReactDOM.render(<Example />, document.getElementById('example'));
+}
+*/
 
 /***/ }),
 
@@ -37434,8 +37459,8 @@ throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\migue\SI26DEMARZO\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\migue\SI26DEMARZO\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\migue\SGD26MARZO\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\migue\SGD26MARZO\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
