@@ -15,7 +15,7 @@ class CreateNotasTable extends Migration
     {
         Schema::create('notas', function (Blueprint $table) {
             $table->id();
-            $table->string('nota')->nullable();
+            $table->string('nota',10)->nullable();
             $table->foreignId('id_curso')
             ->nullable()
             ->constrained('cursos')

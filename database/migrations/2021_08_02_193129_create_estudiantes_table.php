@@ -15,14 +15,14 @@ class CreateEstudiantesTable extends Migration
     {
         Schema::create('estudiantes', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre')->nullable();
-            $table->string('apellidos')->nullable();
-            $table->string('email')->unique();
-            $table->string('contacto')->nullable();
-            $table->string('tipo_doc')->nullable();
-            $table->string('num_id')->nullable();
-            $table->string('estado')->nullable();
-            $table->string('fecha_f')->nullable();
+            $table->string('nombre',150)->nullable();
+            $table->string('apellidos',150)->nullable();
+            $table->string('email',150)->unique();
+            $table->string('contacto',25)->nullable();
+            $table->string('tipo_doc',50)->nullable();
+            $table->string('num_id',30)->nullable();
+            $table->string('estado',30)->nullable();
+            $table->date('fecha_f',)->nullable();
             $table->foreignId('id_curso')
             ->nullable()
             ->constrained('cursos')
