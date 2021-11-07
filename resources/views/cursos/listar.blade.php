@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container ">
-<h4 class="ml-4"><i class="fas fa-list mr-3"></i>Listar cursos creados</h4><br>
+<h4 class="ml-4"><i class="fas fa-list mr-3"></i>Listar cursos </h4><br>
    <div class="ml-4 mr-4">
     <table id="table_id" class="table table-striped table-bordered" style="width:100%">
         
