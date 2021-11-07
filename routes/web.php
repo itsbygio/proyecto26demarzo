@@ -49,3 +49,21 @@ Route::get('/editar/estudiante/{id}', 'EstudiantesController@editar');
 Route::get('/listar/estudiantes', 'EstudiantesController@listar');
 
 /*Fin estudiantes*/
+
+/* Notas */
+Route::get('/subir/nota', 'notasController@subir');
+Route::get('/listar/notas', 'notasController@listar');
+Route::get('/editar/notas', 'notasController@editar');
+/*Fin notas */
+
+/* Materias */
+Route::get('/crear/materia', 'materiasController@crear');
+Route::get('/listar/materias', 'materiasController@listar');
+Route::get('/editar/materia', 'materiasController@editar');
+/*Fin materias */
+
+/* Cursos */
+Route::get('/crear/curso', 'cursosController@crear');
+Route::get('/listar/cursos', 'cursosController@listar');
+Route::get('/editar/curso', 'cursosController@editar');
+/*Fin materias */

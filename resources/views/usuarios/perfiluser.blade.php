@@ -61,15 +61,19 @@
 <br><br>
 <div class="row ml-4">
     <div class="col-md-12">
-       <h4>  <button onclick="restablecer()" class="btn btn-primary fas fa-key btn-sm"></button> Reestablecer Contraseña </h4> 
+       <h4>   Reestablecer Contraseña </h4> 
     </div>
  </div>
  <div class="row ml-4">
          <div class="col-md-4">
          <p>Nueva Contraseña:</p>
 
+         <div class="input-group mb-3">
          <input id="clave" name="clave" type="password" class="form-control"  value="1234567891011123" disabled>
-
+                    <div class="input-group-append">
+                    <button onclick="restablecer()" class="btn btn-primary fas fa-key "></button>
+                    </div>
+                </div> 
          </div>
          <div class="col-md-4">
          <p>Confirmar Nueva Contraseña:</p>
@@ -81,7 +85,7 @@
       <br>
       <div class="row ml-4">
          <div class="col-md-12">
-          <button  class="btn btn-primary  "  id="restablecer"> Reestablecer Contraseña</button>
+          <button  class="btn btn-primary" type="button" > Reestablecer Contraseña</button>
          </div>
 </div>
 <br>

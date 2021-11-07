@@ -1,7 +1,9 @@
 @extends('admin.layout')
 
 @section('content')
+
 <div class="container ">
+
 @if (session('status'))
 <div style=" background-color:#b9f6ca" class="alert  alert-dismissible fade show ml-4 mr-4 mb-4"  role="alert">
           {{ session('status') }} 
@@ -10,9 +12,11 @@
           </button>
         </div>  
 @endif
-
-<h4 class="ml-3"><i class="fas fa-user-plus mr-3"></i>
- Crear Nuevo Usuario del Sistema</h4><br>
+<div class="row">
+<div class="col-md-10"><h4 class="ml-3"><i class="fas fa-user-edit"></i> Crear Usuario del Sistema</h4></div>
+<div class="col-md-2">  <a href="/listar/usuarios">Volver Pagina Anterior</a></div>
+</div>
+<br>
  <div class="row ml-3 mr-3">
      <div class="col-md-4 mb-4">
      <p>Nombre:</p>
@@ -50,20 +54,8 @@
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>
-     <div class="col-md-4 mb-4">
-     <p>Contraseña:</p>
-        <input  id="clave" name="clave" type="password" class="form-control" >
-        @error('clave')
-        <div style="color:red;" >{{ $message }}*</div>
-        @enderror
-     </div>
-     <div class="col-md-4 mb-4 ">
-     <p> Confirma Contraseña:</p>
-        <input  id="cclave" name="cclave" type="password" class="form-control" >
-        @error('cclave')
-        <div style="color:red;" >{{ $message }}*</div>
-        @enderror
-     </div>
+  
+    
      <div class="col-md-4 mb-5">
      <p>Rol:</p>
         <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  value="{{old('rol')}}">
@@ -79,9 +71,12 @@
      </div>
 
  </div>
- <div class="row">
- <button class="btn btn-primary ml-4" ><i class="fas fa-user-plus mr-3"></i>Crear Usuario</button>
+
+ <div class="row ml-4">
+ <button class="btn btn-primary " ><i class="fas fa-user-edit"></i> Editar Usuario</button>
 </div>
-<br>
+
+<br><br>
+
 </div>
 @endsection

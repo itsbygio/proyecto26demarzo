@@ -185,6 +185,7 @@
               </li>
             </ul>
           </li>
+       
           <li class="nav-item @if(isset($listar_docentes)) menu-open  @endif @if(isset($crear_docente) ) menu-open @endif  ">
             <a href="#" class="nav-link  @if(isset($crear_docente)) {{$crear_docente}} @endif @if(isset($listar_docentes) ) {{$listar_docentes}} @endif ">
               <i class="fas fa-users mr-3"></i>
@@ -208,6 +209,7 @@
               </li>
             </ul>
           </li>
+          
           <li class="nav-item @if(isset($crear_estudiante)) menu-open  @endif @if(isset($listar_estudiantes) ) menu-open @endif  ">
             <a href="#" class="nav-link  @if(isset($crear_estudiante)) {{$crear_estudiante}} @endif @if(isset($listar_estudiantes) ) {{$listar_estudiantes}} @endif ">
               <i class="fas fa-users mr-3"></i>
@@ -231,6 +233,7 @@
               </li>
             </ul>
           </li>
+          
           <li class="nav-item @if(isset($crear_documento)) menu-open  @endif @if(isset($listar_documentos)) menu-open @endif @if(isset($consultar_documentos)) menu-open @endif  @if(isset($generar_estadisticas)) menu-open @endif">
             <a href="#" class="nav-link    @if(isset($crear_documento)) {{$crear_documento}}  @endif @if(isset($listar_documentos)) {{$listar_documentos}} @endif @if(isset($consultar_documentos)) {{$consultar_documentos}} @endif  @if(isset($generar_estadisticas)) {{$generar_estadisticas}} @endif   ">
             <i class="fas fa-folder-open mr-3"></i>
@@ -266,8 +269,83 @@
               </li>
             </ul>
           </li>
+        
+          <li class="nav-item @if(isset($subir_nota)) menu-open  @endif @if(isset($listar_notas)) menu-open @endif ">
+            <a href="#" class="nav-link    @if(isset($subir_nota)) {{$subir_nota}}  @endif @if(isset($listar_notas)) {{$listar_notas}} @endif    ">
+            <i class="far  fa-circle mr-3"></i>
+              <p>
+               Notas
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/subir/nota" class="nav-link @if(isset($subir_nota)) {{$subir_nota}} @endif">
+                <i class="fas fa-plus mr-3"></i>
+                <p>Subir Nota</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/listar/notas" class="nav-link @if(isset($listar_notas)) {{$listar_notas}} @endif">
+                <i class="fas fa-list mr-3"></i>
+                <p>Listar notas</p>
+                </a>
+              </li>
+           
+            </ul>
+          </li>
+          <li class="nav-item @if(isset($crear_materia)) menu-open  @endif @if(isset($listar_materias)) menu-open @endif ">
+            <a href="#" class="nav-link    @if(isset($crear_materia)) {{$crear_materia}}  @endif @if(isset($listar_materias)) {{$listar_materias}} @endif    ">
+            <i class="far  fa-circle mr-3"></i>
+              <p>
+               Materias
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/crear/materia" class="nav-link @if(isset($crear_materia)) {{$crear_materia}} @endif">
+                <i class="fas fa-plus mr-3"></i>
+                <p>Crear materia</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/listar/materias" class="nav-link @if(isset($listar_materias)) {{$listar_materias}} @endif">
+                <i class="fas fa-list mr-3"></i>
+                <p>Listar materias</p>
+                </a>
+              </li>
+           
+            </ul>
+          </li>
+          <li class="nav-item @if(isset($crear_curso)) menu-open  @endif @if(isset($listar_cursos)) menu-open @endif ">
+            <a href="#" class="nav-link    @if(isset($crear_curso)) {{$crear_curso}}  @endif @if(isset($listar_cursos)) {{$listar_cursos}} @endif    ">
+            <i class="far  fa-circle mr-3"></i>
+              <p>
+               Cursos
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/crear/curso" class="nav-link @if(isset($crear_curso)) {{$crear_curso}} @endif">
+                <i class="fas fa-plus mr-3"></i>
+                <p>Crear curso</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/listar/cursos" class="nav-link @if(isset($listar_cursos)) {{$listar_cursos}} @endif">
+                <i class="fas fa-list mr-3"></i>
+                <p>Listar cursos</p>
+                </a>
+              </li>
+           
+            </ul>
+          </li>
+        
         </ul>
       </nav>
+      
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

@@ -71,7 +71,60 @@ li{
                         </ul>
                     </div>
             </div>
+            
           </div>
+          <div class="col-md-4">
+              <br>
+              <div class="row">
+                    <div class="col-md-2">
+                       <h2 class="mt-3 "> GN </h2> 
+                    </div>
+                    <div class="col-md-10">
+                      Gestion notas:
+                        <ul >
+                        <li ><a href="/subir/nota">Subir Nota</a></li>
+                            <li> <a href="/listar/notas">Listar Notas</a></li>
+                          
+                        </ul>
+                    </div>
+            </div>
+            
+          </div>
+          <div class="col-md-4">
+              <br>
+              <div class="row">
+                    <div class="col-md-2">
+                       <h2 class="mt-3 "> GM </h2> 
+                    </div>
+                    <div class="col-md-10">
+                      Gestion Materias:
+                        <ul >
+                        <li ><a href="/crear/materia">Crear Materia</a></li>
+                            <li> <a href="/listar/materias">Listar Materias</a></li>
+
+                        </ul>
+                    </div>
+            </div>
+            
+          </div>
+          <div class="col-md-4">
+              <br>
+              <div class="row">
+                    <div class="col-md-2">
+                       <h2 class="mt-3 "> GC </h2> 
+                    </div>
+                    <div class="col-md-10">
+                      Gestion cursos:
+                        <ul >
+                        <li ><a href="/crear/curso">Crear curso</a></li>
+                            <li> <a href="/listar/cursos">Listar Cursos</a></li>
+
+                        </ul>
+                    </div>
+            </div>
+            
+          </div>
+          
       </div>
 
 </div>

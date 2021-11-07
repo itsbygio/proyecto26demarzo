@@ -3,33 +3,26 @@
 @section('content')
 
 <div class="container ">
-<h4 class="ml-1"><i class="fas fa-list mr-3"></i>Listar estudiantes del sistema</h4><br>
-   <div class="ml-1 mr-4">
+<h4 class="ml-4"><i class="fas fa-list mr-3"></i>Listar materias</h4><br>
+   <div class="ml-4 mr-4">
     <table id="table_id" class="table table-striped table-bordered" style="width:100%">
         
         <thead>
              <tr>
                  <th>id</th>
-                 <th>nombre</th>
-                 <th>Apellidos</th>
-                 <th>tipo de documento</th>
-                 <th>numero de identificacion</th>
-                 <th>curso </th>
-
-                 <th>Opciones</th>
-
+                 <th>nombre de la materia</th>
+                 <th>fecha de creacion</th>
+                 <th>fecha de modificacion</th>
+                 <th>opciones</th>
              </tr>
          </thead>
          <tbody  >
         <tr>
             <td>1</td>
-            <td>Andres</td>
-            <td>Jimenez Ramirez</td>
-            <td>Cedula de ciudadania</td>
-            <td>123456789</td>
-            <td>11-1</td>
-
-            <td style="text-align:center"><a href="/editar/estudiante/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button></td>
+            <td>Quimica</td>
+            <td>5-11-2021 11:30</td>
+            <td>6-11-2021 9:35</td>
+            <td style="text-align:center"><a href="/editar/materia" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button></td>
         </tr>
 
         

@@ -50,7 +50,38 @@ Editar docente </h4><br>
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>
-     
+     <div class="col-md-4 mb-4">
+     <p>Direccion:</p>
+        <input id="contacto"  name="contacto" type="text" class="form-control" value="{{old('contacto')}}">
+        @error('direccion')
+        <div   style="color:red;" >{{ $message }}*</div>
+        @enderror
+     </div>
+     <div class="col-md-4 mb-4">
+     <p>Titulos de posgrado:</p>
+        <textarea id="contacto"  name="contacto" type="text" class="form-control" value="{{old('contacto')}}"></textarea>
+        @error('direccion')
+        <div   style="color:red;" >{{ $message }}*</div>
+        @enderror
+     </div>
+     <div class="col-md-4 mb-4">
+     <p>Asignacion Academica:</p>
+     <textarea id="contacto"  name="contacto" type="text" class="form-control" value="{{old('contacto')}}"></textarea>
+        @error('direccion')
+        <div   style="color:red;" >{{ $message }}*</div>
+        @enderror
+     </div>
+     <div class="col-md-4 mb-4">
+     <p>Escalafon</p>
+
+     <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  value="{{old('rol')}}">
+                <option value="ti">1</option>
+                <option value="cc">2</option>
+                <option value="cc">3</option>
+
+        </select>
+        </div>
+
 
  </div>
  <div class="row">

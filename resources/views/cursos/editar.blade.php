@@ -1,23 +1,37 @@
 @extends('admin.layout')
 
 @section('content')
-
-<div class="container ">
-<h4 class="ml-1"><i class="fas fa-list mr-3"></i>Listar estudiantes del sistema</h4><br>
-   <div class="ml-1 mr-4">
-    <table id="table_id" class="table table-striped table-bordered" style="width:100%">
+<div class="container">
+    <h3>Editar curso</h3>
+    <div class="row">
+        <div class="col-xl-4">
+        <h5>El curso seleccionado es:</h5>
+        <div class="input-group mb-3">
+                <input type="text" class="form-control" value="11-1" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled>
+                <div class="input-group-append">
+                    <button class="fas fa-pen-alt btn btn-primary"></button>
+                </div>
+        </div>        
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4">
+            <button type="text" class="btn btn-primary"> + Asignar Estudiantes</button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+      <h5>Estudiantes asignados al curso:</h5>
+      </div>
+      <br>
+      <table id="table_id" class="table table-striped table-bordered" style="width:100%">
         
         <thead>
              <tr>
                  <th>id</th>
-                 <th>nombre</th>
-                 <th>Apellidos</th>
-                 <th>tipo de documento</th>
-                 <th>numero de identificacion</th>
-                 <th>curso </th>
-
-                 <th>Opciones</th>
-
+                 <th>nombre </th>
+                 <th>apellidos</th>
+                 <th>opciones</th>
              </tr>
          </thead>
          <tbody  >
@@ -25,18 +39,13 @@
             <td>1</td>
             <td>Andres</td>
             <td>Jimenez Ramirez</td>
-            <td>Cedula de ciudadania</td>
-            <td>123456789</td>
-            <td>11-1</td>
-
-            <td style="text-align:center"><a href="/editar/estudiante/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button></td>
+            <td  style="text-align:center"><button href="/editar/materia" class='btn btn-danger fas fa-times' ></button> </td>
         </tr>
 
         
          </tbody>
 
      </table>
-    </div>
 </div>
 @endsection
 @section('scripts')

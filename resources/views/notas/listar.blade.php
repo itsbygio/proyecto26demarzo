@@ -3,33 +3,32 @@
 @section('content')
 
 <div class="container ">
-<h4 class="ml-1"><i class="fas fa-list mr-3"></i>Listar estudiantes del sistema</h4><br>
-   <div class="ml-1 mr-4">
+<h4 class="ml-4"><i class="fas fa-list mr-3"></i>Listar notas</h4><br>
+   <div class="ml-4 mr-4">
     <table id="table_id" class="table table-striped table-bordered" style="width:100%">
         
         <thead>
              <tr>
                  <th>id</th>
-                 <th>nombre</th>
-                 <th>Apellidos</th>
-                 <th>tipo de documento</th>
-                 <th>numero de identificacion</th>
-                 <th>curso </th>
-
+                 <th>nombre </th>
+                 <th>apellido</th>
+                 <th>materia</th>
+                 <th>curso</th>
+                 <th>nota</th>
                  <th>Opciones</th>
 
              </tr>
          </thead>
-         <tbody  >
+         <tbody >
         <tr>
             <td>1</td>
             <td>Andres</td>
             <td>Jimenez Ramirez</td>
-            <td>Cedula de ciudadania</td>
-            <td>123456789</td>
+            <td>Quimica</td>
             <td>11-1</td>
+            <td>4.5</td>
 
-            <td style="text-align:center"><a href="/editar/estudiante/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button></td>
+            <td style="text-align:center"><a href="/editar/notas" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button></td>
         </tr>
 
         
