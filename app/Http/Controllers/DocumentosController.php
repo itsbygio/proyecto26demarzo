@@ -26,4 +26,7 @@ class DocumentosController extends Controller
             'listar_documentos'=>'active'
         ]);
     }
+    public function dropzone(){
+        
+    }
 }
