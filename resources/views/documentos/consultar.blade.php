@@ -7,16 +7,15 @@
     <div class="col-xl-4">
         <p>Consultar por:</p>
             <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  value="{{old('rol')}}">
+                   <option value="ti">Seleccione una opcion</option>
                     <option value="ti">Año</option>
                     <option value="cc">Mes</option>
                     <option value="cc">Dia</option>
-                    <option value="cc">semana</option>
-                    <option value="cc">Tipo de documento</option>
-
             </select>
             <br>
             <p>Tipo de documento:</p>
             <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  value="{{old('rol')}}">
+                    <option value="ti">Seleccione un tipo de documento</option>
                     <option value="ti">Actas</option>
                     <option value="cc">Constancias</option>
                     <option value="cc">Certificados</option>
@@ -29,7 +28,6 @@
                     <option value="cc">Acta de grado</option>
                     <option value="cc">Horario de clase</option>
                     <option value="cc">Diplomas</option>
-                    <option value="cc">Actas</option>
                     <option value="cc">Resoluciones</option>
 
 

@@ -98,7 +98,7 @@
             );
     function btn_drop(){
         bootbox.confirm({
-    message: "¿Estas seguro de eliminar este registro?",
+    message: "¿Estas seguro de eliminar este documento?",
     centerVertical:true,
     backdrop:true,
     onEscape:true,
