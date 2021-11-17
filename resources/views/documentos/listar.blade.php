@@ -32,7 +32,7 @@
             <td>Acta</td>
             <td>28-10-2021 12:11:00</td>
             <td>28-10-2021 12:30:00</td>
-            <td style="text-align:center"><a href="/editar/docente/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
+            <td style="text-align:center"><a href="/editar/documento" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
         </tr>
         <tr>
             <td>2</td>

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 class DocumentosController extends Controller
 {
+
+  
     public function crear(){
         return view('documentos.crear',[
             'crear_documento'=>'active'
@@ -23,6 +25,11 @@ class DocumentosController extends Controller
     }
     public function listar(){
         return view('documentos.listar',[
+            'listar_documentos'=>'active'
+        ]);
+    }
+    public function editar(){
+        return view('documentos.editar',[
             'listar_documentos'=>'active'
         ]);
     }

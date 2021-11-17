@@ -16,7 +16,7 @@
     </div>
     <div class="row">
         <div class="col-xl-4">
-            <button type="text" class="btn btn-primary"> + Asignar Estudiantes</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">+ Asignar Estudiantes</button>
         </div>
       </div>
       <br>
@@ -47,6 +47,7 @@
 
      </table>
 </div>
+@include('cursos.modal')
 @endsection
 @section('scripts')
 <script>

@@ -34,6 +34,7 @@ Route::get('/listar/documentos', 'DocumentosController@listar');
 Route::get('/estadisticas/documentos', 'DocumentosController@estadisticas');
 Route::get('/consultar/documentos', 'DocumentosController@consultar');
 Route::get('/dropzone/upload', 'DocumentosController@dropzone');
+Route::get('/editar/documento', 'DocumentosController@editar');
 
 /*Fin documentos*/
 

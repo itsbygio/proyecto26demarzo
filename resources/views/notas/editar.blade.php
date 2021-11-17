@@ -47,10 +47,8 @@
         <div class="col-xl-6">
                 <h5 class="">Agregar nota</h5>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Por favor, Escriba la nota" value="4.5" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled>
-                    <div class="input-group-append">
-                        <button class="fas fa-pen-alt btn btn-primary"></button>
-                    </div>
+                    <input type="text" class="form-control" placeholder="Por favor, Escriba la nota" value="4.5" aria-label="Recipient's username" aria-describedby="basic-addon2">
+             
                 </div>        </div>
     </div><br>
     <div class="row ml-3">

@@ -56,7 +56,7 @@
      </div>
   
     
-     <div class="col-md-4 mb-5">
+     <div class="col-md-4 mb-4">
      <p>Rol:</p>
         <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  value="{{old('rol')}}">
                 <option value="administrador">Administrador</option>
@@ -69,7 +69,17 @@
         <div style="color:red;">{{ $message }}*</div>
         @enderror
      </div>
+     <div class="col-md-4 mb-4">
+     <p>Estado:</p>
+        <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  value="{{old('rol')}}">
+                <option value="administrador">Activo</option>
+                <option value="coordinador"   >Inactivo</option>
 
+        </select>
+        @error('rol')
+        <div style="color:red;">{{ $message }}*</div>
+        @enderror
+     </div>
  </div>
 
  <div class="row ml-4">
