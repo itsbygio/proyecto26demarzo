@@ -69,6 +69,12 @@
         @enderror
      </div>
      <div class="col-md-4 mb-4">
+     <p>Seleccione año del curso:</p>
+     <input type="number" class="form-control" min="1900" max="2099" step="1" value="2021" />
+
+
+     </div>
+     <div class="col-md-4 mb-4">
      <p>Seleccione el curso:</p>
      <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Por favor, Eliga el curso" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled>
@@ -87,4 +93,11 @@
 </div>
 <br>
 </div>
+@endsection
+@section('scripts')
+<script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4'
+        });
+    </script>
 @endsection

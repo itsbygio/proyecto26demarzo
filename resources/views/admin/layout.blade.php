@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>  
   <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
    <link rel="stylesheet" href="{{asset('/adminlte/plugins/fontawesome-free/css/all.min.css') }}">
-   <link rel="stylesheet" href="{{asset('/lightbox/dist/css/lightbox.min.css') }}">
+   
    @yield('styles')
 
 <title>SGD26DEMARZO</title>

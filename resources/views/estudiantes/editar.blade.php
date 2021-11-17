@@ -69,11 +69,23 @@ Editar Estudiante </h4><br>
         @enderror
      </div>
      <div class="col-md-4 mb-4">
+     <p>Seleccione año del curso:</p>
+     <div class="input-group mb-3">
+                    <input type="text" class="form-control" value="11-2" placeholder="Por favor, Eliga el curso" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled>
+                    <div class="input-group-append">
+                        <button class="fas fa-plus btn btn-primary"  data-toggle="modal" data-target="#exampleModalCenter"></button>
+                    </div>
+                </div>
+       @error('direccion')
+        <div   style="color:red;" >{{ $message }}*</div>
+        @enderror
+     </div>
+     <div class="col-md-4 mb-4">
      <p>Seleccione el curso:</p>
      <div class="input-group mb-3">
                     <input type="text" class="form-control" value="11-2" placeholder="Por favor, Eliga el curso" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled>
                     <div class="input-group-append">
-                        <button class="fas fa-plus btn btn-primary"></button>
+                        <button class="fas fa-plus btn btn-primary"  data-toggle="modal" data-target="#exampleModalCenter"></button>
                     </div>
                 </div>
        @error('direccion')
@@ -82,8 +94,9 @@ Editar Estudiante </h4><br>
      </div>
  </div>
  <div class="row">
- <button class="btn btn-primary ml-4" ><i class="fas fa-user-plus mr-3"></i>Editar estudiante</button>
+ <button class="btn btn-primary ml-4" ></i>Editar estudiante</button>
 </div>
 <br>
 </div>
+@include('estudiantes.modal')
 @endsection
