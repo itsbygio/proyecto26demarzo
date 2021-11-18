@@ -80,6 +80,7 @@ Editar Estudiante </h4><br>
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>
+     
      <div class="col-md-4 mb-4">
      <p>Seleccione el curso:</p>
      <div class="input-group mb-3">
@@ -98,5 +99,5 @@ Editar Estudiante </h4><br>
 </div>
 <br>
 </div>
-@include('estudiantes.modal')
+@include('estudiantes.modaledit')
 @endsection
