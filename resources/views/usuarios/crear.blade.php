@@ -81,6 +81,21 @@
         <div style="color:red;">{{ $message }}*</div>
         @enderror
      </div>
+         
+     <div class="col-md-4 mb-4">
+     <p>Contraseña</p>
+        <input id="contacto"  name="contacto" type="password" class="form-control" value="{{old('contacto')}}">
+        @error('contacto')
+        <div   style="color:red;" >{{ $message }}*</div>
+        @enderror
+     </div>
+     <div class="col-md-4 mb-4">
+     <p>Confirmar Contraseña</p>
+        <input id="contacto"  name="contacto" type="password" class="form-control" value="{{old('contacto')}}">
+        @error('contacto')
+        <div   style="color:red;" >{{ $message }}*</div>
+        @enderror
+     </div>
  </div>
 
  <div class="row ml-4">
