@@ -17,6 +17,7 @@
 <title>SGD26DEMARZO</title>
 </head>
 <body class="hold-transition sidebar-mini">
+  @yield('scriptsbody')
 <div class="wrapper">
 
   <!-- Navbar -->
