@@ -92,7 +92,7 @@
      <p>Seleccione el curso actual:</p>
      <div class="input-group">
                     <input type="text" id="ca" class="form-control" placeholder="Por favor, Eliga el curso" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled>
-                    <input  style="display:none" type="text" id="idcurso" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2" >
+                    <input   type="text" id="idcurso" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2" >
 
                     <div class="input-group-append">
                         <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">+</button>
