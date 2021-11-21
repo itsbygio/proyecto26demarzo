@@ -67,5 +67,9 @@ Route::get('/editar/materia', 'materiasController@editar');
 /* Cursos */
 Route::get('/crear/curso', 'cursosController@crear');
 Route::get('/listar/cursos', 'cursosController@listar');
-Route::get('/editar/curso', 'cursosController@editar');
+Route::get('/editar/curso/{id}', 'cursosController@editar');
 /*Fin materias */
+
+/*curyest */
+Route::post('/asignar/estudiantes', 'curyestController@asignar');
+Route::post('/desasignar/estudiantes', 'curyestController@desasignar');

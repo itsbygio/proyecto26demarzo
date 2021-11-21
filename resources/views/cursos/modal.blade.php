@@ -8,6 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
+     
       <table id="table_modal" class="table table-striped table-bordered" style="width:100%">
         
         <thead>
@@ -19,14 +20,18 @@
              </tr>
          </thead>
          <tbody  >
-           @foreach($estudiantes as $estudiante)
+           <?php foreach($estudiantes as $estudiante){?>
         <tr>
-            <td><div  class="form-check text-center"><input  style="width:18px; height:18px;" class="form-check-input" type="checkbox" onclick="RadioModalClick('{{$id_curso}}','{{$estudiante->id}}');" id="flexCheckDefault"></div></td>
-            <td>{{$estudiante->nombre}}</td>
-            <td>{{$estudiante->apellidos}}</td>
-            <td>{{$estudiante->num_id}}</td>
+         
+            <td><div  class="form-check text-center"><input  id="boxcheck{{$estudiante->id}}" style="width:18px; height:18px;" class="form-check-input" type="checkbox" onclick="RadioModalClick('{{$id_curso}}','{{$estudiante->id}}');" id="flexCheckDefault"  >
+         
+          </div>
+          </td>
+            <td><?php echo $estudiante->nombre ?></td>
+            <td><?php echo $estudiante->apellidos?></td>
+            <td><?php echo $estudiante->num_id ?></td>
         </tr>
-        @endforeach
+       <?php } ?>
     
          </tbody>
 
