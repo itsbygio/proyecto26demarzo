@@ -14,7 +14,9 @@ class cursosController extends Controller
     ]);
     }
     public function listar(){
-        return view('cursos.listar',['listar_cursos'=>'active']);
+        return view('cursos.listar',['listar_cursos'=>'active',
+             
+       ]);
 
     }
     public function editar($id){

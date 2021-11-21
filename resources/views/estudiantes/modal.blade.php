@@ -15,99 +15,28 @@
         <thead>
              <tr>
                 <th></th>
+                <th  class="text-center">id</th>
                  <th  class="text-center">curso</th>
                  <th  class="text-center">año</th>
              </tr>
          </thead>
          <tbody  >
+         @foreach($cursos as $curso)
         <tr>
+            
             <td class="text-center">
             <div class="form-check form-check-inline ">
-                <input class="form-check-input" onclick="RadioModalClick(this);" value="11-1,1" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <input class="form-check-input" onclick="RadioModalClick(this);"
+                 value=" {{$curso->titulo}}.{{$curso->id}} " type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+              
             </div>
             </td>
-            <td class="text-center">11-1</td>
-            <td class="text-center">2021</td>
-    
+            <th class="text-center">{{$curso->id}}</th>
+            <td class="text-center">{{$curso->titulo}}</td>
+            <td class="text-center">{{$curso->año}}</td>
+         
         </tr>
-        <tr>
-        <td class="text-center">
-            <div class="form-check form-check-inline ">
-                <input class="form-check-input" type="radio"  onclick="RadioModalClick(this);"  value="11-2,2" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            </div>
-        </td>
-            <td class="text-center">11-2</td>
-            <td class="text-center">2021</td>
-        </tr>
-        <tr>
-        <td class="text-center">
-            <div class="form-check form-check-inline ">
-                <input class="form-check-input" type="radio" onclick="RadioModalClick(this);" value="11-3,3" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            </div>
-        </td>
-            <td class="text-center">11-3</td>
-            <td class="text-center">2021</td>
-        </tr>
-        <tr>
-        <td class="text-center">
-            <div class="form-check form-check-inline ">
-                <input class="form-check-input" type="radio" onclick="RadioModalClick(this);"  value="11-4,4" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            </div>
-        </td>
-            <td class="text-center">11-4</td>
-            <td class="text-center">2021</td>
-        </tr>
-        <tr>
-        <td class="text-center">
-            <div class="form-check form-check-inline ">
-                <input class="form-check-input" type="radio" onclick="RadioModalClick(this);" value="11-5,5" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            </div>
-        </td>
-            <td class="text-center" >11-5</td>
-            <td class="text-center">2021</td>
-        </tr>
-        <tr>
-        <td class="text-center">
-            <div class="form-check form-check-inline ">
-                <input class="form-check-input" type="radio" onclick="RadioModalClick(this);"  value="11-6,6" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            </div>
-        </td> 
-            <td class="text-center">11-6</td>
-            <td class="text-center">2021</td>
-        </tr>
-        <tr>
-        <td class="text-center"> 
-        <div class="form-check form-check-inline ">
-        <input class="form-check-input" type="radio" onclick="RadioModalClick(this);" value="11-7,7" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-        </div>
-        </td>
-            <td class="text-center">11-7</td>
-            <td class="text-center"> 2021</td>
-        </tr>
-        <td class="text-center"> 
-        <div class="form-check form-check-inline ">
-        <input class="form-check-input" type="radio" onclick="RadioModalClick(this);"  value="11-8,8" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-        </div>
-        </td>
-            <td class="text-center">11-8</td>
-            <td class="text-center">2021</td>
-        </tr>
-        <td class="text-center"> 
-        <div class="form-check form-check-inline ">
-        <input class="form-check-input" type="radio" onclick="RadioModalClick(this);" value="11-9,9" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-        </div>
-        </td>            
-            <td class="text-center">11-9</td>
-            <td class="text-center">2021</td>
-        </tr>
-        <td class="text-center"> 
-        <div class="form-check form-check-inline ">
-        <input class="form-check-input" type="radio"  onclick="RadioModalClick(this);" value="11-10,10," name="inlineRadioOptions" id="inlineRadio1" value="option1">
-        </div>
-        </td> 
-            <td class="text-center">11-10</td>
-            <td class="text-center">2021</td>
-        </tr>
+        @endforeach
          </tbody>
 
      </table>

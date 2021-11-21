@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
+use App\Rules\ImageEdit;
 class UsuarioController extends Controller
 {
     /**
@@ -13,7 +19,9 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        return view('usuarios.listar',[
+            'listar_usuarios'=>'active'
+        ]);
     }
 
     /**
@@ -23,14 +31,17 @@ class UsuarioController extends Controller
      */
     public function crear()
     {
+       
         return view('usuarios.crear',[
-            'crear_usuario'=>'active',
-            'prueba'=>'esto es una prueba'
+            'crear'=>'active', 
+            
         ]);
+     
     }
     public function listar(){
         return view('usuarios.listar',[
-            'listar_usuarios'=>'active'
+            'listar_usuarios'=>'active',
+            'usuarios'=>User::all()
         ]);
     }
 
@@ -42,7 +53,60 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $rol='';
+       $nrol=$request->nrol;
+       if($nrol=='1'){
+          
+        $rol='administrador';
+
+       }
+       
+      else if($nrol=='2'){
+
+        $rol='coordinador';
+
+      }
+      else if($nrol=='3'){
+
+        $rol='secretaria de rectoria';
+
+      }
+      else if($nrol=='4'){
+
+        $rol='archivo';
+
+      }
+
+        $validatedData = $request->validate([
+            'nombre' => ['required', 'string', 'max:255'],
+            'apellidos' => ['required', 'string', 'max:255'],    
+            'password'=> ['required', 'string', 'min:6'],
+            'email' => ['required', 'email', 'max:255', 'unique:users'],
+            'contacto'=> ['required', 'numeric', 'min:5'],
+        
+            
+            
+        ]);
+        
+    
+
+      $user=  User::create([
+            'nombre'=>$request->nombre,
+            'apellidos'=>$request->apellidos,       
+            'email'=>$request->email,
+            'estado'=>$request->estado, 
+            'password'=> Hash::make($request->clave),
+            'contacto'=> $request->contacto,
+            'rol'=> $rol,
+            'nrol'=>$nrol,
+            'created_at'=>date('d-m-Y H:i:s'),
+            'updated_at'=>date('d-m-Y H:i:s'),
+            
+        ]);
+        
+        $user->save();
+        return redirect('/crear/usuario')->with('status', 'Usuario creado exitosamente!');
+        
     }
 
     /**
@@ -64,8 +128,10 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
+        $user=User::findOrFail($id);
         return view('usuarios.editar',[
-        'listar_usuarios'=>'active'
+        'listar_usuarios'=>'active',
+        'user'=>$user
         ]);
     }
       
@@ -77,7 +143,45 @@ class UsuarioController extends Controller
     
     public function update(Request $request, $id)
     {
-        //
+      
+      
+       $rol='';
+       $nrol=$request->nrol;
+       if($nrol=='1'){  
+        $rol='administrador';
+       }
+       
+      else if($nrol=='2'){
+        $rol='coordinador';
+      }
+
+      else if($nrol=='3'){
+        $rol='secretaria de rectoria';
+      }
+      else if($nrol=='4'){
+        $rol='archivo';
+      }
+    
+        $validatedData = $request->validate([
+            'nombre' => ['required', 'string', 'max:255'],
+            'apellidos' => ['required', 'string', 'max:255'],           
+            'email' => ['required', 'email', 'max:255'],
+            'contacto'=> ['required', 'numeric', 'min:5'],
+       
+            
+        ]);
+        
+            $user= User::find($id);
+            $user->nombre=$request->nombre;
+            $user->apellidos=$request->apellidos;
+            $user->email=$request->email;
+            $user->contacto=$request->contacto;
+            $user->rol=$request->$rol;
+            $user->nrol=$request->$nrol;
+            $user->save();
+
+           return redirect('/editar/usuario/'.$id)->with('status','Datos modificados exitosamente');
+           
     }
 
     /**
@@ -86,8 +190,9 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $user=User::findOrfail($request->id);
+        $user->delete();
     }
 }

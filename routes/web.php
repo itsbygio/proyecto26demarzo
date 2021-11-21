@@ -23,9 +23,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 /*usuarios*/
 Route::get('/crear/usuario', 'UsuarioController@crear');
+Route::post('/store/usuario', 'UsuarioController@store');
+Route::post('/update/usuario/{id}', 'UsuarioController@update');
 Route::get('/listar/usuarios', 'UsuarioController@listar');
 Route::get('/editar/usuario/{id}', 'UsuarioController@edit');
 Route::get('/perfildelusuario', 'UsuarioController@perfildelusuario');
+Route::post('/delete/usuario','UsuarioController@destroy');
 /*Fin usuarios*/
 
 /*documentos*/
@@ -42,6 +45,9 @@ Route::get('/editar/documento', 'DocumentosController@editar');
 Route::get('/crear/docente', 'DocentesController@crear');
 Route::get('/editar/docente/{id}', 'DocentesController@editar');
 Route::get('/listar/docentes', 'DocentesController@listar');
+Route::post('/store/docente ', 'DocentesController@store');
+Route::post('/update/docente/{id}','DocentesController@update');
+Route::post('/delete/docente','DocentesController@destroy');
 /*Fin docentes*/
 
 
@@ -49,6 +55,9 @@ Route::get('/listar/docentes', 'DocentesController@listar');
 Route::get('/crear/estudiante', 'EstudiantesController@crear');
 Route::get('/editar/estudiante/{id}', 'EstudiantesController@editar');
 Route::get('/listar/estudiantes', 'EstudiantesController@listar');
+Route::post('/store/estudiante', 'EstudiantesController@store');
+Route::post('/update/estudiante/{id}', 'EstudiantesController@update');
+Route::post('/delete/estudiante','EstudiantesController@destroy');
 
 /*Fin estudiantes*/
 
@@ -61,7 +70,10 @@ Route::get('/editar/notas', 'notasController@editar');
 /* Materias */
 Route::get('/crear/materia', 'materiasController@crear');
 Route::get('/listar/materias', 'materiasController@listar');
-Route::get('/editar/materia', 'materiasController@editar');
+Route::get('/editar/materia/{id}', 'materiasController@editar');
+Route::post('/store/materia', 'materiasController@store');
+Route::post('/update/materia/{id}', 'materiasController@update');
+Route::post('/delete/materia', 'materiasController@destroy');
 /*Fin materias */
 
 /* Cursos */

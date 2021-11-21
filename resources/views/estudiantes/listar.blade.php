@@ -20,18 +20,19 @@
 
              </tr>
          </thead>
-         <tbody  >
+         <tbody>
+             @foreach($estudiantes as $estudiante)
         <tr>
-            <td>1</td>
-            <td>Andres</td>
-            <td>Jimenez Ramirez</td>
-            <td>Cedula de ciudadania</td>
-            <td>123456789</td>
-            <td>11-1</td>
-
-            <td style="text-align:center"><a href="/editar/estudiante/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button></td>
+              <td>{{$estudiante->id}}</td>
+              <td>{{$estudiante->nombre}} </td>
+              <td> {{$estudiante->apellidos}} </td>
+              <td>{{$estudiante->tipo_doc}} </td>
+              <td>{{$estudiante->num_id}}</td>
+              <td>{{$estudiante->id_curso}}</td>
+              <td><a href="/editar/estudiante/{{$estudiante->id}}" class='btn btn-primary mr-3' > <i class='fas fa-pen-alt'></i></a>
+              <button  class='btn btn-primary mr-3' onclick="btn_drop('{{$estudiante->id}}')"><i class='far fa-minus-square'></i></button></td>
         </tr>
-
+            @endforeach
         
          </tbody>
 
@@ -41,6 +42,7 @@
 @endsection
 @section('scripts')
 <script>
+    var estudiantes= <?php  echo $estudiante ?>;
     $('#table_id').DataTable(
             
             {
@@ -62,7 +64,7 @@
 
             }
             );
-    function btn_drop(){
+    function btn_drop(id){
         bootbox.confirm({
     message: "¿Estas seguro de eliminar este registro?",
     centerVertical:true,
@@ -86,8 +88,11 @@
             title: 'Registro eliminado',
             showConfirmButton: false,
             timer: 1500
-           })
-        
+           });
+           var url="/delete/estudiante";
+        axios.post(url,{"id":id}).then(response =>{
+        location.href="/listar/estudiantes";
+    });
         }
         else{
 

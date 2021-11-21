@@ -19,25 +19,32 @@
              </tr>
          </thead>
          <tbody  >
-        <tr>
-            <td>1</td>
-            <td>Richard</td>
-            <td>Ardila Cruz</td>
-            <td>123456789</td>
-            <td>Rich_ac91@hotmail.com</td>
-            <td style="text-align:center"><a href="/editar/docente/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button></td>
-        </tr>
-
-        
+         @foreach($docentes as $docente)
+             
+          <tr>
+             <td>{{$docente->id}}</td>
+             <td>{{$docente->nombre}} </td>
+             <td> {{$docente->apellidos}}</td>
+             <td>{{$docente->num_id}} </td>
+             <td>{{$docente->email}}</td>
+             <td><a href="/editar/docente/{{$docente->id}}" class='btn btn-primary mr-3' >
+             <i class='fas fa-pen-alt'></i></a><button  class='btn btn-primary mr-3' onclick="btn_drop('{{$docente->id}}')">
+             <i class='far fa-minus-square'></i></button></td>
+            
+         </tr> 
+         @endforeach 
          </tbody>
 
      </table>
     </div>
 </div>
+
 @endsection
 @section('scripts')
+
 <script>
-    $('#table_id').DataTable(
+     var docentes= <?php  echo $docentes ?>;
+     $('#table_id').DataTable(
             
             {
                 "language": {
@@ -58,7 +65,7 @@
 
             }
             );
-    function btn_drop(){
+            function btn_drop(id){
         bootbox.confirm({
     message: "¿Estas seguro de eliminar este registro?",
     centerVertical:true,
@@ -73,17 +80,23 @@
             label: 'No',
             className: 'btn-danger'
         }
+
     },
     callback: function (result) {
         if(result){
-            Swal.fire({
+          Swal.fire({
             position: 'center',
             icon: 'success',
             title: 'Registro eliminado',
             showConfirmButton: false,
             timer: 1500
-           })
+           });
+            
+         var url="/delete/docente";
+        axios.post(url,{"id":id}).then(response =>{
+        location.href="/listar/docentes";
         
+    });
         }
         else{
 

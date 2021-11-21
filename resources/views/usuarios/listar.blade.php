@@ -11,8 +11,7 @@
              <tr>
                  <th>id</th>
                  <th>nombre</th>
-                 <th>Apellidos</th>
-                 <th>cedula</th>
+                 <th>Apellidos</th>       
                  <th>Email</th>
                  <th>rol</th>
                  <th>Opciones</th>
@@ -20,15 +19,19 @@
              </tr>
          </thead>
          <tbody  >
-        <tr>
-            <td>1</td>
-            <td>Miguel</td>
-            <td>Ocampo</td>
-            <td>1096254476</td>
-            <td>miguelocampoc@gmail.com</td>
-            <td>Administrador</td>
-            <td style="text-align:center"><a href="/editar/usuario/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button></td>
-        </tr>
+         @foreach($usuarios as $usuario)
+          <tr>
+             <td>{{$usuario->id}}</td>
+              <td>{{$usuario->nombre}} </td>
+             <td> {{$usuario->apellidos}} </td>
+              <td>{{$usuario->email}} </td>
+              <td>{{$usuario->rol}}</td>
+         
+              <td><a href="/editar/usuario/{{$usuario->id}}" class='btn btn-primary mr-3' >
+             <i class='fas fa-pen-alt'></i></a><button  class='btn btn-primary mr-3' onclick="btn_drop('{{$usuario->id}}')"><i class='far fa-minus-square'></i></button></td>
+         </tr> 
+               @endforeach
+         
 
         
          </tbody>
@@ -39,6 +42,7 @@
 @endsection
 @section('scripts')
 <script>
+    var usuarios= <?php  echo $usuarios ?>;
     $('#table_id').DataTable(
             
             {
@@ -56,11 +60,11 @@
                         "previous":   "Anterior"
                     },
                 },
-                
+               
 
             }
-            );
-    function btn_drop(){
+            );          
+            function btn_drop(id){
         bootbox.confirm({
     message: "¿Estas seguro de eliminar este registro?",
     centerVertical:true,
@@ -75,17 +79,23 @@
             label: 'No',
             className: 'btn-danger'
         }
+
     },
     callback: function (result) {
         if(result){
-            Swal.fire({
+          Swal.fire({
             position: 'center',
             icon: 'success',
             title: 'Registro eliminado',
             showConfirmButton: false,
             timer: 1500
-           })
+           });
+            
+         var url="/delete/usuario";
+        axios.post(url,{"id":id}).then(response =>{
+        location.href="/listar/usuarios";
         
+    });
         }
         else{
 

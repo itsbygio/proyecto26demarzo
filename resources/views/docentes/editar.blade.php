@@ -10,34 +10,35 @@
           </button>
         </div>  
 @endif
-
+<form  enctype="multipart/form-data" action="/update/docente/{{$docentes->id}}" method="POST">
+@csrf
 <h4 class="ml-3"><i class="fas fa-user-edit"></i>
 Editar docente </h4><br>
  <div class="row ml-3 mr-3">
      <div class="col-md-4 mb-4">
      <p>Nombre:</p>
-        <input id="nombre" name="nombre" type="text" class="form-control" value="{{old('nombre')}}" >
+        <input id="nombre" name="nombre" type="text" class="form-control" value="{{$docentes->nombre}}" >
         @error('nombre')
         <div  style="color:red;">{{ $message }}*</div>
         @enderror
      </div>
      <div class="col-md-4 mb-4">
      <p>Apellidos:</p> 
-        <input id="apellido" name="apellidos" type="text" class="form-control" value="{{old('apellido')}}">
+        <input id="apellidos" name="apellidos" type="text" class="form-control" value="{{$docentes->apellidos}}">
         @error('apellidos')
         <div  style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>
      <div class="col-xl-4  mb-4">
         <p>Cedula de ciudadania :</p>
-        <input  id="cedula"  name="cedula" type="text" class="form-control" value="{{old('cedula')}}">
+        <input  id="num_id"  name="num_id" type="text" class="form-control" value="{{$docentes->num_id}}">
         @error('cedula')
         <div  style="color:red;">{{ $message }}*</div>
         @enderror
         </div>
      <div class="col-md-4 mb-4">
      <p>Email:</p>
-        <input id="email" name="email" type="email" class="form-control"  value="{{old('email')}}">
+        <input id="email" name="email" type="email" class="form-control"  value="{{$docentes->email}}">
         @error('email')
         <div style="color:red;">{{ $message }}*</div>
         @enderror
@@ -45,28 +46,28 @@ Editar docente </h4><br>
     
      <div class="col-md-4 mb-4">
      <p>Numero de contacto:</p>
-        <input id="contacto"  name="contacto" type="text" class="form-control" value="{{old('contacto')}}">
+        <input id="contacto"  name="contacto" type="text" class="form-control" value="{{$docentes->contacto}}">
         @error('contacto')
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>
      <div class="col-md-4 mb-4">
      <p>Direccion:</p>
-        <input id="contacto"  name="contacto" type="text" class="form-control" value="{{old('contacto')}}">
+        <input id="direccion"  name="direccion" type="text" class="form-control" value="{{$docentes->direccion}}">
         @error('direccion')
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>
      <div class="col-md-4 mb-4">
      <p>Titulos de posgrado:</p>
-        <textarea id="contacto"  name="contacto" type="text" class="form-control" value="{{old('contacto')}}"></textarea>
+        <textarea id="tp"  name="tp" type="text" class="form-control" > {{$docentes->tp}}</textarea>
         @error('direccion')
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>
      <div class="col-md-4 mb-4">
      <p>Asignacion Academica:</p>
-     <textarea id="contacto"  name="contacto" type="text" class="form-control" value="{{old('contacto')}}"></textarea>
+     <textarea id="ac"  name="ac" type="text" class="form-control" >{{$docentes->ac}}</textarea>
         @error('direccion')
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
@@ -74,10 +75,10 @@ Editar docente </h4><br>
      <div class="col-md-4 mb-4">
      <p>Escalafon</p>
 
-     <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  value="{{old('rol')}}">
-                <option value="ti">1</option>
-                <option value="cc">2</option>
-                <option value="cc">3</option>
+     <select id="escalafon" name="escalafon" class="form-control" id="exampleFormControlSelect1"  value="{{$docentes->escalafon}}">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
 
         </select>
         </div>
@@ -85,7 +86,7 @@ Editar docente </h4><br>
 
  </div>
  <div class="row">
- <button class="btn btn-primary ml-4" ><i class="fas fa-user-plus mr-3"></i>Crear nuevo Docente</button>
+ <button class="btn btn-primary ml-4" ><i class="fas fa-user-plus mr-3"></i>Editar docente</button>
 </div>
 <br>
 </div>

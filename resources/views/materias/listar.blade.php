@@ -17,13 +17,16 @@
              </tr>
          </thead>
          <tbody  >
+         @foreach($materias as $materia)
         <tr>
-            <td>1</td>
-            <td>Quimica</td>
-            <td>5-11-2021 11:30</td>
-            <td>6-11-2021 9:35</td>
-            <td style="text-align:center"><a href="/editar/materia" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button></td>
+              <td>{{$materia->id}}</td>
+              <td>{{$materia->titulo}} </td>
+              <td>{{$materia->created_at}} </td>
+              <td>{{$materia->updated_at}} </td>
+              <td><a href="/editar/materia/{{$materia->id}}" class='btn btn-primary mr-3' > <i class='fas fa-pen-alt'></i></a>
+              <button  class='btn btn-primary mr-3' onclick="btn_drop('{{$materia->id}}')"><i class='far fa-minus-square'></i></button></td>
         </tr>
+            @endforeach
 
         
          </tbody>
