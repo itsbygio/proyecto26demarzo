@@ -70,7 +70,10 @@ Route::get('/editar/notas', 'notasController@editar');
 /* Materias */
 Route::get('/crear/materia', 'materiasController@crear');
 Route::get('/listar/materias', 'materiasController@listar');
-Route::get('/editar/materia', 'materiasController@editar');
+Route::get('/editar/materia/{id}', 'materiasController@editar');
+Route::post('/store/materia', 'materiasController@store');
+Route::post('/update/materia/{id}', 'materiasController@update');
+Route::post('/delete/materia', 'materiasController@destroy');
 /*Fin materias */
 
 /* Cursos */
