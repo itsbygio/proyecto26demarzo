@@ -34,7 +34,7 @@ lengthMenu: [[5], [5]],
          }
    }
    function RadioModalClick(myRadio){
-       var separa= myRadio.value.split(",",2);
+       var separa= myRadio.value.split(".",2);
         var string= separa[0];
        $("#ca").val(string);
        $("#idcurso").val(separa[1]);

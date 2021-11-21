@@ -1,7 +1,8 @@
 @extends('admin.layout')
 
 @section('content')
-
+<form  enctype="multipart/form-data" action="/store/usuario" method="POST">
+@csrf
 <div class="container ">
 
 @if (session('status'))
@@ -27,18 +28,12 @@
      </div>
      <div class="col-md-4 mb-4">
      <p>Apellidos:</p> 
-        <input id="apellido" name="apellidos" type="text" class="form-control" value="{{old('apellido')}}">
+        <input id="apellidos" name="apellidos" type="text" class="form-control" value="{{old('apellidos')}}">
         @error('apellidos')
         <div  style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>
-     <div class="col-xl-4  mb-4">
-        <p>Cedula:</p>
-        <input  id="cedula"  name="cedula" type="text" class="form-control" value="{{old('cedula')}}">
-        @error('cedula')
-        <div  style="color:red;">{{ $message }}*</div>
-        @enderror
-        </div>
+     
      <div class="col-md-4 mb-4">
      <p>Email:</p>
         <input id="email" name="email" type="email" class="form-control"  value="{{old('email')}}">
@@ -58,51 +53,49 @@
     
      <div class="col-md-4 mb-4">
      <p>Rol:</p>
-        <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  value="{{old('rol')}}">
-                <option value="administrador">Administrador</option>
-                <option value="coordinador"   >Coordinador</option>
-                <option value="srectoria">Secretaria de rectoria</option>
-                <option value="rarchivo">Rol de archivo</option>
+        <select id="nrol" name="nrol" class="form-control" id="exampleFormControlSelect1"  value="{{old('nrol')}}">
+                <option value="1">Administrador</option>
+                <option value="2" >Coordinador</option>
+                <option value="3">Secretaria de rectoria</option>
+                <option value="4">Rol de archivo</option>
 
         </select>
-        @error('rol')
-        <div style="color:red;">{{ $message }}*</div>
-        @enderror
+        
      </div>
     
      <div class="col-md-4 mb-4">
      <p>Estado:</p>
-        <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  value="{{old('rol')}}">
-                <option value="administrador">Activo</option>
-                <option value="coordinador"   >Inactivo</option>
+        <select id="estado" name="estado" class="form-control" id="exampleFormControlSelect1"  value="{{old('estado')}}">
+                <option value="Activo">Activo</option>
+                <option value="inactivo"   >Inactivo</option>
 
         </select>
-        @error('rol')
-        <div style="color:red;">{{ $message }}*</div>
-        @enderror
+        
      </div>
          
      <div class="col-md-4 mb-4">
      <p>Contraseña</p>
-        <input id="contacto"  name="contacto" type="password" class="form-control" value="{{old('contacto')}}">
-        @error('contacto')
+        <input id="password"  name="password" type="password" class="form-control" value="{{old('password')}}">
+        @error('password')
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>
      <div class="col-md-4 mb-4">
      <p>Confirmar Contraseña</p>
-        <input id="contacto"  name="contacto" type="password" class="form-control" value="{{old('contacto')}}">
-        @error('contacto')
+        <input id="password"  name="password" type="password" class="form-control" value="{{old('password')}}">
+        @error('password')
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>
  </div>
 
  <div class="row ml-4">
- <button class="btn btn-primary " ><i class="fas fa-user-edit"></i> Editar Usuario</button>
+ <button class="btn btn-primary " onclick="RegisterUser()" ><i class="fas fa-user-edit"></i> Registrar Usuario</button>
+ </form>
 </div>
 
 <br><br>
 
 </div>
+
 @endsection

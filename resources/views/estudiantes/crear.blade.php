@@ -1,5 +1,7 @@
 @extends('admin.layout')
 @section('content')
+<form  enctype="multipart/form-data" action="/store/estudiante" method="POST">
+@csrf
 <div class="container ">
 @if (session('status'))
 <div style=" background-color:#b9f6ca" class="alert  alert-dismissible fade show ml-4 mr-4 mb-4"  role="alert">
@@ -9,6 +11,7 @@
           </button>
         </div>  
 @endif
+
 
 <h4 class="ml-3"><i class="fas fa-user-plus mr-3"></i>
  Crear Nuevo Estudiante </h4><br>
@@ -22,16 +25,16 @@
      </div>
      <div class="col-md-4 mb-4">
      <p>Apellidos:</p> 
-        <input id="apellido" name="apellidos" type="text" class="form-control" value="{{old('apellido')}}">
+        <input id="apellido" name="apellidos" type="text" class="form-control" value="{{old('apellidos')}}">
         @error('apellidos')
         <div  style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>
      <div class="col-md-4 mb-4">
      <p>Tipo de documento:</p>
-        <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  value="{{old('rol')}}">
-                <option value="ti">Tarjeta de identidad</option>
-                <option value="cc">Cedula de ciudadania</option>
+        <select id="tipo_doc" name="tipo_doc" class="form-control" id="exampleFormControlSelect1"  value="{{old('tipo_doc')}}">
+                <option value="tarjeta de identidad">Tarjeta de identidad</option>
+                <option value="cedula de ciudadania">Cedula de ciudadania</option>
 
         </select>
         @error('rol')
@@ -40,7 +43,7 @@
      </div>
      <div class="col-xl-4  mb-4">
         <p>Numero de identifcacion :</p>
-        <input  id="cedula"  name="cedula" type="text" class="form-control" value="{{old('cedula')}}">
+        <input  id="num_id"  name="num_id" type="text" class="form-control" value="{{old('num_id')}}">
         @error('cedula')
         <div  style="color:red;">{{ $message }}*</div>
         @enderror
@@ -62,7 +65,7 @@
      </div>
      <div class="col-md-4 mb-4">
      <p>Direccion:</p>
-        <input id="contacto"  name="contacto" type="text" class="form-control" value="{{old('contacto')}}">
+        <input id="direccion"  name="direccion" type="text" class="form-control" value="{{old('direccion')}}">
         @error('direccion')
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
@@ -84,18 +87,18 @@
      </div>
      <div  style="display:none" id="aeg" class="col-md-4 mb-4">
      <p>Año en que el  estudiante es egresado:</p>
-     <input type="number" class="form-control" min="1900" max="2099" step="1" value="2021" />
+     <input type="number" name="fecha_f" class="form-control"  value="{{old('fecha_f')}}" />
 
 
      </div>
      <div id="sec"  style="display:none" class="col-md-4 mb-4 ">
      <p>Seleccione el curso actual:</p>
      <div class="input-group">
-                    <input type="text" id="ca" class="form-control" placeholder="Por favor, Eliga el curso" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled>
-                    <input  style="display:none" type="text" id="idcurso" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2" >
+                    <input type="text" id="ca"  name="titulo "class="form-control" placeholder="Por favor, Eliga el curso" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled value="{{old('titulo')}}">
+                    <input  style="display:none" type="text" id="idcurso" name="id_curso" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2" value="{{old('id_curso')}}" >
 
                     <div class="input-group-append">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">+</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">+</button>
                     </div>
                 </div>
        @error('direccion')
@@ -106,6 +109,7 @@
  
  <div class="row">
  <button class="btn btn-primary ml-4" ><i class="fas fa-user-plus mr-3"></i> Crear nuevo Estudiante</button>
+</form>
 </div>
 <br>
 </div>
