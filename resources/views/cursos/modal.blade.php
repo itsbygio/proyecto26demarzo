@@ -13,78 +13,21 @@
         <thead>
              <tr>
                  <th></th>
-                 <th>id</th>
                  <th>nombre</th>
                  <th> Apellidos</th>
                  <th> Numero de identificacion</th>
              </tr>
          </thead>
          <tbody  >
+           @foreach($estudiantes as $estudiante)
         <tr>
-            <td><div  class="form-check text-center"><input  style="width:18px; height:18px;" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></div></td>
-            <td>1</td>
-            <td>juan</td>
-            <td>rodriguez</td>
-            <td>123456789</td>
+            <td><div  class="form-check text-center"><input  style="width:18px; height:18px;" class="form-check-input" type="checkbox" onclick="RadioModalClick('{{$id_curso}}','{{$estudiante->id}}');" id="flexCheckDefault"></div></td>
+            <td>{{$estudiante->nombre}}</td>
+            <td>{{$estudiante->apellidos}}</td>
+            <td>{{$estudiante->num_id}}</td>
         </tr>
-        <tr>
-        <td><div  class="form-check text-center"><input  style="width:18px; height:18px;" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></div></td>
-            <td>2</td>
-            <td>juan</td>
-            <td>rodriguez</td>
-            <td>123456789</td>
-        </tr>
-        <tr>
-        <td><div  class="form-check text-center"><input  style="width:18px; height:18px;" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></div></td>
-             <td>3</td>
-             <td>juan</td>
-            <td>rodriguez</td>
-            <td>123456789</td>
-        </tr>
-        <tr>
-        <td><div  class="form-check text-center"><input  style="width:18px; height:18px;" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></div></td>
-            <td>4</td>
-            <td>juan</td>
-            <td>rodriguez</td>
-            <td>123456789</td>
-        </tr>
-        <tr>
-        <td><div  class="form-check text-center"><input  style="width:18px; height:18px;" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></div></td>
-            <td>5</td>
-            <td>juan</td>
-            <td>rodriguez</td>
-            <td>123456789</td>
-        </tr>
-        <td><div  class="form-check text-center"><input  style="width:18px; height:18px;" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></div></td>
-            <td>5</td>
-            <td>juan</td>
-            <td>rodriguez</td>
-            <td>123456789</td>
-        </tr>
-        <td><div  class="form-check text-center"><input  style="width:18px; height:18px;" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></div></td>
-            <td>5</td>
-            <td>juan</td>
-            <td>rodriguez</td>
-            <td>123456789</td>
-        </tr>
-        <td><div  class="form-check text-center"><input  style="width:18px; height:18px;" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></div></td>
-            <td>5</td>
-            <td>juan</td>
-            <td>rodriguez</td>
-            <td>123456789</td>
-        </tr>
-        <td><div  class="form-check text-center"><input  style="width:18px; height:18px;" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></div></td>
-            <td>5</td>
-            <td>juan</td>
-            <td>rodriguez</td>
-            <td>123456789</td>
-        </tr>
-        <td><div  class="form-check text-center"><input  style="width:18px; height:18px;" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></div></td>
-            <td>5</td>
-            <td>juan</td>
-            <td>rodriguez</td>
-            <td>123456789</td>
-        </tr>
+        @endforeach
+    
          </tbody>
 
      </table>

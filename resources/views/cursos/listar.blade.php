@@ -24,7 +24,7 @@
             <td>11-1</td>
             <td>5-11-2021 11:30</td>
             <td>6-11-2021 9:35</td>
-            <td style="text-align:center"><a href="/editar/curso" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button></td>
+            <td style="text-align:center"><a href="/editar/curso/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button></td>
         </tr>
 
         

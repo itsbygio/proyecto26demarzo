@@ -7,23 +7,32 @@
         <div class="col-xl-4">
         <h5>El curso seleccionado es:</h5>
         <div class="input-group mb-3">
-                <input type="text" class="form-control" value="11-1" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled>
-                <div class="input-group-append">
-                    <button class="fas fa-pen-alt btn btn-primary"></button>
-                </div>
+                <input type="text" class="form-control" value="11-1" aria-label="Recipient's username" aria-describedby="basic-addon2" >
+               
+        </div>        
+      </div>
+      <div class="col-xl-4">
+        <h5>El año del curso es:</h5>
+        <div class="input-group mb-3">
+                <input type="text" class="form-control" value="2021" aria-label="Recipient's username" aria-describedby="basic-addon2" >
+              
         </div>        
       </div>
     </div>
     <div class="row">
         <div class="col-xl-4">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">+ Asignar Estudiantes</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Editar curso</button>
         </div>
       </div>
       <br>
-      <div class="row">
-      <h5>Estudiantes asignados al curso:</h5>
+      <div class="row mb-3">
+      <h4>Estudiantes asignados al curso:</h4>
       </div>
-      <br>
+      <div class="row mb-4 ">
+        <div class="col-xl-4">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-user-plus mr-1"></i>  </button>
+        </div>
+      </div>
       <table id="table_id" class="table table-striped table-bordered" style="width:100%">
         
         <thead>
@@ -50,85 +59,5 @@
 @include('cursos.modal')
 @endsection
 @section('scripts')
-<script>
-     $('#table_modal').DataTable(
-
-            {
-                pageLength : 5,
-    lengthMenu: [[5], [5]],
-                "language": {
-                    "lengthMenu": "Mostrar _MENU_ registros por pagina",
-                    "zeroRecords": "No hay registros",
-                    "info": "Mostrando pagina _PAGE_ de _PAGES_",
-                    "infoEmpty": "No registros disponibles",
-                    "infoFiltered": "(filtrado de _MAX_ total de registros)",
-                    "search":         "Buscar:",
-                    "paginate": {
-                        "first":      "First",
-                        "last":       "Last",
-                        "next":       "Siguiente",
-                        "previous":   "Anterior"
-                    },
-                },
-                
-
-            }
-            );
-    $('#table_id').DataTable(
-            
-            {
-                
-                "language": {
-                    "lengthMenu": "Mostrar _MENU_ registros por pagina",
-                    "zeroRecords": "No hay registros",
-                    "info": "Mostrando pagina _PAGE_ de _PAGES_",
-                    "infoEmpty": "No registros disponibles",
-                    "infoFiltered": "(filtrado de _MAX_ total de registros)",
-                    "search":         "Buscar:",
-                    "paginate": {
-                        "first":      "First",
-                        "last":       "Last",
-                        "next":       "Siguiente",
-                        "previous":   "Anterior"
-                    },
-                },
-                
-
-            }
-            );
-    function btn_drop(){
-        bootbox.confirm({
-    message: "¿Estas seguro de eliminar este registro?",
-    centerVertical:true,
-    backdrop:true,
-    onEscape:true,
-    buttons: {
-        confirm: {
-            label: 'Si',
-            className: 'btn-success pr-3 pl-3'
-        },
-        cancel: {
-            label: 'No',
-            className: 'btn-danger'
-        }
-    },
-    callback: function (result) {
-        if(result){
-            Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Registro eliminado',
-            showConfirmButton: false,
-            timer: 1500
-           })
-        
-        }
-        else{
-
-        }
-    }
-});
-    }
-</script>
-
+@include('cursos.cursos_script')
 @endsection
