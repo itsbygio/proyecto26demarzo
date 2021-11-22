@@ -20,19 +20,31 @@
              </tr>
          </thead>
          <tbody  >
-           <?php foreach($estudiantes as $estudiante){?>
+         <?php foreach($estudiantes as $estudiante){?>
         <tr>
          
-            <td><div  class="form-check text-center"><input  id="boxcheck{{$estudiante->id}}" style="width:18px; height:18px;" class="form-check-input" type="checkbox" onclick="RadioModalClick('{{$id_curso}}','{{$estudiante->id}}');" id="flexCheckDefault"  >
+         <td><div  class="form-check text-center"><input  id="boxcheck{{$estudiante->id}}" style="width:18px; height:18px;" class="form-check-input" type="checkbox" onclick="RadioModalClick('{{$id_curso}}','{{$estudiante->id}}');" id="flexCheckDefault"  >
+      
+       </div>
+       </td>
+         <td><?php echo $estudiante->nombre ?></td>
+         <td><?php echo $estudiante->apellidos?></td>
+         <td><?php echo $estudiante->num_id ?></td>
+     </tr>
+        <?php } ?>
+        <?php foreach($curyests as $curyest){?>
+        <tr>
+         
+            <td><div  class="form-check text-center"><input  id="boxcheck{{$curyest->estudiante->id}}" style="width:18px; height:18px;" class="form-check-input" type="checkbox" onclick="RadioModalClick('{{$id_curso}}','{{$curyest->estudiante->id}}');" id="flexCheckDefault" checked >
          
           </div>
           </td>
-            <td><?php echo $estudiante->nombre ?></td>
-            <td><?php echo $estudiante->apellidos?></td>
-            <td><?php echo $estudiante->num_id ?></td>
+            <td><?php echo $curyest->estudiante->nombre ?></td>
+            <td><?php echo $curyest->estudiante->apellidos?></td>
+            <td><?php echo $curyest->estudiante->num_id ?></td>
         </tr>
        <?php } ?>
-    
+      
          </tbody>
 
      </table>

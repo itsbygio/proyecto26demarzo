@@ -65,6 +65,8 @@ Route::post('/delete/estudiante','EstudiantesController@destroy');
 Route::get('/subir/nota', 'notasController@subir');
 Route::get('/listar/notas', 'notasController@listar');
 Route::get('/editar/notas', 'notasController@editar');
+Route::get('/nota/store', 'notasController@store');
+
 /*Fin notas */
 
 /* Materias */
@@ -85,3 +87,4 @@ Route::get('/editar/curso/{id}', 'cursosController@editar');
 /*curyest */
 Route::post('/asignar/estudiantes', 'curyestController@asignar');
 Route::post('/desasignar/estudiantes', 'curyestController@desasignar');
+Route::get('/listar/curyest/{id}', 'curyestController@listar_table');

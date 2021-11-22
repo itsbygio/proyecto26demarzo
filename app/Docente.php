@@ -6,15 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\Docentes as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-class Docentes extends Model
+class Docente extends Model
 {
  use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    protected $table = 'docentes';  
+
     public $fillable = [
         'id', 'nombre', 'apellidos','email','contacto', 'direccion','tipo_doc', 'estado',
         'num_id', 'tp', 'ac','escalafon', 'created_at','updated_at'
