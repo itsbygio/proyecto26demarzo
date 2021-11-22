@@ -63,6 +63,7 @@ class materiasController extends Controller
     }
 
     public function destroy(Request $request){
-
+        $materias=Materias::findOrfail($request->id);
+        $materias->delete();
     }
 }

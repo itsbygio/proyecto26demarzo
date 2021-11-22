@@ -13,7 +13,7 @@ class cursosController extends Controller
     }
     public function listar(){
         return view('cursos.listar',['listar_cursos'=>'active',
-             
+             'cursos'=>cursos::all()
        ]);
 
     }
@@ -21,4 +21,34 @@ class cursosController extends Controller
         return view('cursos.editar',['listar_cursos'=>'active']);
 
     }
+
+    public function store(Request $request){
+        $validatedData = $request->validate([
+            'titulo' => ['required'],
+            'año'    => ['required']
+        
+        ]);
+
+
+        $cursos=cursos::create([
+
+            'titulo'=>$request->titulo,
+            'año'=>$request->año,
+            'created_at'=>date('d-m-Y H:i:s'),
+            'updated_at'=>date('d-m-Y H:i:s')
+        ]);
+        $cursos->save();
+        return redirect('/crear/curso')->with('status', 'Materia creada exitosamente!');
+
+    }
+    public function update(Request $request, $id){
+
+
+    }
+    public function destroy(Request $request){
+
+        $cursos=cursos::findOrfail($request->id);
+        $cursos->delete();
+    }
+
 }

@@ -37,6 +37,7 @@
 @endsection
 @section('scripts')
 <script>
+    var materias= <?php  echo $materias ?>;
     $('#table_id').DataTable(
             
             {
@@ -58,7 +59,7 @@
 
             }
             );
-    function btn_drop(){
+    function btn_drop(id){
         bootbox.confirm({
     message: "¿Estas seguro de eliminar este registro?",
     centerVertical:true,
@@ -82,8 +83,11 @@
             title: 'Registro eliminado',
             showConfirmButton: false,
             timer: 1500
-           })
-        
+           });
+           var url="/delete/materia";
+        axios.post(url,{"id":id}).then(response =>{
+        location.href="/listar/materias";
+    });
         }
         else{
 

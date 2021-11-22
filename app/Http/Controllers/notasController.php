@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Notas;
 use Illuminate\Http\Request;
 
 class notasController extends Controller
@@ -10,7 +10,10 @@ class notasController extends Controller
         return view('notas.crear',['subir_nota'=>'active']);
     }
     public function listar(){
-        return view('notas.listar',['listar_notas'=>'active']);
+        return view('notas.listar',['listar_notas'=>'active',
+        'notas'=>Notas::all()
+    
+    ]);
 
     }
     public function editar(){

@@ -19,13 +19,16 @@
              </tr>
          </thead>
          <tbody  >
+         @foreach($cursos as $curso)
         <tr>
-            <td>1</td>
-            <td>11-1</td>
-            <td>5-11-2021 11:30</td>
-            <td>6-11-2021 9:35</td>
-            <td style="text-align:center"><a href="/editar/curso/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button></td>
+              <td>{{$curso->id}}</td>
+              <td>{{$curso->titulo}} </td>
+              <td>{{$curso->created_at}} </td>
+              <td>{{$curso->updated_at}} </td>
+              <td><a href="/editar/materia/{{$curso->id}}" class='btn btn-primary mr-3' > <i class='fas fa-pen-alt'></i></a>
+              <button  class='btn btn-primary mr-3' onclick="btn_drop('{{$curso->id}}')"><i class='far fa-minus-square'></i></button></td>
         </tr>
+            @endforeach
 
         
          </tbody>
@@ -36,6 +39,7 @@
 @endsection
 @section('scripts')
 <script>
+     var cursos= <?php  echo $cursos ?>;
     $('#table_id').DataTable(
             
             {
@@ -57,7 +61,7 @@
 
             }
             );
-    function btn_drop(){
+    function btn_drop(id){
         bootbox.confirm({
     message: "¿Estas seguro de eliminar este registro?",
     centerVertical:true,
@@ -81,8 +85,12 @@
             title: 'Registro eliminado',
             showConfirmButton: false,
             timer: 1500
-           })
-        
+           });
+
+           var url="/delete/curso";
+        axios.post(url,{"id":id}).then(response =>{
+        location.href="/listar/cursos";
+    });
         }
         else{
 

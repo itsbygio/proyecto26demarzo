@@ -80,4 +80,7 @@ Route::post('/delete/materia', 'materiasController@destroy');
 Route::get('/crear/curso', 'cursosController@crear');
 Route::get('/listar/cursos', 'cursosController@listar');
 Route::get('/editar/curso', 'cursosController@editar');
+Route::post('/store/curso', 'cursosController@store');
+Route::post('/update/curso/{id}', 'cursosController@update');
+Route::post('/delete/curso', 'cursosController@destroy');
 /*Fin materias */
