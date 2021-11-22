@@ -37,21 +37,16 @@
         
         <thead>
              <tr>
-                 <th>id</th>
+                  <th>id </th>
                  <th>nombre </th>
                  <th>apellidos</th>
+                 <th>cedula</th>
                  <th>opciones</th>
              </tr>
          </thead>
          <tbody  >
-        <tr>
-            <td>1</td>
-            <td>Andres</td>
-            <td>Jimenez Ramirez</td>
-            <td  style="text-align:center"><button href="/editar/materia" class='btn btn-danger fas fa-times' ></button> </td>
-        </tr>
+  
 
-        
          </tbody>
 
      </table>

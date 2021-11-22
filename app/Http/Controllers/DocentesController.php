@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Docentes;
+use App\Docente;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -34,7 +34,7 @@ class DocentesController extends Controller
         
     
 
-      $Docentes=  Docentes::create([
+      $Docentes=  Docente::create([
             'nombre'=>$request->nombre,
             'apellidos'=>$request->apellidos,
             'email'=>$request->email,
@@ -55,11 +55,11 @@ class DocentesController extends Controller
     public function listar(){
         return view('docentes.listar',[
             'listar_docentes'=>'active',
-            'docentes'=>Docentes::all()
+            'docentes'=>Docente::all()
         ]);
     }
     public function editar($id){
-        $docentes=Docentes::findOrfail($id);
+        $docentes=Docente::findOrfail($id);
         return view('docentes.editar',[
             'listar_docentes'=>'active',
             'docentes'=>$docentes
@@ -79,7 +79,7 @@ class DocentesController extends Controller
             
         ]);
 
-        $Docentes=Docentes::find($id);
+        $Docentes=Docente::find($id);
         $Docentes->nombre=$request->nombre;
         $Docentes->apellidos=$request->apellidos;
         $Docentes->email=$request->email;
@@ -95,7 +95,7 @@ class DocentesController extends Controller
     }
 
 public function destroy(Request $request){
-    $docentes=Docentes::findOrfail($request->id);
+    $docentes=Docente::findOrfail($request->id);
     $docentes->delete();
 }
 

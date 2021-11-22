@@ -27,7 +27,7 @@
             <td class="text-center">
             <div class="form-check form-check-inline ">
                 <input class="form-check-input" onclick="RadioModalClick(this);"
-                 value=" {{$curso->titulo}}.{{$curso->id}} " type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                 value=" {{$curso->titulo}}.{{$curso->id}} " type="radio" name="inlineRadioOptions" id="inlineRadio1">
               
             </div>
             </td>

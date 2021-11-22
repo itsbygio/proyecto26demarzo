@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\cursos;
-use App\Estudiantes;
+use App\Curso;
+use App\Estudiante;
 use Illuminate\Http\Request;
 
 class EstudiantesController extends Controller
@@ -10,23 +10,23 @@ class EstudiantesController extends Controller
     public function crear(){
       return view('estudiantes.crear',[
           'crear_estudiante'=>'active',
-          'cursos'=> cursos::all() 
+          'cursos'=> Curso::all() 
       ]);
     }
     public function listar(){
         return view('estudiantes.listar',[
             'listar_estudiantes'=>'active',
-            'estudiantes'=>Estudiantes::all(),
-            'cursos'=> cursos::all() 
+            'estudiantes'=>Estudiante::all(),
+            'cursos'=> Curso::all() 
         ]);
     }
     public  function  editar($id){
-        $estudiantes=Estudiantes::findOrFail($id);
+        $estudiantes=Estudiante::findOrFail($id);
         return view('estudiantes.editar',[
             'listar_estudiantes'=>'active',
             'fecha_e'=> null,
             'estudiantes'=>$estudiantes,
-            'cursos'=> cursos::all() 
+            'cursos'=> Curso::all() 
              
         ]);
     }
@@ -48,7 +48,7 @@ class EstudiantesController extends Controller
         */
     
 
-      $Estudiantes= Estudiantes::create([
+      $Estudiantes= Estudiante::create([
             'nombre'=>$request->nombre,
             'apellidos'=>$request->apellidos,
             'email'=>$request->email,
@@ -84,7 +84,7 @@ class EstudiantesController extends Controller
         ]);
         */
 
-        $estudiantes= Estudiantes::find($id);
+        $estudiantes= Estudiante::find($id);
         $estudiantes->nombre=$request->nombre;
         $estudiantes->apellidos=$request->apellidos;
         $estudiantes->email=$request->email;
@@ -102,7 +102,7 @@ class EstudiantesController extends Controller
     }
 
     public function destroy(Request $request){
-        $Estudiantes=Estudiantes::findOrfail($request->id);
+        $Estudiantes=Estudiante::findOrfail($request->id);
         $Estudiantes->delete();
     }
 }

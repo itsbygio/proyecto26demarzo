@@ -3,22 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Materias;
+use App\Materia;
 class materiasController extends Controller
 {
     public function crear(){
         return view('materias.crear',['crear_materia'=>'active',
-        'materias'=>Materias::all()
+        'materias'=>Materia::all()
     ]);
     }
     public function listar(){
         return view('materias.listar',['listar_materias'=>'active',
-        'materias'=>Materias::all()
+        'materias'=>Materia::all()
     ]);
 
     }
     public function editar($id){
-        $materias=Materias::findOrfail($id);
+        $materias=Materia::findOrfail($id);
         return view('materias.editar',['listar_materias'=>'active',
         'materias'=>$materias,
        
@@ -35,7 +35,7 @@ class materiasController extends Controller
         ]);
 
 
-        $materias=Materias::create([
+        $materias=Materia::create([
 
             'titulo'=>$request->titulo,
             'created_at'=>date('d-m-Y H:i:s'),
@@ -52,7 +52,7 @@ class materiasController extends Controller
         
         ]);
         
-        $materias= Materias::find($id);
+        $materias= Materia::find($id);
         $materias->titulo=$request->titulo;
         
         $materias->save();

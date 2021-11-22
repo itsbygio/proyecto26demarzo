@@ -34,6 +34,27 @@ class estudiantesSeeder extends Seeder
             'estado' =>'activo',
             'id_curso'=>'2',
         ]);
-        
+        DB::table('estudiantes')->insert([
+            'id' =>'3',
+            'nombre'=>'Itachi',
+            'apellidos'=>'Uchiha',
+            'email'=>'uchiha@example.com',
+            'contacto' =>'123456789',
+            'tipo_doc'=>'cedula',
+            'num_id'=>'123456780',
+            'estado' =>'activo',
+            'id_curso'=>'3',
+        ]);
+        DB::table('estudiantes')->insert([
+            'id' =>'4',
+            'nombre'=>'Madara',
+            'apellidos'=>'Uchiha',
+            'email'=>'uchihamadara@example.com',
+            'contacto' =>'123456789',
+            'tipo_doc'=>'cedula',
+            'num_id'=>'123456780',
+            'estado' =>'activo',
+            'id_curso'=>'4',
+        ]);
     }
 }
