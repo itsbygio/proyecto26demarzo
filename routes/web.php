@@ -84,3 +84,9 @@ Route::post('/store/curso', 'cursosController@store');
 Route::post('/update/curso/{id}', 'cursosController@update');
 Route::post('/delete/curso', 'cursosController@destroy');
 /*Fin materias */
+Route::get('/editar/curso/{id}', 'cursosController@editar');
+/*Fin materias */
+
+/*curyest */
+Route::post('/asignar/estudiantes', 'curyestController@asignar');
+Route::post('/desasignar/estudiantes', 'curyestController@desasignar');
