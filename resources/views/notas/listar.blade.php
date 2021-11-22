@@ -61,7 +61,7 @@
 
             }
             );
-    function btn_drop(){
+    function btn_drop(id){
         bootbox.confirm({
     message: "¿Estas seguro de eliminar este registro?",
     centerVertical:true,

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\curyest;
+use App\cursos;
 use Illuminate\Http\Request;
 
 class cursosController extends Controller
