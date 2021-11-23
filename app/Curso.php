@@ -18,4 +18,7 @@ class Curso extends Model
     public function curyests(){
         return $this->hasMany('App\Curyest','id');
     }
+    public function notas(){
+        return $this->hasMany('App\Nota','id');
+    }
 }

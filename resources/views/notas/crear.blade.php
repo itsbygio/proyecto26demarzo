@@ -56,7 +56,7 @@
     </div><br>
     <div class="row ml-3">
         <div class="col-xl-6">
-            <button class="btn btn-primary">Subir nota</button>
+            <button onclick="SubirNota()" class="btn btn-primary">Subir nota</button>
         </div>
     </div>
 </div>

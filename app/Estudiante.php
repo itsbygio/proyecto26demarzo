@@ -21,4 +21,7 @@ class Estudiante extends Model
     public function curyest(){
         return $this->hasMany('App\Curyest','id');
     }
+    public function notas(){
+        return $this->hasMany('App\Nota','id');
+    }
 }

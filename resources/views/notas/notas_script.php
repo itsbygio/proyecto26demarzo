@@ -90,21 +90,14 @@ $('#table_cursos_modal').DataTable({
        }
    }
    function SubirNota(){
-                var url="/nota/store";
+                var url="/nota/save";
                 var formData = new FormData();
                 formData.append('id_curso', $('#id_curso').val());
                 formData.append('id_estudiante', $('#id_estudiante').val());
                 formData.append('id_materia', $('#id_materia').val());
-                fetch(url, {
-                method: 'POST', // or 'PUT'
-                body: formData, 
-                headers:{
-                    'X-CSRF-TOKEN': "{{ csrf_token() }}",
-
-                }
-            }).then(res => res.json())
-            .catch(error => console.error('Error:', error))
-            .then(response => console.log('Success:', response));
+                formData.append('nota', $('#nota').val());
+                axios.post(url,formData).then(response =>{
+                });
    }
 
 </script>

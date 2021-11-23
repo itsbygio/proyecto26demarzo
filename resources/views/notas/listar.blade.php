@@ -20,14 +20,16 @@
              </tr>
          </thead>
          <tbody >
-         @foreach($notas as $notas)
+         @foreach($notas as $nota)
         <tr>
-              <td>{{$materia->id}}</td>
-              <td>{{$notas->titulo}} </td>
-              <td>{{$notas->created_at}} </td>
-              <td>{{$notas->updated_at}} </td>
-              <td><a href="/editar/materia/{{$materia->id}}" class='btn btn-primary mr-3' > <i class='fas fa-pen-alt'></i></a>
-              <button  class='btn btn-primary mr-3' onclick="btn_drop('{{$materia->id}}')"><i class='far fa-minus-square'></i></button></td>
+              <td>{{$nota->id}}</td>
+              <td>{{$nota->estudiante->nombre}}</td>
+              <td>{{$nota->estudiante->apellidos}} </td>
+              <td>{{$nota->materia->titulo}} </td>
+              <td>{{$nota->curso->titulo}} </td>
+              <td>{{$nota->nota}} </td>
+              <td><a href="/editar/nota/{{$nota->id}}" class='btn btn-primary mr-3' > <i class='fas fa-pen-alt'></i></a>
+              <button  class='btn btn-primary mr-3' onclick="btn_drop('{{$nota->id}}')"><i class='far fa-minus-square'></i></button></td>
         </tr>
             @endforeach
 

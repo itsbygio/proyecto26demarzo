@@ -15,4 +15,7 @@ class Materia extends Model
            
         'id', 'titulo', 'created_at','updated_at'
     ];
+    public function notas(){
+        return $this->hasMany('App\Nota','id');
+    }
 }

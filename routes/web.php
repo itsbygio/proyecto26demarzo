@@ -64,8 +64,8 @@ Route::post('/delete/estudiante','EstudiantesController@destroy');
 /* Notas */
 Route::get('/subir/nota', 'notasController@subir');
 Route::get('/listar/notas', 'notasController@listar');
-Route::get('/editar/notas', 'notasController@editar');
-Route::get('/nota/store', 'notasController@store');
+Route::get('/editar/nota/{id}', 'notasController@editar');
+Route::post('/nota/save', 'notasController@save');
 
 /*Fin notas */
 
