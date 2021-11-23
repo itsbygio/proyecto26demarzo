@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Notas;
+use App\Nota;
 use App\Curso;
 use App\Estudiante;
 use App\Materia;
@@ -29,7 +29,11 @@ class notasController extends Controller
 
     }
     public function store(request $request){
-        
+        $nota=Nota::create([
+           'id_curso'=> $request->id_curso,
+           'id_est'=> $request->id_estudiante,
+           'id_materia'=>$request->id_materia
+        ]);
     }
 
 }

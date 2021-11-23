@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\Notas as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-class Notas extends Model
+class Nota extends Model
 {
     public $fillable =[
 

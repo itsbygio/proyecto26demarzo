@@ -13,16 +13,20 @@ class estudiantesSeeder extends Seeder
     {
         DB::table('estudiantes')->insert([
             'id' =>'1',
-            'nombre'=>'Juan',
-            'apellidos'=>'Venanidez',
-            'email'=>'ortega@example.com',
+            'nombre'=>'Ramirez',
+            'apellidos'=>'Hernandez',
+            'email'=>'ramirez@example.com',
             'contacto' =>'123456789',
-            'tipo_doc'=>'cedula',
+            'tipo_doc'=>'TI',
             'num_id'=>'123456780',
             'estado' =>'activo',
             'id_curso'=>'1',
         ]);
-        
+        DB::table('cur_est')->insert([
+            'id' =>'1',
+            'id_cur'=> '1',
+            'id_est'=>'1',
+        ]);
         
         DB::table('estudiantes')->insert([
             'id' =>'2',
@@ -30,43 +34,63 @@ class estudiantesSeeder extends Seeder
             'apellidos'=>'ortega',
             'email'=>'ortega1@example.com',
             'contacto' =>'123456789',
-            'tipo_doc'=>'cedula',
+            'tipo_doc'=>'TI',
             'num_id'=>'123456780',
             'estado' =>'activo',
             'id_curso'=>'1',
+        ]);
+        DB::table('cur_est')->insert([
+            'id' =>'2',
+            'id_cur'=> '1',
+            'id_est'=>'2',
         ]);
         DB::table('estudiantes')->insert([
             'id' =>'3',
-            'nombre'=>'Itachi',
-            'apellidos'=>'Uchiha',
-            'email'=>'uchiha@example.com',
+            'nombre'=>'Andres',
+            'apellidos'=>'Suarez',
+            'email'=>'andres@example.com',
             'contacto' =>'123456789',
-            'tipo_doc'=>'cedula',
+            'tipo_doc'=>'TI',
             'num_id'=>'123456780',
             'estado' =>'activo',
             'id_curso'=>'1',
+        ]);
+        DB::table('cur_est')->insert([
+            'id' =>'3',
+            'id_cur'=> '1',
+            'id_est'=>'3',
         ]);
         DB::table('estudiantes')->insert([
             'id' =>'4',
-            'nombre'=>'Madara',
-            'apellidos'=>'Uchiha',
-            'email'=>'uchihamadara@example.com',
+            'nombre'=>'Juan',
+            'apellidos'=>'Mendez',
+            'email'=>'juan@example.com',
             'contacto' =>'123456789',
-            'tipo_doc'=>'cedula',
+            'tipo_doc'=>'TI',
             'num_id'=>'123456780',
             'estado' =>'activo',
             'id_curso'=>'1',
         ]);
+        DB::table('cur_est')->insert([
+            'id' =>'4',
+            'id_cur'=> '1',
+            'id_est'=>'4',
+        ]);
         DB::table('estudiantes')->insert([
             'id' =>'5',
-            'nombre'=>'Shisui',
-            'apellidos'=>'Uchiha',
-            'email'=>'shisui@example.com',
+            'nombre'=>'Carlos',
+            'apellidos'=> 'hernandez',
+            'email'=>'carlos@example.com',
             'contacto' =>'123456789',
-            'tipo_doc'=>'cedula',
+            'tipo_doc'=>'TI',
             'num_id'=>'123456780',
             'estado' =>'activo',
             'id_curso'=>'1',
+        ]);
+        DB::table('cur_est')->insert([
+            'id' =>'5',
+            'id_cur'=> '1',
+            'id_est'=>'5',
         ]);
         DB::table('estudiantes')->insert([
             'id' =>'6',
@@ -74,21 +98,31 @@ class estudiantesSeeder extends Seeder
             'apellidos'=>'Sanchez',
             'email'=>'julian@example.com',
             'contacto' =>'123456789',
-            'tipo_doc'=>'cedula',
+            'tipo_doc'=>'TI',
             'num_id'=>'123456780',
             'estado' =>'activo',
             'id_curso'=>'1',
+        ]);
+        DB::table('cur_est')->insert([
+            'id' =>'6',
+            'id_cur'=> '1',
+            'id_est'=>'6',
         ]);
         DB::table('estudiantes')->insert([
             'id' =>'7',
             'nombre'=>'Andres ',
             'apellidos'=>'Rodriguez',
-            'email'=>'andres@example.com',
+            'email'=>'Rodriguez@example.com',
             'contacto' =>'123456789',
-            'tipo_doc'=>'cedula',
+            'tipo_doc'=>'TI',
             'num_id'=>'123456780',
             'estado' =>'activo',
             'id_curso'=>'1',
+        ]);
+        DB::table('cur_est')->insert([
+            'id' =>'7',
+            'id_cur'=> '1',
+            'id_est'=>'7',
         ]);
     }   
 }

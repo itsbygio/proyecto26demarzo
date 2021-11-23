@@ -26,6 +26,11 @@ class CreateNotasTable extends Migration
             ->constrained('materias')
             ->onDelete('no action')
             ->onUpdate('cascade');
+            $table->foreignId('id_est')
+            ->nullable()
+            ->constrained('estudiantes')
+            ->onDelete('no action')
+            ->onUpdate('cascade');
             $table->timestamps();
         });
     }
