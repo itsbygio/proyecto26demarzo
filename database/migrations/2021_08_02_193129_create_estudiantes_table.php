@@ -23,7 +23,7 @@ class CreateEstudiantesTable extends Migration
             $table->string('direccion',150)->nullable();
             $table->string('num_id',30)->nullable();
             $table->string('estado',50)->nullable();
-            $table->date('fecha_f',)->nullable();
+            $table->string('fecha_f',)->nullable();
             $table->foreignId('id_curso')
             ->nullable()
             ->constrained('cursos')
