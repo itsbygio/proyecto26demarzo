@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-xl-4">
         <form  enctype="multipart/form-data" action="/update/curso/{{$cursos->id}}" method="POST">
-@csrf
+       @csrf
         <h5>El curso seleccionado es:</h5>
         <div class="input-group mb-3">
                 <input type="text" class="form-control" value="{{$cursos->titulo}}" aria-label="Recipient's username" aria-describedby="basic-addon2" >

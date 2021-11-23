@@ -89,15 +89,23 @@ $('#table_cursos_modal').DataTable({
         break;
        }
    }
-   function SubirNota(){
-                var url="/nota/save";
-                var formData = new FormData();
-                formData.append('id_curso', $('#id_curso').val());
-                formData.append('id_estudiante', $('#id_estudiante').val());
-                formData.append('id_materia', $('#id_materia').val());
-                formData.append('nota', $('#nota').val());
-                axios.post(url,formData).then(response =>{
-                });
+   function SubirNota(value,id)
+   {    
+    var url;       
+       if(value=="subir"){
+        url="/nota/save";
+        }
+        else{
+         url="/nota/update";
+        }
+        var formData = new FormData();
+        formData.append('id_nota',id);
+        formData.append('id_curso', $('#id_curso').val());
+        formData.append('id_estudiante', $('#id_estudiante').val());
+        formData.append('id_materia', $('#id_materia').val());
+        formData.append('nota', $('#nota').val());
+        axios.post(url,formData).then(response =>{
+         });
    }
 
 </script>
