@@ -19,13 +19,13 @@
              </tr>
          </thead>
          <tbody  >
-         @foreach($cursos as $curso)
+         @foreach($curso as $curso)
         <tr>
               <td>{{$curso->id}}</td>
               <td>{{$curso->titulo}} </td>
               <td>{{$curso->created_at}} </td>
               <td>{{$curso->updated_at}} </td>
-              <td><a href="/editar/materia/{{$curso->id}}" class='btn btn-primary mr-3' > <i class='fas fa-pen-alt'></i></a>
+              <td><a href="/editar/curso/{{$curso->id}}" class='btn btn-primary mr-3' > <i class='fas fa-pen-alt'></i></a>
               <button  class='btn btn-primary mr-3' onclick="btn_drop('{{$curso->id}}')"><i class='far fa-minus-square'></i></button></td>
         </tr>
             @endforeach
@@ -39,7 +39,7 @@
 @endsection
 @section('scripts')
 <script>
-     var cursos= <?php  echo $cursos ?>;
+     var curso= <?php  echo $curso ?>;
     $('#table_id').DataTable(
             
             {

@@ -37,14 +37,14 @@
                 <option value="cedula de ciudadania">Cedula de ciudadania</option>
 
         </select>
-        @error('rol')
+        @error('tipo_doc')
         <div style="color:red;">{{ $message }}*</div>
         @enderror
      </div>
      <div class="col-xl-4  mb-4">
         <p>Numero de identifcacion :</p>
         <input  id="num_id"  name="num_id" type="text" class="form-control" value="{{old('num_id')}}">
-        @error('cedula')
+        @error('num_id')
         <div  style="color:red;">{{ $message }}*</div>
         @enderror
         </div>
@@ -101,7 +101,7 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">+</button>
                     </div>
                 </div>
-       @error('direccion')
+       @error('titulo')
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>

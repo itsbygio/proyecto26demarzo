@@ -17,7 +17,7 @@ class cursosController extends Controller
     }
     public function listar(){
         return view('cursos.listar',['listar_cursos'=>'active',
-             'cursos'=>cursos::all()
+             'curso'=>curso::all()
        ]);
 
     }
@@ -47,12 +47,12 @@ class cursosController extends Controller
             'listar_cursos'=>'active',
              'id_curso'=>$id,
             'estudiantes'=> DB::select($consulta),
-             'curyests'=> $curyest1
+             'curyests'=> $curyest1,
+             'cursos'=>Curso::findOrfail($id)
 
         ]);
     
     }
-<<<<<<< HEAD
 
     public function store(Request $request){
         $validatedData = $request->validate([
@@ -62,7 +62,7 @@ class cursosController extends Controller
         ]);
 
 
-        $cursos=cursos::create([
+        $cursos=Curso::create([
 
             'titulo'=>$request->titulo,
             'año'=>$request->año,
@@ -74,16 +74,25 @@ class cursosController extends Controller
 
     }
     public function update(Request $request, $id){
+        $validatedData = $request->validate([
+            'titulo' => ['required'],
+            'año'    => ['required']
+        
+        ]);
 
+        $curso=Curso::find($id);
+        $curso->titulo=$request->titulo;
+        $curso->año=$request->año;
+        $curso->save();
+
+        return redirect('/editar/curso/'. $id)->with('status','cursos modificado correctamente');
 
     }
     public function destroy(Request $request){
 
-        $cursos=cursos::findOrfail($request->id);
+        $cursos=Curso::findOrfail($request->id);
         $cursos->delete();
     }
 
-=======
   
->>>>>>> 2cfb007a68c33e29769661aaf2e34ff3e120facf
 }

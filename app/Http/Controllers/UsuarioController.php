@@ -166,7 +166,7 @@ class UsuarioController extends Controller
             'nombre' => ['required', 'string', 'max:255'],
             'apellidos' => ['required', 'string', 'max:255'],           
             'email' => ['required', 'email', 'max:255'],
-            'contacto'=> ['required', 'numeric', 'min:5'],
+            'contacto'=> ['required', 'numeric', 'min:5', 'max:12'],
        
             
         ]);
@@ -182,6 +182,10 @@ class UsuarioController extends Controller
 
            return redirect('/editar/usuario/'.$id)->with('status','Datos modificados exitosamente');
            
+    }
+    public function edit_profile(Request $request, $id){
+
+
     }
 
     /**

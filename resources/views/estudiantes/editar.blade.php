@@ -25,7 +25,7 @@ Editar Estudiante </h4><br>
      </div>
      <div class="col-md-4 mb-4">
      <p>Apellidos:</p> 
-        <input id="apellidos" name="apellidoss" type="text" class="form-control" value="{{$estudiantes->apellidos}}">
+        <input id="apellidos" name="apellidos" type="text" class="form-control" value="{{$estudiantes->apellidos}}">
         @error('apellidos')
         <div  style="color:red;" >{{ $message }}*</div>
         @enderror
@@ -79,13 +79,13 @@ Editar Estudiante </h4><br>
      <div class="col-md-4 mb-4">
      <p>¿El estudiante es egresado?:</p>
      <div class="form-check">
-               <input  class="form-check-input" type="radio" onclick="handleClick(this);" name="flexRadioDefault" id="flexRadioDefault1" value="1" @if(isset($fecha_e)) checked @endif>
+               <input  class="form-check-input" type="radio" onclick="handleClick(this);" name="flexRadioDefault" id="flexRadioDefault1" value="1" @if(isset($estudiantes->fecha_f)) checked  @endif>
                <label class="form-check-label" for="flexRadioDefault1">
                  SI
                </label>
                </div>
                <div class="form-check">
-               <input class="form-check-input" type="radio" onclick="handleClick(this);" name="flexRadioDefault" id="flexRadioDefault2" value="0" @if(!isset($fecha_e)) checked @endif>
+               <input class="form-check-input" type="radio" onclick="handleClick(this);" name="flexRadioDefault" id="flexRadioDefault2" value="0" @if(isset($estudiantes->id_curso)) checked @endif>
                <label class="form-check-label" for="flexRadioDefault2">
                   NO
                </label>
@@ -93,22 +93,22 @@ Editar Estudiante </h4><br>
      </div>
      <div style="display:none" id="aeg" class="col-md-4 mb-4">
      <p>Año en que el  estudiante es egresado:</p>
-     <input type="number" class="form-control" min="1900" max="2099" step="1" value="2021" />
+     <input type="number" class="form-control" min="1900" max="2099" step="1" value="{{$estudiantes->fecha_f}}"/>
 
 
      </div>
      <div id="sec"  style="display:none" class="col-md-4 mb-4 ">
      <p>Seleccione el curso actual:</p>
      <div class="input-group">
-                    <input type="text" id="ca" class="form-control" placeholder="Por favor, Eliga el curso" aria-label="Recipient's username" aria-describedby="basic-addon2"  disabled value="">
-                    <input  style="display:none" type="text" id="idcurso" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2"  value="{{$estudiantes->id_curso}}">
+                    <input type="text" id="ca" class="form-control" placeholder="Por favor, Eliga el curso" aria-label="Recipient's username" aria-describedby="basic-addon2"  disabled @if(isset($estudiantes->id_curso)) value="{{$estudiantes->curso->titulo}} @endif">
+                    <input  style="display:none" type="text"  name="id_curso" id="idcurso" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2"  value="{{$estudiantes->id_curso}}">
 
                     <div class="input-group-append">
                         <button  type="button"class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">+</button>
                     </div>
                 </div>
 
-       @error('direccion')
+       @error('titulo')
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>
@@ -124,7 +124,7 @@ Editar Estudiante </h4><br>
 @endsection
 @section('scripts')
 <script>
-   var fecha_f= "<?php echo $fecha_e ?>";
+   var fecha_f= "<?php echo $estudiantes->fecha_f ?>";
    console.log(fecha_f);
    if(fecha_f === ""){
            $('#sec').show(); 

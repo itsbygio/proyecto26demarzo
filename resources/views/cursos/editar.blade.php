@@ -5,26 +5,30 @@
     <h3>Editar curso</h3>
     <div class="row">
         <div class="col-xl-4">
+        <form  enctype="multipart/form-data" action="/update/curso/{{$cursos->id}}" method="POST">
+@csrf
         <h5>El curso seleccionado es:</h5>
         <div class="input-group mb-3">
-                <input type="text" class="form-control" value="11-1" aria-label="Recipient's username" aria-describedby="basic-addon2" >
+                <input type="text" class="form-control" value="{{$cursos->titulo}}" aria-label="Recipient's username" aria-describedby="basic-addon2" >
                
         </div>        
       </div>
       <div class="col-xl-4">
         <h5>El año del curso es:</h5>
         <div class="input-group mb-3">
-                <input type="text" class="form-control" value="2021" aria-label="Recipient's username" aria-describedby="basic-addon2" >
+                <input type="text" class="form-control" value="{{$cursos->año}}" aria-label="Recipient's username" aria-describedby="basic-addon2" >
               
         </div>        
       </div>
     </div>
     <div class="row">
         <div class="col-xl-4">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Editar curso</button>
+            <button  class="btn btn-primary" >Editar curso</button>
         </div>
       </div>
+
       <br>
+      </form>
       <div class="row mb-3">
       <h4>Estudiantes asignados al curso:</h4>
       </div>

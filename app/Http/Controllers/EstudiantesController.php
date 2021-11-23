@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Curso;
 use App\Estudiante;
+use App\curyest;
 use Illuminate\Http\Request;
 
 class EstudiantesController extends Controller
@@ -17,14 +18,14 @@ class EstudiantesController extends Controller
         return view('estudiantes.listar',[
             'listar_estudiantes'=>'active',
             'estudiantes'=>Estudiante::all(),
-            'cursos'=> Curso::all() 
+            'cursos'=> Curso::all() ,
+            'curyest'=> curyest::all()
         ]);
     }
     public  function  editar($id){
         $estudiantes=Estudiante::findOrFail($id);
         return view('estudiantes.editar',[
             'listar_estudiantes'=>'active',
-            'fecha_e'=> null,
             'estudiantes'=>$estudiantes,
             'cursos'=> Curso::all() 
              
@@ -33,19 +34,18 @@ class EstudiantesController extends Controller
 
     public function store(Request $request){
 
-        /*
+        
         $validatedData = $request->validate([
             'nombre' => ['required'],
             'apellidos' => ['required'],
-            'tipo_doc' => ['required'],
-            'num_id' => ['required'],
+            'num_id' => ['required' ,'numeric', 'min:7'],
             'email'=> ['required', 'email'],
-            'contacto   '=>['required'],
+            'contacto'=>['required', 'numeric','min:6'],
             'direccion'=> ['required'],
-           
+            
             
         ]);
-        */
+        
     
 
       $Estudiantes= Estudiante::create([
@@ -70,19 +70,18 @@ class EstudiantesController extends Controller
     }
     public function update(Request $request, $id){
 
-         /*
+         
         $validatedData = $request->validate([
             'nombre' => ['required'],
             'apellidos' => ['required'],
-            'tipo_doc' => ['required'],
-            'num_id' => ['required'],
+            'num_id' => ['required' ,'numeric', 'min:7'],
             'email'=> ['required', 'email'],
-            'contacto   '=>['required'],
+            'contacto'=>['required', 'numeric','min:6'],
             'direccion'=> ['required'],
            
             
         ]);
-        */
+        
 
         $estudiantes= Estudiante::find($id);
         $estudiantes->nombre=$request->nombre;
