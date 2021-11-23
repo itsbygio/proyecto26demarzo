@@ -64,7 +64,11 @@ class EstudiantesController extends Controller
             
         ]);
       
-        $Estudiantes->save();
+         $Estudiantes->save();
+         curyest::create([
+             'id_est'=> $Estudiantes->id,
+             'id_cur' =>$request->id_curso,
+         ]);
         return redirect('/crear/estudiante')->with('status', 'Estudiante creado exitosamente!');
 
     }
@@ -84,6 +88,7 @@ class EstudiantesController extends Controller
         
 
         $estudiantes= Estudiante::find($id);
+          $id_curso= $estudiantes->id_curso;
         $estudiantes->nombre=$request->nombre;
         $estudiantes->apellidos=$request->apellidos;
         $estudiantes->email=$request->email;
@@ -96,6 +101,11 @@ class EstudiantesController extends Controller
         $estudiantes->id_curso=$request->id_curso;
         $estudiantes->save();
         
+        $curyest= curyest::where('id_est',$id)
+        ->where('id_cur',$id_curso)
+         ->update([
+             'id_cur'=>$request->id_curso
+         ]); 
 
         return redirect('/editar/estudiante/'.$id)->with('status','Estudiante modificado exitosamente');
     }

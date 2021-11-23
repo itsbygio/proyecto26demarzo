@@ -15,6 +15,7 @@
                  <th>tipo de documento</th>
                  <th>numero de identificacion</th>
                  <th>curso actual</th>
+                 <th>¿egresado?</th>
 
                  <th>Opciones</th>
 
@@ -34,12 +35,16 @@
                   {{$estudiante->curso->titulo}}
                   
                   @else
-                  Egresado
+                 Ninguno
                 @endif
               
-               
-
             </td>
+            <td>@if(isset($estudiante->curso->titulo))
+                 NO
+                  
+                  @else
+                  SI
+                @endif</td>
               <td><a href="/editar/estudiante/{{$estudiante->id}}" class='btn btn-primary mr-3' > <i class='fas fa-pen-alt'></i></a>
               <button  class='btn btn-primary mr-3' onclick="btn_drop('{{$estudiante->id}}')"><i class='far fa-minus-square'></i></button></td>
         </tr>
