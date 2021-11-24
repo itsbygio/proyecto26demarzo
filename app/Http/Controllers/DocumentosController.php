@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Documento;
 class DocumentosController extends Controller
 {
 
@@ -14,8 +14,10 @@ class DocumentosController extends Controller
         ]);
     }
     public function estadisticas(){
+        $Actas=Documento::where('tipo','Acta')->get();
         return view('documentos.estadisticas',[
-            'generar_estadisticas'=>'active'
+            'generar_estadisticas'=>'active',
+            'Acta' => $Actas->count()
         ]);
     }
     public function consultar(){
@@ -36,4 +38,21 @@ class DocumentosController extends Controller
     public function dropzone(){
         
     }
+    public function mostrar_estadistica(request $request){
+        
+         $tipo = $request->tipo;
+         if($tipo=="Circular" || $tipo=="Citacion"  ||  $tipo=="Orden" ||  $tipo=="Resolucion"){
+             $tipo.="es";
+         }
+         else{
+            $tipo.="s";
+         }
+         $documentos=Documento::where('tipo',$request->tipo)->get();
+         return response()->json([
+             'count' => $documentos->count(),
+              'tipo'=>$tipo],200); 
+
+          
+    }
+   
 }

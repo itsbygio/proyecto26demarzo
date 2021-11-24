@@ -8,21 +8,17 @@
 
     <div class="col-xl-4 mb-4">
         <p>Filtrar por:</p>
-            <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  value="{{old('rol')}}">
-                    <option value="ti">Actas</option>
-                    <option value="cc">Constancias</option>
-                    <option value="cc">Certificados</option>
-                    <option value="cc">Permisos</option>
-                    <option value="cc">Circulares</option>
-                    <option value="cc">Informes Academicos</option>
-                    <option value="cc">Citaciones</option>
-                    <option value="cc">Ordenes de cancelacion de matricula paz y salvo </option>
-                    <option value="cc">Informes de diplomas otorgados</option>
-                    <option value="cc">Acta de grado</option>
-                    <option value="cc">Horario de clase</option>
-                    <option value="cc">Diplomas</option>
-                    <option value="cc">Resoluciones</option>
-
+            <select  name="documento" class="form-control"  onchange='changevent(this)' >
+                    <option value="Acta">Actas</option>
+                    <option value="Constancia">Constancias</option>
+                    <option value="Certificado">Certificados</option>
+                    <option value="Permiso">Permisos</option>
+                    <option value="Circular">Circulares</option>
+                    <option value="Informe">Informes</option>
+                    <option value="Citacion">Citaciones</option>
+                    <option value="Orden">Ordenes</option>
+                    <option value="Diploma">Diplomas</option>
+                    <option value="Resolucion">Resoluciones</option>
 
             </select>
     </div>
@@ -34,7 +30,7 @@
 
     </div>
     <div class="row ml-1">
-    <p>Los numeros de actas registradas son 1</p>
+    <p>El numero de <span id="tipo"></span> registrados son <span id="num"></span></p>
     </div>
    
 
@@ -43,13 +39,34 @@
 @section('scripts')
 <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
 <script>
- 
+     var documento="Actas";
+     var num= "<?php echo $Acta ?>"; 
+    $('#num').html("<?php echo $Acta ?>");
+    $('#tipo').html(documento);
     var data = [{
-      x: ["Actas"],
-      y: ["1"],
+      x: [documento],
+      y: [num],
       type: "bar"
     }];
     Plotly.newPlot("tester",data, {
 	margin: { t: 0 } });
+
+function changevent(object){
+    var url ="/generar/estadistica"
+      var formData = new FormData();
+      var tipo= object.value;
+    formData.append('tipo',tipo);
+    axios.post(url,formData).then(response =>{
+        console.log(response.data);
+         data[0]['y'][0]=response.data.count;
+         data[0]['x'][0]=response.data.tipo;
+         Plotly.redraw("tester");
+         $('#num').html(response.data.count);
+         $('#tipo').html(response.data.tipo);
+        });
+     
+}
+
+   
 </script>
 @endsection

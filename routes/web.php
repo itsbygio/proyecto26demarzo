@@ -29,6 +29,7 @@ Route::get('/listar/usuarios', 'UsuarioController@listar');
 Route::get('/editar/usuario/{id}', 'UsuarioController@edit');
 Route::get('/perfildelusuario', 'UsuarioController@perfildelusuario');
 Route::post('/delete/usuario','UsuarioController@destroy');
+
 /*Fin usuarios*/
 
 /*documentos*/
@@ -38,6 +39,8 @@ Route::get('/estadisticas/documentos', 'DocumentosController@estadisticas');
 Route::get('/consultar/documentos', 'DocumentosController@consultar');
 Route::get('/dropzone/upload', 'DocumentosController@dropzone');
 Route::get('/editar/documento', 'DocumentosController@editar');
+Route::post('/generar/estadistica', 'DocumentosController@mostrar_estadistica');
+
 
 /*Fin documentos*/
 

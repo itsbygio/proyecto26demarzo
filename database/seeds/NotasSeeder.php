@@ -14,7 +14,8 @@ class NotasSeeder extends Seeder
         DB::table('notas')->insert([
             'nota' =>'5.0',
             'id_curso'=>'1',
-            'id_materia'=>'5',
+            'id_materia'=>'1',
+            'id_est'=>'1'
         ]);
     }
 }
