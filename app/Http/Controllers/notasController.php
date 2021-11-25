@@ -25,14 +25,18 @@ class notasController extends Controller
 
     }
     public function editar($id){
-        return view('notas.editar',['listar_notas'=>'active',
-        'notas'=>Nota::all()
+        return view('notas.editar',[
+        'listar_notas'=>'active',
+        'nota'=>Nota::find($id),
+        'cursos'=>Curso::all(),
+        'materias'=>Materia::all(),
+        'estudiantes'=>Estudiante::where('fecha_f',null)->get(),
     ]);
 
     }
     public function save(Request $request){
       $r_nota= Nota::where('id_curso',$request->id_curso)->where('id_est', $request->id_est)->where('id_materia',$request->id_materia)->get();
-      if($r_nota->count()==1){
+      if($r_nota->count()=="1"){
 
         $nota=Nota::create([
             'id_curso'=> $request->id_curso,
