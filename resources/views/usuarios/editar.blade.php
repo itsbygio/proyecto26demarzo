@@ -97,6 +97,9 @@
 </div>
 </form>
 <br><br>
+
+<form  enctype="multipart/form-data" action="/change/password/{{$user->id}}" method="POST">
+@csrf
 <div class="row ml-4">
     <div class="col-md-12">
        <h4>  Reestablecer Contraseña </h4> 
@@ -107,27 +110,28 @@
          <p>Nueva Contraseña:</p>
 
          <div class="input-group mb-3">
-         <input id="clave" name="clave" type="password" class="form-control"  value="1234567891011123" disabled>
+         <input id="clave" name="password" type="password" class="form-control"   >
                     <div class="input-group-append">
-                    <button onclick="restablecer()" class="btn btn-primary fas fa-key "></button>
+                  
                     </div>
                 </div> 
          </div>
+         
          <div class="col-md-4">
          <p>Confirmar Nueva Contraseña:</p>
-
-         <input id="cclave" name="cclave" type="password" class="form-control"  value="1234567891011123" disabled>
+         <input id="cclave" name="cclave" type="password" class="form-control" >
 
          </div>
       </div>
       <br>
       <div class="row ml-4">
          <div class="col-md-12">
-          <button  class="btn btn-primary  "  id="restablecer"> Reestablecer Contraseña</button>
+          <button  class="btn btn-primary"  > Reestablecer Contraseña</button>
          </div>
       </div>
 <br>
 </div>
+</form>
 @endsection
 @section('scripts')
 <script>

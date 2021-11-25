@@ -68,23 +68,24 @@
          <p>Nueva Contraseña:</p>
 
          <div class="input-group mb-3">
-         <input id="" name="password" type="password" class="form-control"  value="" >
-                    <div class="input-group-append">
-                  
+         <input id="clave" name="password" type="password" class="form-control"   disabled >
+         
+         <div class="input-group-append">
+                    <button type="button" onclick="restablecer()" class="btn btn-primary fas fa-key ">
                     </div>
                 </div> 
          </div>
          <div class="col-md-4">
          <p>Confirmar Nueva Contraseña:</p>
 
-         <input id="" name="cclave" type="password" class="form-control"  value="">
+         <input id="cclave" name="cclave" type="password" class="form-control"  disabled>
 
          </div>
       </div>
       <br>
       <div class="row ml-4">
          <div class="col-md-12">
-          <button  class="btn btn-primary"  > Reestablecer Contraseña</button>
+          <button  class="btn btn-primary"  id="restablecer"> Reestablecer Contraseña</button>
          </div>
 </div>
 <br>

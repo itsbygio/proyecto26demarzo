@@ -120,7 +120,7 @@ Editar Estudiante </h4><br>
 <br>
 </form>  
 </div>
-@include('estudiantes.modaledit')
+@include('estudiantes.modal')
 @endsection
 @section('scripts')
 <script>

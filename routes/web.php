@@ -30,6 +30,7 @@ Route::get('/editar/usuario/{id}', 'UsuarioController@edit');
 Route::get('/perfildelusuario', 'UsuarioController@perfildelusuario');
 Route::post('/editar/perfil','UsuarioController@edit_profile');
 Route::post('/editar/password','UsuarioController@cambiar_contraseña');
+Route::post('/change/password/{id}','UsuarioController@other_change_password');
 Route::post('/delete/usuario','UsuarioController@destroy');
 
 /*Fin usuarios*/

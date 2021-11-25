@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use App\Rules\ImageEdit;
+use Illuminate\Support\Facades\Session;
 class UsuarioController extends Controller
 {
   public function __construct()
@@ -225,12 +226,33 @@ class UsuarioController extends Controller
          
         
     ]);
+    
        
-        $usuario = User::find($request->id);
+        $usuario = User::find(Auth::user()->id);
         $usuario->password= Hash::make($request->password);
         $usuario->save();
+        
 
          return redirect('/perfildelusuario')->with('status','Contraseña modificada exitosamente');
+        
+    }
+
+    public function other_change_password(Request $request, $id){
+
+ $validatedData = $request->validate([
+           
+        'password'=> ['required', 'string', 'min:6'],
+         
+        
+    ]);
+    
+       
+        $usuario = User::find($id);
+        $usuario->password= Hash::make($request->password);
+        $usuario->save();
+        
+
+         return redirect('/editar/usuario/'. $id)->with('status','Contraseña modificada exitosamente');
     }
     public function destroy(Request $request)
     {
