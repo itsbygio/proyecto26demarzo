@@ -16,6 +16,8 @@ class DocumentosSeeder extends Seeder
             'titulo'=>'Acta de reunion',
             'ruta'=>'1.pdf', 
             'tipo' =>'Acta',
+            'subtipo' =>'Acta de reunion',
+            'nm'=>'acr',
             'id_est'=> null,
             'id_doc'=> null,
             'id_user_c'=> '1',
@@ -25,9 +27,11 @@ class DocumentosSeeder extends Seeder
         ]);
         DB::table('documentos')->insert([
             'id' =>'2',
-            'titulo'=>'Constancia de estudio',
+            'titulo'=>'Constancia',
             'ruta'=>'2.pdf', 
             'tipo' =>'Constancia',
+            'subtipo'=>'Constancia de estudio',
+            'nm'=>'cone',
             'id_est'=> '1',
             'id_doc'=> null,
             'id_user_c'=> '1',
@@ -37,9 +41,11 @@ class DocumentosSeeder extends Seeder
         ]);
         DB::table('documentos')->insert([
             'id' =>'3',
-            'titulo'=>'Certificado de notas',
+            'titulo'=>'Certificado',
             'ruta'=>'3.pdf', 
             'tipo' =>'Certificado',
+            'subtipo' =>'Certificado de notas',
+            'nm'=>'cen',
             'id_est'=> '1',
             'id_doc'=> null,
             'id_user_c'=> '1',
@@ -52,6 +58,8 @@ class DocumentosSeeder extends Seeder
             'titulo'=>'Permiso de docente',
             'ruta'=>'4.pdf', 
             'tipo' =>'Permiso',
+            'subtipo' =>'Permiso de docente',
+            'nm'=>'pd',
             'id_est'=> null,
             'id_doc'=> '1',
             'id_user_c'=> '1',
@@ -60,10 +68,12 @@ class DocumentosSeeder extends Seeder
             'updated_at'=>date('Y-m-d H:i:s') 
         ]);
         DB::table('documentos')->insert([
-            'id' =>'5',
-            'titulo'=>'Formato de circulares',
-            'ruta'=>'5.pdf', 
+            'id' => '5',
+            'titulo'=> 'Formato de circulares',
+            'ruta'=>  '5.pdf', 
             'tipo' => 'Circular',
+            'subtipo'=> null,
+            'nm'=>'cir',
             'id_est'=> null,
             'id_doc'=> null,
             'id_user_c'=> '1',
@@ -76,6 +86,8 @@ class DocumentosSeeder extends Seeder
             'titulo'=>'Informe academico',
             'ruta'=>'6.pdf', 
             'tipo' => 'Informe',
+            'subtipo'=>'Informe Academico',
+            'nm' => 'ia',
             'id_est'=> null,
             'id_doc'=> null,
             'id_user_c'=> '1',
@@ -88,6 +100,8 @@ class DocumentosSeeder extends Seeder
             'titulo'=>'Citacion de docentes',
             'ruta'=>'7.pdf', 
             'tipo' => 'Citacion',
+            'subtipo' => 'Citacion de docentes',
+            'nm' => 'cd',
             'id_est'=> null,
             'id_doc'=> null,
             'id_user_c'=> '1',
@@ -97,9 +111,11 @@ class DocumentosSeeder extends Seeder
         ]);
         DB::table('documentos')->insert([
             'id' =>'8',
-            'titulo'=>'Orden de cancelacion matricula paz y salvo',
+            'titulo'=>'Orden de cancelacion matricula',
             'ruta'=>  '8.pdf', 
-            'tipo' => 'Orden',
+            'tipo' => 'Orden ',
+            'subtipo' => 'Orden de cancelacion matricula',
+            'nm' => 'orcm',
             'id_est'=> '1',
             'id_doc'=> null,
             'id_user_c'=> '1',
@@ -109,21 +125,11 @@ class DocumentosSeeder extends Seeder
         ]);
         DB::table('documentos')->insert([
             'id' =>'9',
-            'titulo'=>'Informes de diplomas',
+            'titulo'=>'Paz y salvo estudiante',
             'ruta'=>  '9.pdf', 
-            'tipo' => 'Informe',
-            'id_est'=> null,
-            'id_doc'=> null,
-            'id_user_c'=> '1',
-            'id_user_m' =>'1',
-            'created_at'=>date('Y-m-d H:i:s'),
-            'updated_at'=>date('Y-m-d H:i:s') 
-        ]);
-        DB::table('documentos')->insert([
-            'id' =>'10',
-            'titulo'=>'Acta de grado',
-            'ruta'=>  '10.pdf', 
-            'tipo' => 'Acta',
+            'tipo' => 'Paz y Salvo',
+            'subtipo' => null,
+            'nm' => 'pys',
             'id_est'=> '1',
             'id_doc'=> null,
             'id_user_c'=> '1',
@@ -132,10 +138,26 @@ class DocumentosSeeder extends Seeder
             'updated_at'=>date('Y-m-d H:i:s') 
         ]);
         DB::table('documentos')->insert([
+            'id' =>'10',
+            'titulo'=>'Informes de diplomas',
+            'ruta'=>  '10.pdf', 
+            'tipo' => 'Informe',
+            'subtipo' => 'Informe de diplomas',
+            'nm' => 'ifp',
+            'id_est'=> null,
+            'id_doc'=> null,
+            'id_user_c'=> '1',
+            'id_user_m' =>'1',
+            'created_at'=>date('Y-m-d H:i:s'),
+            'updated_at'=>date('Y-m-d H:i:s') 
+        ]);
+        DB::table('documentos')->insert([
             'id' =>'11',
-            'titulo'=>'Diploma',
-            'ruta'=>  '11.pdf', 
-            'tipo' => 'Diploma',
+            'titulo'=>'Acta de grado',
+            'ruta'=>  '10.pdf', 
+            'tipo' => 'Acta',
+            'subtipo'=>'Acta de grado',
+            'nm' => 'acg',
             'id_est'=> '1',
             'id_doc'=> null,
             'id_user_c'=> '1',
@@ -145,9 +167,25 @@ class DocumentosSeeder extends Seeder
         ]);
         DB::table('documentos')->insert([
             'id' =>'12',
+            'titulo'=>'Diploma',
+            'ruta'=>  '11.pdf', 
+            'tipo' => 'Diploma',
+            'subtipo'=> null,
+            'nm' => 'dp',
+            'id_est'=> '1',
+            'id_doc'=> null,
+            'id_user_c'=> '1',
+            'id_user_m' =>'1',
+            'created_at'=>date('Y-m-d H:i:s'),
+            'updated_at'=>date('Y-m-d H:i:s') 
+        ]);
+        DB::table('documentos')->insert([
+            'id' =>'13',
             'titulo'=>'Resolucion',
             'ruta'=>  '12.pdf', 
             'tipo' => 'Resolucion',
+            'subtipo'=> null,
+            'nm' => 'rs',
             'id_est'=> null,
             'id_doc'=> null,
             'id_user_c'=> '1',

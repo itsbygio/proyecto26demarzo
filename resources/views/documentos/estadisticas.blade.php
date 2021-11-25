@@ -9,16 +9,19 @@
     <div class="col-xl-4 mb-4">
         <p>Filtrar por:</p>
             <select  name="documento" class="form-control"  onchange='changevent(this)' >
-                    <option value="Acta">Actas</option>
-                    <option value="Constancia">Constancias</option>
-                    <option value="Certificado">Certificados</option>
-                    <option value="Permiso">Permisos</option>
-                    <option value="Circular">Circulares</option>
-                    <option value="Informe">Informes</option>
-                    <option value="Citacion">Citaciones</option>
-                    <option value="Orden">Ordenes</option>
-                    <option value="Diploma">Diplomas</option>
-                    <option value="Resolucion">Resoluciones</option>
+                    <option value="acr">Acta de reunion</option>
+                    <option value="cone">Constancia de estudio</option>
+                    <option value="cen">Certificado de notas</option>
+                    <option value="pd">Permisos de docentes</option>
+                    <option value="cir">Circulares</option>
+                    <option value="ia">Informe Academico</option>
+                    <option value="cd">Citaciones de docentes</option>
+                    <option value="orcm">Ordenes de cancelacion de matricula</option>
+                    <option value="pys">Paz y salvo estudiante</option>
+                    <option value="ifp">Informes de diplomas</option>
+                    <option value="acg">Acta de grado</option>
+                    <option value="dp">Diploma</option>
+                    <option value="rs">Resolucion</option>
 
             </select>
     </div>
@@ -35,11 +38,10 @@
    
 
 </div>
-@endsection
 @section('scripts')
 <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
 <script>
-     var documento="Actas";
+     var documento="Acta de reunion";
      var num= "<?php echo $Acta ?>"; 
     $('#num').html("<?php echo $Acta ?>");
     $('#tipo').html(documento);
@@ -54,19 +56,20 @@
 function changevent(object){
     var url ="/generar/estadistica"
       var formData = new FormData();
-      var tipo= object.value;
-    formData.append('tipo',tipo);
+      var nm= object.value;
+    formData.append('nm',nm);
     axios.post(url,formData).then(response =>{
         console.log(response.data);
          data[0]['y'][0]=response.data.count;
-         data[0]['x'][0]=response.data.tipo;
+         data[0]['x'][0]=response.data.subtipo;
          Plotly.redraw("tester");
          $('#num').html(response.data.count);
-         $('#tipo').html(response.data.tipo);
+         $('#tipo').html(response.data.subtipo);
         });
      
 }
 
    
 </script>
+@endsection
 @endsection
