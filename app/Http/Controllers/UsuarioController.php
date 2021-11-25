@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Rules\ImageEdit;
 class UsuarioController extends Controller
 {
+  public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -95,7 +99,7 @@ class UsuarioController extends Controller
             'apellidos'=>$request->apellidos,       
             'email'=>$request->email,
             'estado'=>$request->estado, 
-            'password'=> Hash::make($request->clave),
+            'password'=> Hash::make($request->password),
             'contacto'=> $request->contacto,
             'rol'=> $rol,
             'nrol'=>$nrol,
@@ -144,8 +148,7 @@ class UsuarioController extends Controller
     public function update(Request $request, $id)
     {
       
-      
-       $rol='';
+       $rol=Auth::user()->rol;
        $nrol=$request->nrol;
        if($nrol=='1'){  
         $rol='administrador';
@@ -166,7 +169,7 @@ class UsuarioController extends Controller
             'nombre' => ['required', 'string', 'max:255'],
             'apellidos' => ['required', 'string', 'max:255'],           
             'email' => ['required', 'email', 'max:255'],
-            'contacto'=> ['required', 'numeric', 'min:5', 'max:12'],
+            'contacto'=> ['required', 'numeric', 'min:6',],
        
             
         ]);
@@ -176,15 +179,35 @@ class UsuarioController extends Controller
             $user->apellidos=$request->apellidos;
             $user->email=$request->email;
             $user->contacto=$request->contacto;
-            $user->rol=$request->$rol;
+            $user->estado=$request->estado;
+            $user->rol=$request->rol;
             $user->nrol=$request->$nrol;
             $user->save();
 
            return redirect('/editar/usuario/'.$id)->with('status','Datos modificados exitosamente');
            
     }
-    public function edit_profile(Request $request, $id){
+    public function edit_profile(Request $request){
 
+      $id=Auth::user()->id;
+    
+       $validatedData = $request->validate([
+           'nombre' => ['required', 'string', 'max:255'],
+           'apellidos' => ['required', 'string', 'max:255'],           
+           'email' => ['required', 'email', 'max:255'],
+           'contacto'=> ['required', 'numeric', 'min:6', ],
+      
+           
+       ]);
+       
+           $user= User::find($id);
+           $user->nombre=$request->nombre;
+           $user->apellidos=$request->apellidos;
+           $user->email=$request->email;
+           $user->contacto=$request->contacto;
+           $user->save();
+
+          return redirect('/perfildelusuario')->with('status','Datos modificados exitosamente');
 
     }
 
@@ -194,6 +217,21 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function cambiar_contraseña(Request $request)
+    {
+      $validatedData = $request->validate([
+           
+        'password'=> ['required', 'string', 'min:6'],
+         
+        
+    ]);
+       
+        $usuario = User::find($request->id);
+        $usuario->password= Hash::make($request->password);
+        $usuario->save();
+
+         return redirect('/perfildelusuario')->with('status','Contraseña modificada exitosamente');
+    }
     public function destroy(Request $request)
     {
         $user=User::findOrfail($request->id);

@@ -66,8 +66,8 @@
      <div class="col-md-4 mb-4">
      <p>Estado:</p>
         <select id="estado" name="estado" class="form-control" id="exampleFormControlSelect1"  value="{{old('estado')}}">
-                <option value="Activo">Activo</option>
-                <option value="inactivo"   >Inactivo</option>
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option>
 
         </select>
         

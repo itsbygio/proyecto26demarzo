@@ -28,6 +28,8 @@ Route::post('/update/usuario/{id}', 'UsuarioController@update');
 Route::get('/listar/usuarios', 'UsuarioController@listar');
 Route::get('/editar/usuario/{id}', 'UsuarioController@edit');
 Route::get('/perfildelusuario', 'UsuarioController@perfildelusuario');
+Route::post('/editar/perfil','UsuarioController@edit_profile');
+Route::post('/editar/password','UsuarioController@cambiar_contraseña');
 Route::post('/delete/usuario','UsuarioController@destroy');
 
 /*Fin usuarios*/
