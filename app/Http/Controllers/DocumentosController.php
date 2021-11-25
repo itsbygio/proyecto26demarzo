@@ -14,10 +14,10 @@ class DocumentosController extends Controller
         ]);
     }
     public function estadisticas(){
-        $Actas=Documento::where('tipo','Acta')->get();
+        $acta=Documento::where('nm','acr')->get();
         return view('documentos.estadisticas',[
             'generar_estadisticas'=>'active',
-            'Acta' => $Actas->count()
+            'Acta' => $acta->count()
         ]);
     }
     public function consultar(){
@@ -39,18 +39,53 @@ class DocumentosController extends Controller
         
     }
     public function mostrar_estadistica(request $request){
+        $subtipo="12";
+        switch ($request->nm) {
+            case "acr":
+            $subtipo= "Actas de reuniones";
+            break;
+            case "cone":
+            $subtipo= "Constancias de estudio";
+            break;
+            case "cen":
+             $subtipo= "Certificado de notas";
+            break;
+            case "pd":
+            $subtipo= "Permiso de docente";
+                break;
+            case "cir":
+                $subtipo= "Circulares";
+                break;
+            case "ia":
+                $subtipo= "Informes Academicos";
+             break;
+             case "cd":
+                $subtipo= "Citacion de docentes";
+             break;
+             case "orcm":
+                $subtipo= "Ordenes de cancelacion de matriculas";
+             break;
+             case "pys":
+                $subtipo= "Paz y salvo estudiantes";
+             break;
+             case "ifp":
+                $subtipo= "Informes de diplomas";
+             break;
+             case "acg":
+                $subtipo= "Actas de grado";
+             break;
+             case "dp":
+                $subtipo= "Diplomas";
+             break;
+             case "rs":
+                $subtipo= "Resoluciones";
+             break;
+        }
         
-         $tipo = $request->tipo;
-         if($tipo=="Circular" || $tipo=="Citacion"  ||  $tipo=="Orden" ||  $tipo=="Resolucion"){
-             $tipo.="es";
-         }
-         else{
-            $tipo.="s";
-         }
-         $documentos=Documento::where('tipo',$request->tipo)->get();
+         $documentos=Documento::where('nm',$request->nm)->get();
          return response()->json([
              'count' => $documentos->count(),
-              'tipo'=>$tipo],200); 
+              'subtipo'=>$subtipo],200); 
 
           
     }

@@ -4,33 +4,32 @@
 <div class="container">
 <h4 class="ml-3"><i class="far fa-circle mr-3"></i>
  Consultar Documentos </h4>
-    <div class="col-xl-4">
+    <div class="col-xl-5">
         <p>Consultar por:</p>
-            <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  value="{{old('rol')}}">
-                   <option value="ti">Seleccione una opcion</option>
-                    <option value="ti">Año</option>
-                    <option value="cc">Mes</option>
-                    <option value="cc">Dia</option>
+            <select  onchange="ChangeDateSelect(this)" class="form-control">
+                    <option value="">Seleccione una opcion</option>
+                    <option value="año">Año</option>
+                    <option value="mes">Mes</option>
+                    <option value="dia">Dia</option>
             </select>
             <br>
+            <div id="inputsdate"></div>
+            <br>
             <p>Tipo de documento:</p>
-            <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  value="{{old('rol')}}">
-                    <option value="ti">Seleccione un tipo de documento</option>
-                    <option value="ti">Actas</option>
-                    <option value="cc">Constancias</option>
-                    <option value="cc">Certificados</option>
-                    <option value="cc">Permisos</option>
-                    <option value="cc">Circulares</option>
-                    <option value="cc">Informes Academicos</option>
-                    <option value="cc">Citaciones</option>
-                    <option value="cc">Ordenes de cancelacion de matricula paz y salvo </option>
-                    <option value="cc">Informes de diplomas otorgados</option>
-                    <option value="cc">Acta de grado</option>
-                    <option value="cc">Horario de clase</option>
-                    <option value="cc">Diplomas</option>
-                    <option value="cc">Resoluciones</option>
-
-
+            <select id="td" name="td" class="form-control">
+                    <option value="">Seleccione un tipo de documento</option>
+                    <option value="Acta">Actas</option>
+                    <option value="Constancia">Constancias</option>
+                    <option value="Certificado">Certificados</option>
+                    <option value="Permiso">Permisos</option>
+                    <option value="Circular">Circulares</option>
+                    <option value="Informe Academico">Informes Academicos</option>
+                    <option value="Citacion">Citaciones</option>
+                    <option value="Orden">Ordenes de cancelacion de matricula paz y salvo </option>
+                    <option value="Informe diploma">Informes de diplomas otorgados</option>
+                    <option value="Acta de grado">Acta de grado</option>
+                    <option value="Diploma">Diplomas</option>
+                    <option value="Resolucion">Resoluciones</option>
             </select>
     </div>
     <br>
@@ -41,4 +40,7 @@
         </div>
     </div>
 </div>
+@section('scripts')
+@include('documentos.consultar_script')
+@endsection
 @endsection

@@ -18,7 +18,8 @@ class CreateDocumentosTable extends Migration
             $table->string('titulo',150)->nullable();
             $table->string('ruta',150)->nullable();
             $table->string('tipo',150)->nullable();
-            
+            $table->string('subtipo',150)->nullable();
+            $table->string('nm',20)->nullable();
             $table->foreignId('id_est')
             ->nullable()
             ->constrained('estudiantes')
