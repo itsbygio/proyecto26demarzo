@@ -105,6 +105,27 @@ $('#table_cursos_modal').DataTable({
         formData.append('id_materia', $('#id_materia').val());
         formData.append('nota', $('#nota').val());
         axios.post(url,formData).then(response =>{
+            if(response.data.result=="SI"){
+                    Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'La nota ha sido registrada',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+            else{
+                Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Ya se ha asignado una nota al estudiante a la misma materia y al mismo curso',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
+            }
+         }).catch(function(err) {
+            alert("Error de conexion a internet");
          });
    }
 

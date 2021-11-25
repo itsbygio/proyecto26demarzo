@@ -35,26 +35,30 @@ class notasController extends Controller
 
     }
     public function save(Request $request){
-      $r_nota= Nota::where('id_curso',$request->id_curso)->where('id_est', $request->id_est)->where('id_materia',$request->id_materia)->get();
-      if($r_nota->count()=="1"){
+        $r_nota= Nota::where('id_curso',$request->id_curso)->where('id_est', $request->id_estudiante)->where('id_materia',$request->id_materia)->get();
+        if($r_nota->count()=="0"){
+            $nota=Nota::create([
+                'id_curso'=> $request->id_curso,
+                'id_est'=> $request->id_estudiante,
+                'id_materia'=>$request->id_materia,
+                'nota' =>$request->nota
+             ]);
+             return response()->json([
+                'result' => 'SI'
+             ],200);   
 
-        $nota=Nota::create([
-            'id_curso'=> $request->id_curso,
-            'id_est'=> $request->id_estudiante,
-            'id_materia'=>$request->id_materia,
-            'nota' =>$request->nota
-         ]);
-
-      }  
-      else{
-        return response()->json('No'); 
+        }
+        else{
+            return response()->json([
+                'result' => 'NO'
+             ],200);   
+        }  
+  
+      
 
       }
      
-        
-        
      
-    }
   
 
 }
