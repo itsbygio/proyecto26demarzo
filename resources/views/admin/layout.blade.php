@@ -163,6 +163,7 @@
                   <p>Mi perfil</p>
                 </a>
               </li>
+              @if( Auth::user()->rol=='administrador')
           <li class="nav-item @if(isset($crear_usuario)) menu-open  @endif @if(isset($listar_usuarios) ) menu-open @endif ">
             <a href="#" class="nav-link  @if(isset($crear_usuario)) {{$crear_usuario}} @endif @if(isset($listar_usuarios) ) {{$listar_usuarios}} @endif ">
               <i class="fas fa-users mr-3"></i>
@@ -186,7 +187,7 @@
               </li>
             </ul>
           </li>
-       
+          @endif
           <li class="nav-item @if(isset($listar_docentes)) menu-open  @endif @if(isset($crear_docente) ) menu-open @endif  ">
             <a href="#" class="nav-link  @if(isset($crear_docente)) {{$crear_docente}} @endif @if(isset($listar_docentes) ) {{$listar_docentes}} @endif ">
               <i class="fas fa-users mr-3"></i>

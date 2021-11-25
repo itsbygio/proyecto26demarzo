@@ -55,19 +55,19 @@
     
      <div class="col-md-4 mb-4">
      <p>Rol:</p>
-        <select id="nrol" name="nrol" class="form-control" id="exampleFormControlSelect1"  >
-        <option value="{{$user->nrol}}">{{$user->rol}}</option>        
-                @if($user->nrol!="1")
-                <option value="1">Administrador</option>
+        <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  >
+        <option value="{{$user->rol}}">{{$user->rol}}</option>        
+                @if($user->rol!="administrador")
+                <option value="administrador">administrador</option>
                 @endif
-                @if($user->nrol!="2")
-                <option value="2"   >Coordinador</option>
+                @if($user->nrol!="coordinador")
+                <option value="coordinador" >coordinador</option>
                 @endif
-                @if($user->nrol!="3")
-                <option value="3">Secretaria de rectoria</option>
+                @if($user->nrol!="secretaria de rectoria")
+                <option value="secretaria de rectoria">secretaria de rectoria</option>
                 @endif
-                @if($user->nrol!="4")
-                <option value="4">Rol de archivo</option>
+                @if($user->rol!="archivo")
+                <option value="archivo">archivo</option>
                 @endif
         </select>
         @error('rol')
@@ -76,9 +76,14 @@
      </div>
      <div class="col-md-4 mb-4">
      <p>Estado:</p>
-        <select id="estado" name="estado" class="form-control" id="exampleFormControlSelect1"  value="{{old('$user->estado')}}">
-                <option value="activo">Activo</option>
-                <option value="inactivo"   >Inactivo</option>
+        <select id="estado" name="estado" class="form-control" id="exampleFormControlSelect1"  >
+        <option value="{{$user->estado}}">{{$user->estado}}</option> 
+        @if($user->estado!="activo")  
+        <option value="activo">activo</option>ç
+        @endif
+        @if($user->estado!="inactivo") 
+                <option value="inactivo">inactivo</option>
+                @endif
 
         </select>
         @error('rol')
