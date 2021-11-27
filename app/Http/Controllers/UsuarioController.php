@@ -222,7 +222,7 @@ class UsuarioController extends Controller
     {
       $validatedData = $request->validate([
            
-        'password'=> ['required', 'string', 'min:6'],
+        'password'=> ['required', 'string', 'min:6','confirmed'],
          
         
     ]);
@@ -241,7 +241,7 @@ class UsuarioController extends Controller
 
  $validatedData = $request->validate([
            
-        'password'=> ['required', 'string', 'min:6'],
+        'password'=> ['required', 'string', 'min:6','confirmed'],
          
         
     ]);

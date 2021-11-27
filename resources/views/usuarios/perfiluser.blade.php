@@ -67,19 +67,18 @@
          <div class="col-md-4">
          <p>Nueva Contraseña:</p>
 
-         <div class="input-group mb-3">
-         <input id="clave" name="password" type="password" class="form-control"   disabled >
-         
-         <div class="input-group-append">
-                    <button type="button" onclick="restablecer()" class="btn btn-primary fas fa-key ">
-                    </div>
-                </div> 
+         <input id="clave" name="password" type="password" class="form-control"    >
+         @error('password')
+                    <div   style="color:red;" >{{ $message }}*</div>
+          @enderror
          </div>
          <div class="col-md-4">
          <p>Confirmar Nueva Contraseña:</p>
 
-         <input id="cclave" name="cclave" type="password" class="form-control"  disabled>
-
+         <input id="cclave" name="cclave" type="password" class="form-control"  >
+                     @error('cclave')
+                    <div   style="color:red;" >{{ $message }}*</div>
+                    @enderror
          </div>
       </div>
       <br>
@@ -94,7 +93,7 @@
 @endsection
 @section('scripts')
 <script>
-            $("#restablecer").prop('disabled',true)
+          //  $("#restablecer").prop('disabled',true)
 
    function restablecer(){
       bootbox.confirm({

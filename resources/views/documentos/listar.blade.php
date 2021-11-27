@@ -16,9 +16,9 @@
         
         <thead>
              <tr>
-                 <th>id</th>
-                 <th>nombre</th>
+                 <th>titulo</th>
                  <th>tipo</th>
+                 <th>subtipo</th>
                  <th>fecha creacion</th>
                  <th>fecha actualizacion</th>
                  <th>Opciones</th>
@@ -27,46 +27,45 @@
          </thead>
          <tbody  >
         <tr>
-            <td>1</td>
-            <td>Acta </td>
-            <td>Acta</td>
-            <td>28-10-2021 12:11:00</td>
+            <td>ACTA DE REUNION SEMANA TECNICA </td>
+            <td>ACTA</td>
+            <td>ACTA DE REUNION</td>
+            <td>28-10-2021 12:30:00</td>
             <td>28-10-2021 12:30:00</td>
             <td style="text-align:center"><a href="/editar/documento" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
         </tr>
         <tr>
-            <td>2</td>
-            <td>Constancia </td>
-            <td>Constancia</td>
-            <td>27-10-2021 11:30:00</td>
-            <td>27-10-2021 11:45:00</td>
-            <td style="text-align:center"><a href="/editar/docente/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Certificados </td>
-            <td>Certificados</td>
-            <td>26-10-2021 08:32:00</td>
-            <td>28-10-2021 9:45:00</td>
-            <td style="text-align:center"><a href="/editar/docente/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Permisos </td>
-            <td>Permisos</td>
-            <td>28-10-2021 12:11:00</td>
+            <td>ACTA DE REUNION SEMANA TECNICA </td>
+            <td>ACTA</td>
+            <td>ACTA DE REUNION</td>
             <td>28-10-2021 12:30:00</td>
-            <td style="text-align:center"><a href="/editar/docente/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
+            <td>28-10-2021 12:30:00</td>
+            <td style="text-align:center"><a href="/editar/documento" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
         </tr>
         <tr>
-            <td>5</td>
-            <td>Circulares </td>
-            <td>Circulares</td>
-            <td>25-10-2021 9:26:00</td>
-            <td>25-10-2021 10:30:00</td>
-            <td style="text-align:center"><a href="/editar/docente/1" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
+            <td>ACTA DE REUNION SEMANA TECNICA </td>
+            <td>ACTA</td>
+            <td>ACTA DE REUNION</td>
+            <td>28-10-2021 12:30:00</td>
+            <td>28-10-2021 12:30:00</td>
+            <td style="text-align:center"><a href="/editar/documento" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
         </tr>
-        
+        <tr>
+            <td>ACTA DE REUNION SEMANA TECNICA </td>
+            <td>ACTA</td>
+            <td>ACTA DE REUNION</td>
+            <td>28-10-2021 12:30:00</td>
+            <td>28-10-2021 12:30:00</td>
+            <td style="text-align:center"><a href="/editar/documento" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
+        </tr>
+        <tr>
+            <td> CERTIFICADO DE TERMINACION DE PRACTICAS DEL ESTUDIANTE MIGUEL ANGEL OCAMPO CHAVARRO DE LA UNIVERSIDAD DE INVESTIGACION Y DESARROLLO </td>
+            <td>ACTA</td>
+            <td>ACTA DE REUNION</td>
+            <td>28-10-2021 12:30:00</td>
+            <td>28-10-2021 12:30:00</td>
+            <td style="text-align:center"><a href="/editar/documento" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
+        </tr>
          </tbody>
 
      </table>
