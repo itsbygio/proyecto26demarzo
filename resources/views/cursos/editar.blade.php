@@ -2,6 +2,14 @@
 
 @section('content')
 <div class="container">
+@if (session('status'))
+<div style=" background-color:#b9f6ca" class="alert  alert-dismissible fade show ml-4 mr-4 mb-4"  role="alert">
+          {{ session('status') }} 
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>  
+@endif
     <h3>Editar curso</h3>
     <div class="row">
         <div class="col-xl-4">
@@ -9,14 +17,14 @@
        @csrf
         <h5>El curso seleccionado es:</h5>
         <div class="input-group mb-3">
-                <input type="text" class="form-control" value="{{$cursos->titulo}}" aria-label="Recipient's username" aria-describedby="basic-addon2" >
+                <input type="text"  name="titulo" class="form-control" value="{{$cursos->titulo}}" aria-label="Recipient's username" aria-describedby="basic-addon2" >
                
         </div>        
       </div>
       <div class="col-xl-4">
         <h5>El año del curso es:</h5>
         <div class="input-group mb-3">
-                <input type="text" class="form-control" value="{{$cursos->año}}" aria-label="Recipient's username" aria-describedby="basic-addon2" >
+                <input type="text"  name="año" class="form-control" value="{{$cursos->año}}" aria-label="Recipient's username" aria-describedby="basic-addon2" >
               
         </div>        
       </div>

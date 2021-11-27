@@ -58,7 +58,32 @@ class notasController extends Controller
 
       }
      
-     
-  
+     public function update(Request $request, $id){
+        $r_nota= Nota::where('id_curso',$request->id_curso)->where('id_est', $request->id_estudiante)->where('id_materia',$request->id_materia)->get();
+        if($r_nota->count()=="1"){
 
+            $nota=Nota::find($id);
+            $nota->id_curso=$request->id_curso;
+            $nota->id_estudiante=$request->id_estudiante;
+            $nota->id_materia=$request->id_materia;
+            $nota->nota=$request->nota;
+             
+             return response()->json([
+                'result' => 'SI'
+             ],200);   
+
+        }
+        else{
+            return response()->json([
+                'result' => 'NO'
+             ],200);   
+        }  
+        
+     }
+  
+     public function destroy(Request $request){
+        $nota=Nota::findOrfail($request->id);
+        $nota->delete();
+
+     }
 }

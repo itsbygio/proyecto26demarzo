@@ -1,6 +1,14 @@
 @extends('admin.layout')
 
 @section('content')
+@if (session('status'))
+<div style=" background-color:#b9f6ca" class="alert  alert-dismissible fade show ml-4 mr-4 mb-4"  role="alert">
+          {{ session('status') }} 
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>  
+@endif
 <div class="container">
     <div class="row">
         <h3 class="ml-3">Editar nota</h3>
@@ -56,7 +64,7 @@
     </div><br>
     <div class="row ml-3">
         <div class="col-xl-6">
-            <button onclick="SubirNota('editar','{{$nota->id}}')" class="btn btn-primary">Editar nota</button>
+            <button onclick="EditarNota('editar','{{$nota->id}}')" class="btn btn-primary">Editar nota</button>
         </div>
     </div>
 </div>

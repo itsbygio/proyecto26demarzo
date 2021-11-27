@@ -128,5 +128,45 @@ $('#table_cursos_modal').DataTable({
             alert("Error de conexion a internet");
          });
    }
+function EditarNota(value,id){
+    var url;       
+       if(value=="editar"){
+        url="/nota/update/{id}";
+        }
+        else{
+         url="/nota/save";
+        }
+        var formData = new FormData();
+        formData.append('id_nota',id);
+        formData.append('id_curso', $('#id_curso').val());
+        formData.append('id_estudiante', $('#id_estudiante').val());
+        formData.append('id_materia', $('#id_materia').val());
+        formData.append('nota', $('#nota').val());
+        axios.post(url,formData).then(response =>{
+            if(response.data.result=="SI"){
+                    Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'La nota ha sido modificada',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+            else{
+                Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Ya se ha asignado una nota al estudiante a la misma materia y al mismo curso',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
+            }
+         }).catch(function(err) {
+            alert("Error de conexion a internet");
+         });
+
+}
+
 
 </script>
