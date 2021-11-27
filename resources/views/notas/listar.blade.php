@@ -88,6 +88,10 @@
             showConfirmButton: false,
             timer: 1500
            })
+           var url="/delete/nota";
+        axios.post(url,{"id":id}).then(response =>{
+        location.href="/listar/notas";
+    });
         
         }
         else{

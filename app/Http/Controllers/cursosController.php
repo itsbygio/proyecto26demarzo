@@ -80,6 +80,7 @@ class cursosController extends Controller
 
     }
     public function update(Request $request, $id){
+        
         $validatedData = $request->validate([
             'titulo' => ['required'],
             'año'    => ['required']
@@ -91,7 +92,7 @@ class cursosController extends Controller
         $curso->año=$request->año;
         $curso->save();
 
-        return redirect('/editar/curso/'. $id)->with('status','cursos modificado correctamente');
+        return redirect('/editar/curso/'. $id)->with('status','Curso modificado correctamente');
 
     }
     public function destroy(Request $request){
