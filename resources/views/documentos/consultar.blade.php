@@ -6,36 +6,37 @@
  Consultar Documentos </h4>
     <div class="col-xl-5">
         <p>Consultar por:</p>
-            <select  onchange="ChangeDateSelect(this)" class="form-control">
+            <select  id="selectconsulta" onchange="ChangeDateSelect(this)" class="form-control">
                     <option value="">Seleccione una opcion</option>
-                    <option value="año">Año</option>
+                    <option value="year">Año</option>
                     <option value="mes">Mes</option>
                     <option value="dia">Dia</option>
             </select>
             <br>
             <div id="inputsdate"></div>
             <br>
-            <p>Tipo de documento:</p>
+            <p>Seleccione el documento:</p>
             <select id="td" name="td" class="form-control">
-                    <option value="">Seleccione un tipo de documento</option>
-                    <option value="Acta">Actas</option>
-                    <option value="Constancia">Constancias</option>
-                    <option value="Certificado">Certificados</option>
-                    <option value="Permiso">Permisos</option>
-                    <option value="Circular">Circulares</option>
-                    <option value="Informe Academico">Informes Academicos</option>
-                    <option value="Citacion">Citaciones</option>
-                    <option value="Orden">Ordenes de cancelacion de matricula paz y salvo </option>
-                    <option value="Informe diploma">Informes de diplomas otorgados</option>
-                    <option value="Acta de grado">Acta de grado</option>
-                    <option value="Diploma">Diplomas</option>
-                    <option value="Resolucion">Resoluciones</option>
+                    <option value="">Seleccione un  documento</option>
+                    <option value="acr">Acta de reunion</option>
+                    <option value="cone">Constancia de estudio</option>
+                    <option value="cen">Certificados de notas</option>
+                    <option value="pd">Permisos de docentes</option>
+                    <option value="cir">Circulares</option>
+                    <option value="ia">Informes Academicos</option>
+                    <option value="cd">Citaciones</option>
+                    <option value="orcm">Ordenes de cancelacion de matricula  </option>
+                    <option value="pys">Paz y salvo estudiante </option>
+                    <option value="ifp">Informes de diplomas otorgados</option>
+                    <option value="acg">Acta de grado</option>
+                    <option value="dp">Diplomas</option>
+                    <option value="rs">Resoluciones</option>
             </select>
     </div>
     <br>
     <div class="row">
         <div class="col-xl-4">
-        <button class="btn btn-primary ml-2">Consultar </button>
+        <button type="button" onclick="consultar()" class="btn btn-primary ml-2">Consultar </button>
 
         </div>
     </div>

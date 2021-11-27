@@ -38,6 +38,39 @@ class DocumentosController extends Controller
     public function dropzone(){
         
     }
+        
+    public function consultar_documento(request $request){
+    
+     $result="";
+     $dia= $request->dia;
+     $mes=$request->mes;
+     $year= $request->year;
+     $nm= $request->nm;
+     
+     if($dia!=null){
+      $result= Documento::where('nm',$request->nm)->whereDate('created_at',$request->dia)->get();
+      return response()->json([
+        'result' =>$result],200);
+       
+
+     }
+     else if($mes!=null){
+        $mes=substr($request->mes, -2, 3);
+        $añom =substr($request->mes, 0, 4);
+        $result= Documento::where('nm',$request->nm)->whereYear('created_at',$añom)->whereMonth('created_at',$mes)->get();
+        return response()->json([
+            'result' =>$result],200);
+     }
+     else{
+        $result= Documento::where('nm',$request->nm)->whereYear('created_at',$request->year)->get();
+        return response()->json([
+            'result' =>$result],200);
+     }
+     
+     
+
+    }
+
     public function mostrar_estadistica(request $request){
         $subtipo="12";
         switch ($request->nm) {

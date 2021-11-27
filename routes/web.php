@@ -43,6 +43,7 @@ Route::get('/consultar/documentos', 'DocumentosController@consultar');
 Route::get('/dropzone/upload', 'DocumentosController@dropzone');
 Route::get('/editar/documento', 'DocumentosController@editar');
 Route::post('/generar/estadistica', 'DocumentosController@mostrar_estadistica');
+Route::post('/consultas/doc', 'DocumentosController@consultar_documento');
 
 
 /*Fin documentos*/
