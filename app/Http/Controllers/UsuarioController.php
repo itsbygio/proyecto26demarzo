@@ -38,7 +38,7 @@ class UsuarioController extends Controller
     {
        
         return view('usuarios.crear',[
-            'crear'=>'active', 
+            'crear_usuario'=>'active', 
             
         ]);
      

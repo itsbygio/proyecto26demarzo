@@ -39,6 +39,24 @@
         <button type="button" onclick="consultar()" class="btn btn-primary ml-2">Consultar </button>
 
         </div>
+    </div><br>
+    <div style="display:none" id="tablaconsulta">
+        <table id="table_id" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+                <tr>
+                    <th>id</th>
+                    <th>titulo del documento</th>
+                    <th>tipo</th>
+                    <th>subtipo</th>
+                    <th>Opciones</th>
+
+                </tr>         
+            </thead>
+            <tbody>
+
+
+            </tbody>
+        </table>
     </div>
 </div>
 @section('scripts')

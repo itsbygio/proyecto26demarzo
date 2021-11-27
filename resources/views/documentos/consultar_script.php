@@ -1,9 +1,12 @@
 <script>
+localStorage.setItem('tabledata', '0');
 var inputsdate= document.getElementById ("inputsdate");
 var td="";
 var input1 = document.createElement("input");
 var input2 = document.createElement("input");
 var input4 = document.createElement("input");
+var tabledata="";
+var datatabla="";
 var formData = new FormData();
 var selectconsulta;
 var url="/consultas/doc";
@@ -35,14 +38,27 @@ function consultar(){
 
        if(response.data.result==0){
         sweetalert('No se han encontrado registros');
+        datatabla.clear().draw();
+        $('#tablaconsulta').hide();
        }
        else{
-        console.log(response.data);
+            tabledata=localStorage.getItem('tabledata');
+            if(tabledata=="1"){
+              datatabla.clear().draw();
+              datatabla.rows.add(response.data.result);
+              datatabla.columns.adjust().draw();
+              $('#tablaconsulta').show();
 
+            }
+            else{
+            localStorage.setItem('tabledata', '1');
+            datatable(response.data.result);
+            $('#tablaconsulta').show();
+
+            }
        }
         });
-    
-   
+  
 }
 function asignarvalores(){
   switch ($('#selectconsulta').val()) {
@@ -98,4 +114,35 @@ function ChangeDateSelect(data){
 
     }
     }
+ function datatable(data){
+  datatabla= $('#table_id').DataTable(
+            
+            {
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ registros por pagina",
+                    "zeroRecords": "No hay registros",
+                    "info": "Mostrando pagina _PAGE_ de _PAGES_",
+                    "infoEmpty": "No registros disponibles",
+                    "infoFiltered": "(filtrado de _MAX_ total de registros)",
+                    "search":         "Buscar:",
+                    "paginate": {
+                        "first":      "First",
+                        "last":       "Last",
+                        "next":       "Siguiente",
+                        "previous":   "Anterior"
+                    },
+                },
+                "data":data,
+                    "columns": [
+                    { "data": "id" ,"className":"d-none"},
+                    { "data": "titulo" },
+                    { "data": "tipo" },
+                    { "data": "subtipo" },
+                    { "defaultContent": " <button  class='btn btn-primary mr-3 fas fa-eye' ></button>"},
+
+                    ]
+
+            }
+            );
+ }
 </script>
