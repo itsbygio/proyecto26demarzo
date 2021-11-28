@@ -18,7 +18,7 @@
             <div class="form-check">
             <input  onclick="handleClick(this);" class="form-check-input"  type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="2" checked >
             <label class="form-check-label" for="flexRadioDefault2">
-                Crear documento
+                Generar documento
             </label>
             </div>
         </div>
@@ -34,32 +34,47 @@
         @enderror
         </div>
     </div><br>
-    <div class="row">
+    <div id="generate" class="row">
         <div class="col-xl-5 ml-4">
-        <p>Tipo documento:</p>
-        <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"   onchange="generar_elementos(this);" value="{{old('rol')}}">
-                    <option value="ac">Actas</option>
-                    <option value="co">Constancias</option>
-                    <option value="ce">Certificados</option>
-                    <option value="pe">Permisos</option>
-                    <option value="ci">Circulares</option>
-                    <option value="cc">Informes Academicos</option>
-                    <option value="cc">Citaciones</option>
-                    <option value="cc">Ordenes de cancelacion de matricula paz y salvo </option>
-                    <option value="cc">Informes de diplomas otorgados</option>
-                    <option value="cc">Acta de grado</option>
-                    <option value="cc">Horario de clase</option>
-                    <option value="cc">Diplomas</option>
-                    <option value="cc">Resoluciones</option>
-
-
-            </select>
+        <p>Seleccione el documento:</p>
+         <select onchange="generar_elementos(this)" id="selectgenerate" class="form-control">
+                    <option value="">Seleccione un  documento</option>
+                    <option value="acr">Acta de reunion</option>
+                    <option value="cone">Constancia de estudio</option>
+                    <option value="cen">Certificados de notas</option>
+                    <option value="pd">Permisos de docentes</option>
+                    <option value="cir">Circulares</option>
+         </select>
         </div>
     </div>
     <br>
 
+    <div style="display:none" id="seccion_acta_reunion" class="ml-4 ">
+     @include('documentos.generacion.actareunion')
+   </div>
+    <div style="display:none" id="upload" class="row">
+        <div class="col-xl-5 ml-4">
+        <p>Seleccione el documento:</p>
+        <select id="td" name="td" class="form-control">
+                    <option value="">Seleccione un  documento</option>
+                    <option value="acr">Acta de reunion</option>
+                    <option value="cone">Constancia de estudio</option>
+                    <option value="cen">Certificados de notas</option>
+                    <option value="pd">Permisos de docentes</option>
+                    <option value="cir">Circulares</option>
+                    <option value="ia">Informes Academicos</option>
+                    <option value="cd">Citaciones</option>
+                    <option value="orcm">Ordenes de cancelacion de matricula  </option>
+                    <option value="pys">Paz y salvo estudiante </option>
+                    <option value="ifp">Informes de diplomas otorgados</option>
+                    <option value="acg">Acta de grado</option>
+                    <option value="dp">Diplomas</option>
+                    <option value="rs">Resoluciones</option>
+            </select>
+        </div>
+    </div>
     <br>
-    <div style="display:none" id="dropzoneitem" class="row">
+    <div style="display:none" id="dropzoneitem" class="row mb-3">
         <div class="col-xl-5 ml-4">
         @csrf
 
@@ -68,9 +83,12 @@
 
         </div>
     </div>
-    <button id="btn-next" class="btn btn-primary  ml-4 ">  Siguiente  </button>
-    <button id="btn-upload"style="display:none" class="btn btn-primary  ml-4 mt-3">  Subir documento  </button>
+    
+    <button id="btn-next"  type="button"   class="btn btn-primary  ml-4 ">  Siguiente  </button>
+    <button id="btn-upload"style="display:none" class="btn btn-primary  ml-4 ">  Subir documento  </button>
 </div>
+<br>
+
 @endsection
 @section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script>

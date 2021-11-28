@@ -48,6 +48,14 @@ Route::post('/consultas/doc', 'DocumentosController@consultar_documento');
 
 /*Fin documentos*/
 
+
+/*Generacion*/
+Route::get('/generar/actas_reunion', 'GenerateController@index');
+
+
+
+/*Fin Generacion*/
+
 /*docentes*/
 Route::get('/crear/docente', 'DocentesController@crear');
 Route::get('/editar/docente/{id}', 'DocentesController@editar');
