@@ -2,8 +2,14 @@
 <div class="col-xl-12">
 <h5>Por Favor digite los siguientes campos:</h5><br>
 </div>
-<div class="col-xl-3">
+<div class="col-xl-12">
 <form id="form_acta_reunion">
+
+    <p>Nombre del documento</p>
+    <input  name="nombre_doc" id="nombre_doc" type="text" class="form-control col-xl-5 mb-3">
+
+</div>
+<div class="col-xl-3">
     <p>Fecha de la reunion</p>
     <input name="fecha_reunion" id="fecha_reunion" type="date" class="form-control mb-3">
 

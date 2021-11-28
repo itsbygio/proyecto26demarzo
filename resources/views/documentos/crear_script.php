@@ -3,9 +3,9 @@
 function generar_elementos(data){
   switch (data.value) {
   case 'acr':
-  
     $('#btn-next').hide();
     $('#seccion_circular').hide();
+    $('#seccion_per_doc').hide();
     $('#seccion_constancia').hide();
     $('#seccion_cer_nota').hide();
     $('#seccion_acta_reunion').show();
@@ -14,6 +14,7 @@ function generar_elementos(data){
   case 'cone':
     $('#seccion_circular').hide();
     $('#seccion_cer_nota').hide();
+    $('#seccion_per_doc').hide();
     $('#seccion_acta_reunion').hide();
     $('#btn-next').hide();
     $('#seccion_constancia').show();
@@ -22,16 +23,23 @@ function generar_elementos(data){
   case 'cen':
     $('#seccion_circular').hide();
     $('#seccion_constancia').hide();
+    $('#seccion_per_doc').hide();
     $('#seccion_acta_reunion').hide();
     $('#btn-next').hide();
     $('#seccion_cer_nota').show();
     break;
   case 'pd':
+    $('#seccion_acta_reunion').hide();
+    $('#seccion_constancia').hide();
+     $('#seccion_cer_nota').hide();
+     $('#btn-next').hide();
+    $('#seccion_per_doc').show();
 
     break;
 
   case 'cir':
      $('#seccion_acta_reunion').hide();
+     $('#seccion_per_doc').hide();
      $('#seccion_constancia').hide();
      $('#seccion_cer_nota').hide();
      $('#btn-next').hide();
@@ -40,6 +48,7 @@ function generar_elementos(data){
     break;
 
   default:
+  $('#seccion_per_doc').hide();
   $('#seccion_circular').hide();
   $('#seccion_acta_reunion').hide();
   $('#seccion_constancia').hide();
@@ -62,8 +71,17 @@ axios.post('/generar/actas_reunion',data).then(response =>{
    axios.post('/generar/certificado_notas',data).then(response =>{
      console.log(response.data);
    });
-  
+
 });
+
+$( "#btn_per_doc" ).click(function() {
+   var data=$('#form_per_doc').serialize();
+   axios.post('/generar/permisos_docentes',data).then(response =>{
+     console.log(response.data);
+   });
+
+});
+
 
 $( "#btn_circular" ).click(function() {
    var data=$('#form_circular').serialize();

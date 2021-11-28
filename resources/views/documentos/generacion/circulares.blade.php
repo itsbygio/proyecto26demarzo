@@ -1,9 +1,13 @@
 <div class="row">
 <div class="col-xl-12">
-<h5>Por Ingrese la siguiente Informacion:</h5><br>
+<h5>Por Ingrese digite los siguientes campos :</h5><br>
+</div>
+<div class="col-xl-12">
+<form id="form_circular">
+    <p>Nombre del documento</p>
+    <input  name="nombre_doc" id="nombre_doc" type="text" class="form-control col-xl-5 mb-3">
 </div>
 <div class="col-xl-4">
-<form id="form_circular">
 <p>Para:</p>
 <input type="text" name="para" id="para"  class="form-control mb-4">
 </div>

@@ -26,13 +26,6 @@
     </div>
     <br>
     <div class="row">
-        <div class="col-xl-5 ml-4">
-        <p>Nombre del documento:</p>
-        <input id="nombre" name="nombre" type="text" class="form-control" value="{{old('nombre')}}" >
-        @error('nombre')
-        <div  style="color:red;">{{ $message }}*</div>
-        @enderror
-        </div>
     </div><br>
     <div id="generate" class="row">
         <div class="col-xl-5 ml-4">
@@ -60,6 +53,9 @@
    </div>
    <div style="display:none" id="seccion_circular" class="ml-4 ">
      @include('documentos.generacion.circulares')
+   </div>
+   <div style="display:none" id="seccion_per_doc" class="ml-4 ">
+     @include('documentos.generacion.permiso_doc')
    </div>
     <div style="display:none" id="upload" class="row">
         <div class="col-xl-5 ml-4">
