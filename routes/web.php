@@ -46,13 +46,14 @@ Route::post('/generar/estadistica', 'DocumentosController@mostrar_estadistica');
 Route::post('/consultas/doc', 'DocumentosController@consultar_documento');
 
 
-/*Fin documentos*/
 
 
 /*Generacion*/
-Route::get('/generar/actas_reunion', 'GenerateController@index');
-
-
+Route::post('/generar/actas_reunion', 'GenerateController@actas_reunion');
+Route::post('/generar/permisos_docentes', 'GenerateController@permisos_docentes');
+Route::post('/generar/certificado_notas', 'GenerateController@certificado_notas');
+Route::post('/generar/constancia_estudio', 'GenerateController@constancia_estudio');
+Route::post('/generar/circular', 'GenerateController@circular');
 
 /*Fin Generacion*/
 

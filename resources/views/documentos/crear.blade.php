@@ -52,6 +52,15 @@
     <div style="display:none" id="seccion_acta_reunion" class="ml-4 ">
      @include('documentos.generacion.actareunion')
    </div>
+   <div style="display:none" id="seccion_constancia" class="ml-4 ">
+     @include('documentos.generacion.constancia_est')
+   </div>
+   <div style="display:none" id="seccion_cer_nota" class="ml-4 ">
+     @include('documentos.generacion.certifcado_n')
+   </div>
+   <div style="display:none" id="seccion_circular" class="ml-4 ">
+     @include('documentos.generacion.circulares')
+   </div>
     <div style="display:none" id="upload" class="row">
         <div class="col-xl-5 ml-4">
         <p>Seleccione el documento:</p>
@@ -86,10 +95,12 @@
     
     <button id="btn-next"  type="button"   class="btn btn-primary  ml-4 ">  Siguiente  </button>
     <button id="btn-upload"style="display:none" class="btn btn-primary  ml-4 ">  Subir documento  </button>
+
 </div>
 <br>
 
 @endsection
+
 @section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script>
 @include('documentos.crear_script')
