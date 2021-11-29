@@ -13,7 +13,7 @@ class Docente extends Model
     protected $table = 'docentes';  
 
     public $fillable = [
-        'id', 'nombre', 'apellidos','email','contacto', 'direccion','tipo_doc', 'estado',
+        'id', 'nombre', 'apellidos','email','contacto', 'direccion','tipo_doc', 'estado','sede',
         'num_id', 'tp', 'ac','escalafon', 'created_at','updated_at'
     ];
 

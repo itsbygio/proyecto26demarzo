@@ -82,7 +82,7 @@ Route::get('/subir/nota', 'notasController@subir');
 Route::get('/listar/notas', 'notasController@listar');
 Route::get('/editar/nota/{id}', 'notasController@editar');
 Route::post('/nota/save', 'notasController@save');
-Route::post('/nota/update/{id}', 'notasController@update');
+Route::post('/update/nota/{id}', 'notasController@update');
 Route::post('/delete/nota', 'notasController@destroy');
 
 /*Fin notas */

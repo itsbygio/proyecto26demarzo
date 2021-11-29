@@ -74,27 +74,23 @@
         @enderror
      </div>
      <div class="col-md-4 mb-4">
-     <p>Escalafon</p>
+     <p>sede</p>
 
-     <select id="escalafon" name="escalafon" class="form-control" id="exampleFormControlSelect1"  value="{{old('escalafon')}}">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
+     <select id="sede" name="sede"   type="text" class="form-control" id="exampleFormControlSelect1"  value="{{old('escalafon')}}">
+                <option value="1">A</option>
+                <option value="2">B</option>
+                <option value="3">D</option>
+               
 
 
 
         </select>
+        </div>
+     <div class="col-md-4 mb-4">
+     <p>Escalafon</p>
+
+     <input id="escalafon" name="escalafon"   type="text" class="form-control"   value="{{old('escalafon')}}">
+               
         </div>
 
  </div>

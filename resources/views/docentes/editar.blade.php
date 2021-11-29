@@ -73,16 +73,31 @@ Editar docente </h4><br>
         @enderror
      </div>
      <div class="col-md-4 mb-4">
-     <p>Escalafon</p>
+     <p>sede</p>
 
-     <select id="escalafon" name="escalafon" class="form-control" id="exampleFormControlSelect1"  value="{{$docentes->escalafon}}">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+     <select id="sede" name="sede"   type="text" class="form-control" id="exampleFormControlSelect1" >
+               <option value="{{$docentes->sede}}">{{$docentes->sede}}</option> 
+               @if($docentes->sede!="A")
+                <option value="A">A</option>
+                @endif
+                @if($docentes->sede!="B")
+                <option value="B">B</option>
+                @endif
+                @if($docentes->sede!="D")
+                <option value="D">D</option>
+                @endif
+               
+
+
 
         </select>
         </div>
+     <div class="col-md-4 mb-4">
+     <p>Escalafon</p>
 
+     <input id="escalafon" name="escalafon"   type="text" class="form-control"   value="{{$docentes->escalafon}}">
+               
+        </div>
 
  </div>
  <div class="row">

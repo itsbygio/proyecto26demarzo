@@ -28,7 +28,8 @@ class DocentesController extends Controller
             'num_id'=>['required'],
             'tp'=> ['required'],
             'ac'=>['required'],
-            'escalafon'=>['required', ],
+            'sede'=>['required'],
+            'escalafon'=>['required'],
             
         ]);
         
@@ -43,6 +44,7 @@ class DocentesController extends Controller
             'num_id'=> $request->num_id,
             'tp'=>$request->tp,
             'ac'=> $request->ac,
+            'sede'=> $request->sede,
             'escalafon'=>$request->escalafon,
             'created_at'=>date('d-m-Y H:i:s'),
             'updated_at'=>date('d-m-Y H:i:s'),
@@ -75,6 +77,7 @@ class DocentesController extends Controller
             'contacto' => ['required','numeric','min:10'],
             'direccion'=> ['required'],
             'num_id'=>['required'],
+            'sede'=>['required'],
             'escalafon'=>['required'],
             
         ]);
@@ -88,6 +91,7 @@ class DocentesController extends Controller
         $Docentes->num_id=$request->num_id;
         $Docentes->tp=$request->tp;
         $Docentes->ac=$request->ac;
+        $Docentes->sede=$request->sede;
         $Docentes->escalafon=$request->escalafon;
         $Docentes->save();
         return redirect('/editar/docente/'.$id)->with('status','docente modificado exitosamente');

@@ -25,12 +25,14 @@ class notasController extends Controller
 
     }
     public function editar($id){
+        $nota=Nota::findOrFail($id);
         return view('notas.editar',[
         'listar_notas'=>'active',
         'nota'=>Nota::find($id),
         'cursos'=>Curso::all(),
         'materias'=>Materia::all(),
         'estudiantes'=>Estudiante::where('fecha_f',null)->get(),
+        'notas'=>$nota
     ]);
 
     }
@@ -60,15 +62,22 @@ class notasController extends Controller
      
      public function update(Request $request, $id){
 
-        
+        $validatedData = $request->validate([
+            'nota' => ['required'],
+            
+           
+            
+        ]);
+
+
             $nota=Nota::find($id);
             $nota->id_curso=$request->id_curso;
-            $nota->id_estudiante=$request->id_estudiante;
+            $nota->id_est=$request->id_est;
             $nota->id_materia=$request->id_materia;
             $nota->nota=$request->nota;
+            $nota->save();
              
-            
-          
+            return redirect('/editar/nota/'.$id)->with('status','Estudiante modificado exitosamente');
         
      }
   

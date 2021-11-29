@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'nombre' =>'Archivo',
             'nrol'=>'4',
-            'rol'=>'Archi',
+            'rol'=>'Archivo',
             'email' =>'archivo@inst26demarzo.com',
             'password' => Hash::make('archivo12345'),  
         ]);

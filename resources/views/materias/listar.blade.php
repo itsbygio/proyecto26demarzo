@@ -9,7 +9,7 @@
         
         <thead>
              <tr>
-                 <th>id</th>
+                 
                  <th>nombre de la materia</th>
                  <th>fecha de creacion</th>
                  <th>fecha de modificacion</th>
@@ -19,7 +19,7 @@
          <tbody  >
          @foreach($materias as $materia)
         <tr>
-              <td>{{$materia->id}}</td>
+             
               <td>{{$materia->titulo}} </td>
               <td>{{$materia->created_at}} </td>
               <td>{{$materia->updated_at}} </td>

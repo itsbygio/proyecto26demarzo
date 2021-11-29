@@ -9,7 +9,7 @@
         
         <thead>
              <tr>
-                 <th>id</th>
+                
                  <th>nombre del curso</th>
                  <th> fecha de creacion</th>
                  <th> fecha de actualizacion</th>
@@ -21,7 +21,7 @@
          <tbody  >
          @foreach($curso as $curso)
         <tr>
-              <td>{{$curso->id}}</td>
+            
               <td>{{$curso->titulo}} </td>
               <td>{{$curso->created_at}} </td>
               <td>{{$curso->updated_at}} </td>

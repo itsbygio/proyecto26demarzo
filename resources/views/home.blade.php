@@ -10,7 +10,7 @@ li{
 <p class="ml-3 mb-4"> Bienvenido {{ Auth::user()->nombre }}. Seleccione la Opcion que desea realizar:</p>
 
       <div class="row ml-3">
-
+      @if( Auth::user()->nrol=='1' )
           <div class="col-md-4 ">
               <div class="row">
                     <div class="col-md-2 bg-dark">
@@ -60,13 +60,15 @@ li{
                     </div>
             </div>
           </div>
-          
+          @endif
+          @if( Auth::user()->nrol=='1' || Auth::user()->nrol=='2' )
           <div class="col-md-4">
               <br>
               <div class="row">
                     <div class="col-md-2 bg-dark">
                        <h2 class="mt-4 ml-1"> GC </h2> 
                     </div>
+                  
                     <div class="col-md-8 border">
                         <div class="mb-2"></div>
                     <span class="ml-3 ">Gestion cursos:</span>
@@ -115,7 +117,7 @@ li{
                         </ul>
                     </div>
             </div>
-            
+            @endif
           </div>
           <div class="col-md-4">
               <br>

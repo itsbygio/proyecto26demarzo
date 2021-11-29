@@ -9,11 +9,13 @@
         
         <thead>
              <tr>
-                 <th>id</th>
+                 
                  <th>nombre</th>
                  <th>Apellidos</th>       
                  <th>Email</th>
                  <th>rol</th>
+                 <th>Fecha de creación</th>
+                 <th>Fecha de modificación</th>
                  <th>Opciones</th>
 
              </tr>
@@ -21,12 +23,12 @@
          <tbody  >
          @foreach($usuarios as $usuario)
           <tr>
-             <td>{{$usuario->id}}</td>
               <td>{{$usuario->nombre}} </td>
              <td> {{$usuario->apellidos}} </td>
               <td>{{$usuario->email}} </td>
               <td>{{$usuario->rol}}</td>
-         
+              <td>{{$usuario->created_at}} </td>
+              <td>{{$usuario->updated_at}} </td>
               <td><a href="/editar/usuario/{{$usuario->id}}" class='btn btn-primary mr-3' >
              <i class='fas fa-pen-alt'></i></a><button  class='btn btn-primary mr-3' onclick="btn_drop('{{$usuario->id}}')"><i class='far fa-minus-square'></i></button></td>
          </tr> 

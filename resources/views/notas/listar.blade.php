@@ -9,12 +9,14 @@
         
         <thead>
              <tr>
-                 <th>id</th>
+                
                  <th>nombre </th>
                  <th>apellido</th>
                  <th>materia</th>
                  <th>curso</th>
                  <th>nota</th>
+                 <th>fecha de creacion</th>
+                 <th>fecha de modificacion</th>
                  <th>Opciones</th>
 
              </tr>
@@ -22,12 +24,14 @@
          <tbody >
          @foreach($notas as $nota)
         <tr>
-              <td>{{$nota->id}}</td>
+             
               <td>{{$nota->estudiante->nombre}}</td>
               <td>{{$nota->estudiante->apellidos}} </td>
               <td>{{$nota->materia->titulo}} </td>
               <td>{{$nota->curso->titulo}} </td>
               <td>{{$nota->nota}} </td>
+              <td>{{$nota->created_at}} </td>
+              <td>{{$nota->updated_at}} </td>
               <td><a href="/editar/nota/{{$nota->id}}" class='btn btn-primary mr-3' > <i class='fas fa-pen-alt'></i></a>
               <button  class='btn btn-primary mr-3' onclick="btn_drop('{{$nota->id}}')"><i class='far fa-minus-square'></i></button></td>
         </tr>
