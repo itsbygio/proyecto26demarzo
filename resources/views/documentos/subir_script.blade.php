@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         maxFilesize: 50,
         parallelUploads: 1,
         maxFiles: 1,
-        url: "/save/document",
+        url: "/update/document",
         dictDefaultMessage: 'Sube aquí tu archivo',
         acceptedFiles: ".pdf",
         addRemoveLinks: true,

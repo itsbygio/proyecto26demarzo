@@ -16,7 +16,9 @@ class UserSeeder extends Seeder
             'rol'=>'Administrador',
             'nrol'=>'1',
             'email' =>'administrador@inst26demarzo.com',
-            'password' => Hash::make('administrador12345'),  
+            'password' => Hash::make('administrador12345'),
+            'created_at' =>date('Y-m-d H:i:s'),
+            'updated_at' =>date('Y-m-d H:i:s'),  
         ]);
         DB::table('users')->insert([
             'nombre' =>'Coordinador',
@@ -24,6 +26,8 @@ class UserSeeder extends Seeder
             'nrol'=>'2',
             'email' =>'coordinador@inst26demarzo.com',
             'password' => Hash::make('coordinador12345'),  
+            'created_at' =>date('Y-m-d H:i:s'),
+            'updated_at' =>date('Y-m-d H:i:s'),
         ]);
         DB::table('users')->insert([
             'nombre' =>'Secretaria de rectoria',
@@ -31,13 +35,17 @@ class UserSeeder extends Seeder
             'nrol'=>'3',
             'email' =>'secretaria@inst26demarzo.com',
             'password' => Hash::make('secretaria12345'),  
+            'created_at' =>date('Y-m-d H:i:s'),
+            'updated_at' =>date('Y-m-d H:i:s'),
         ]);
         DB::table('users')->insert([
             'nombre' =>'Archivo',
             'nrol'=>'4',
             'rol'=>'Archivo',
             'email' =>'archivo@inst26demarzo.com',
-            'password' => Hash::make('archivo12345'),  
+            'password' => Hash::make('archivo12345'),
+            'created_at' =>date('Y-m-d H:i:s'),
+            'updated_at' =>date('Y-m-d H:i:s'), 
         ]);
     }
 }

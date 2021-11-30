@@ -23,6 +23,7 @@
         <div class="col-xl-5 ml-4">
         <p>Tipo documento:</p>
         <select onchange="changeselectedit(this)" id="td" name="td" class="form-control">
+                  <option value="">Seleccione un  documento</option>
                     <option value="acr">Acta de reunion</option>
                     <option value="cone">Constancia de estudio</option>
                     <option value="cen">Certificado de nota</option>
@@ -35,13 +36,24 @@
                     <option value="ifp">Informes de diplomas otorgado</option>
                     <option value="acg">Acta de grado</option>
                     <option value="dp">Diploma</option>
-                    <option value="rs">Resolucione</option>
+                    <option value="rs">Resoluciones</option>
 
             </select>
         </div>
     </div>
     <br>
-
+    <div style="display:none" id="seccion_upload_constancia" class="row  ml-3 mb-2">
+        <div class="col-xl-5">
+            <p>Ingrese el numero de identificacion del estudiante</p>
+          <input id="est_id" type="text" class="form-control" placeholder="Porfavor Ingrese el numero de identificacion">
+        </div>
+    </div>
+    <div style="display:none" id="seccion_upload_permiso" class="row  ml-3 mb-2">
+        <div class="col-xl-5">
+            <p>Ingrese el numero de identificacion del docente</p>
+          <input id="doc_id" type="text" class="form-control" placeholder="Porfavor Ingrese el numero de identificacion">
+        </div>
+    </div>
     <br>
     <div id="dropzoneitem" class="row">
         <div class="col-xl-5 ml-4 text-center border pt-5 pb-5">

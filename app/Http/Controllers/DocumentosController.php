@@ -41,8 +41,30 @@ class DocumentosController extends Controller
              'documento'=>$documento
         ]);
     }
-    public function dropzone(){
-        
+    public function update_document(request $request){
+        $documento= Documento::find($request->id);
+        $archivo = $request->file('file');
+        $ext='.'.$archivo->extension();
+
+       switch ($request->nm) {
+           case 'acr':
+        $documento->titulo=$archivo->getClientOriginalName();
+        $documento->ext=$ext;
+        $documento->tipo="Acta";
+        $documento->subtipo="Acta de reunion";
+        $documento->nm="acr";
+        $documento->id_est=null;
+        $documento->id_doc=null;
+        $documento->id_user_m=Auth::user()->id;
+        $documento->save();
+        break;
+           
+           default:
+               # code...
+               break;
+       }
+       $nombreDocumento = $$request->id.'.'.$archivo->extension();
+       $archivo->move(public_path('documentos'),$nombreDocumento);
     }
         
     public function consultar_documento(request $request){
@@ -261,8 +283,7 @@ class DocumentosController extends Controller
             default:
                echo "i no es igual a 0, 1 ni 2";
         }
-        $nombreDocumento = $file->id.'.'.$archivo->extension();
-        $archivo->move(public_path('documentos'),$nombreDocumento);
+
 
     }
 

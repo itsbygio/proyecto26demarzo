@@ -4,7 +4,43 @@
    });
 
 function changeselectedit(data){
- alert(data.value);
+    switch (data.value) {
+        case "cone":
+       $("#seccion_upload_constancia").show();
+       $("#seccion_upload_permiso").hide();
+
+          break;
+        case "cen": 
+          $("#seccion_upload_permiso").hide();
+          $("#seccion_upload_constancia").show();
+          break;
+        case "pd": 
+          $("#seccion_upload_constancia").hide();
+          $("#seccion_upload_permiso").show();
+          break; 
+         case "orcm": 
+           $("#seccion_upload_permiso").hide();
+           $("#seccion_upload_constancia").show();
+
+          break; 
+          case "pys": 
+           $("#seccion_upload_permiso").hide();
+           $("#seccion_upload_constancia").show();
+          break; 
+          case "acg": 
+           $("#seccion_upload_permiso").hide();
+           $("#seccion_upload_constancia").show();
+          break; 
+          case "dp": 
+           $("#seccion_upload_permiso").hide();
+           $("#seccion_upload_constancia").show();
+          break;
+        default:
+        $("#seccion_upload_constancia").hide();
+        $("#seccion_upload_permiso").hide();
+
+
+      }
 }
 
 
