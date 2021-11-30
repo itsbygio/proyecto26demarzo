@@ -57,10 +57,10 @@
    <div style="display:none" id="seccion_per_doc" class="ml-4 ">
      @include('documentos.generacion.permiso_doc')
    </div>
-    <div style="display:none" id="upload" class="row">
+    <div style="display:none" id="upload" class="row mb-3">
         <div class="col-xl-5 ml-4">
         <p>Seleccione el documento:</p>
-        <select id="td" name="td" class="form-control">
+        <select  onchange="changeDocumentUpload(this)" id="td" name="td" class="form-control">
                     <option value="">Seleccione un  documento</option>
                     <option value="acr">Acta de reunion</option>
                     <option value="cone">Constancia de estudio</option>
@@ -76,6 +76,18 @@
                     <option value="dp">Diplomas</option>
                     <option value="rs">Resoluciones</option>
             </select>
+        </div>
+    </div>
+    <div style="display:none" id="seccion_upload_constancia" class="row  ml-3 mb-2">
+        <div class="col-xl-5">
+            <p>Ingrese el numero de identificacion del estudiante</p>
+          <input id="est_id" type="text" class="form-control" placeholder="Porfavor Ingrese el numero de identificacion">
+        </div>
+    </div>
+    <div style="display:none" id="seccion_upload_permiso" class="row  ml-3 mb-2">
+        <div class="col-xl-5">
+            <p>Ingrese el numero de identificacion del docente</p>
+          <input id="doc_id" type="text" class="form-control" placeholder="Porfavor Ingrese el numero de identificacion">
         </div>
     </div>
     <br>
@@ -98,6 +110,7 @@
 @endsection
 
 @section('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script>
 @include('documentos.crear_script')
+@include('documentos.subir_script')
+
 @endsection

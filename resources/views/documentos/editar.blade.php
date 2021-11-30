@@ -12,7 +12,7 @@
         <div class="col-xl-5 ml-4">
         <p>Nombre del documento:</p>
         <div class="input-group mb-3">
-                    <input type="text" class="form-control " placeholder="Por favor, Eliga el curso" aria-label="Recipient's username" aria-describedby="basic-addon2"  value="Acta">
+                    <input type="text" class="form-control " placeholder="Por favor, Eliga el curso" aria-label="Recipient's username" aria-describedby="basic-addon2"  value="{{$documento->titulo}}">
                     <div class="input-group-append">
                         <button class="fas fa-eye btn btn-primary"></button>
                     </div>
@@ -22,21 +22,20 @@
     <div class="row">
         <div class="col-xl-5 ml-4">
         <p>Tipo documento:</p>
-        <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  value="{{old('rol')}}">
-                    <option value="ti">Actas</option>
-                    <option value="cc">Constancias</option>
-                    <option value="cc">Certificados</option>
-                    <option value="cc">Permisos</option>
-                    <option value="cc">Circulares</option>
-                    <option value="cc">Informes Academicos</option>
-                    <option value="cc">Citaciones</option>
-                    <option value="cc">Ordenes de cancelacion de matricula paz y salvo </option>
-                    <option value="cc">Informes de diplomas otorgados</option>
-                    <option value="cc">Acta de grado</option>
-                    <option value="cc">Horario de clase</option>
-                    <option value="cc">Diplomas</option>
-                    <option value="cc">Resoluciones</option>
-
+        <select onchange="changeselectedit(this)" id="td" name="td" class="form-control">
+                    <option value="acr">Acta de reunion</option>
+                    <option value="cone">Constancia de estudio</option>
+                    <option value="cen">Certificado de nota</option>
+                    <option value="pd">Permiso de docente</option>
+                    <option value="cir">Circular</option>
+                    <option value="ia">Informes Academico</option>
+                    <option value="cd">Citaciones</option>
+                    <option value="orcm">Ordenes de cancelacion de matricula </option>
+                    <option value="pys">Paz y salvo estudiante </option>
+                    <option value="ifp">Informes de diplomas otorgado</option>
+                    <option value="acg">Acta de grado</option>
+                    <option value="dp">Diploma</option>
+                    <option value="rs">Resolucione</option>
 
             </select>
         </div>
@@ -47,7 +46,7 @@
     <div id="dropzoneitem" class="row">
         <div class="col-xl-5 ml-4 text-center border pt-5 pb-5">
         <i class="fas fa-file-pdf fa-5x"></i><br><br>
-         <a href="">Remplazar archivo</a>  
+         <a style="color:blue; cursor:pointer" id="btn_upload_modal">Remplazar archivo</a>  
         </div>
  
     </div>
@@ -55,45 +54,8 @@
     <button class="btn btn-primary  ml-4 ">  Guardar cambios  </button>
     <br>
 </div>
+@include('documentos.modales.upload_modal')
 @endsection
 @section('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script>
-<script>
-
-Dropzone.autoDiscover = false;
-document.addEventListener('DOMContentLoaded', () => {
-    const dropzoneUpload = new Dropzone('#dropzoneUpload', {
-        autoProcessQueue: false,
-            maxFilesize: 2,
-            parallelUploads: 20,
-            maxFiles: 20,
-            url: "/dropzone/upload",
-            dictDefaultMessage: 'Sube aquí tu archivo',
-            acceptedFiles: ".png,.jpg,.jpeg,.gif,.bmp,.pdf",
-            addRemoveLinks: true,
-            dictRemoveFile: 'Borrar Archivo',
-            init: function() {
-
-  
-            this.on("addedfile", function(file) { 
-                      file.previewElement.classList.add('dz-complete');
-                      });
-            }
-    });
-    
-});
-
-
-function handleClick(myRadio){
-if(myRadio.value=="2"){
-    $('#dropzoneitem').hide(); 
-}
-else{
-    $('#dropzoneitem').show(); 
-
-}
-}
-
-
-</script>
+@include('documentos.editar_script')
 @endsection
