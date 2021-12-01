@@ -45,7 +45,7 @@ Route::get('/editar/documento/{id}', 'DocumentosController@editar');
 Route::post('/generar/estadistica', 'DocumentosController@mostrar_estadistica');
 Route::post('/consultas/doc', 'DocumentosController@consultar_documento');
 Route::post('/update/document', 'DocumentosController@update_document');
-
+Route::post('/update/file', 'DocumentosController@update_file');
 Route::post('/save/document', 'DocumentosController@guardar_documento');
 
 

@@ -45,8 +45,18 @@ function changeselectedit(data){
       }
 }
 
+function updated_data(){
+ var url="/update/document";
+  var formData = new FormData();
+  formData.append("nm", $('#td').val());
+  formData.append("numid", $('#est_id').val());
+  formData.append("docid", $('#doc_id').val());
+  formData.append("id_documento", id_documento);
+ axios.post(url,formData).then(response =>{
 
-
+  console.log(response.data);
+   });
+}
 
 Dropzone.autoDiscover = false;
 document.addEventListener('DOMContentLoaded', () => {
@@ -56,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         maxFilesize: 50,
         parallelUploads: 1,
         maxFiles: 1,
-        url: "/update/document",
+        url: "/update/file",
         dictDefaultMessage: 'Sube aquí tu archivo',
         acceptedFiles: ".pdf",
         addRemoveLinks: true,
