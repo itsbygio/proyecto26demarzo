@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Documento;
 use App\Estudiante;
@@ -42,29 +43,149 @@ class DocumentosController extends Controller
         ]);
     }
     public function update_document(request $request){
-        $documento= Documento::find($request->id);
-        $archivo = $request->file('file');
-        $ext='.'.$archivo->extension();
-
+        $documento= Documento::find($request->id_documento);
        switch ($request->nm) {
            case 'acr':
-        $documento->titulo=$archivo->getClientOriginalName();
-        $documento->ext=$ext;
-        $documento->tipo="Acta";
-        $documento->subtipo="Acta de reunion";
-        $documento->nm="acr";
-        $documento->id_est=null;
-        $documento->id_doc=null;
-        $documento->id_user_m=Auth::user()->id;
-        $documento->save();
-        break;
-           
-           default:
+                $documento->tipo="Acta";
+                $documento->subtipo="Acta de reunion";
+                $documento->nm="acr";
+                $documento->id_est=null;
+                $documento->id_doc=null;
+                $documento->id_user_m=Auth::user()->id;
+                $documento->save();
+          break;
+          case 'cone':
+                $documento->tipo="Constancia";
+                $documento->subtipo="Constancia de estudio";
+                $documento->nm="cone";
+                $documento->id_est=$request->numid;
+                $documento->id_doc=null;
+                $documento->id_user_m=Auth::user()->id;
+                $documento->save();
+           break;
+           case 'cen':
+                $documento->tipo="Certificado";
+                $documento->subtipo="Certificado de notas";
+                $documento->nm="cen";
+                $documento->id_est=$request->numid;
+                $documento->id_doc=null;
+                $documento->id_user_m=Auth::user()->id;
+                $documento->save();
+         break;
+            case 'pd':
+                $documento->tipo="Permiso";
+                $documento->subtipo="Permiso de docente";
+                $documento->nm="pd";
+                $documento->id_est=null;
+                $documento->id_doc=$request->docid;
+                $documento->id_user_m=Auth::user()->id;
+                $documento->save();
+            break;
+            case 'cir':
+                $documento->tipo="Circular";
+                $documento->subtipo="Ninguno";
+                $documento->nm="pd";
+                $documento->id_est=$request->numid;
+                $documento->id_doc=null;
+                $documento->id_user_m=Auth::user()->id;
+                $documento->save();
+            break;
+            case 'ia':
+                $documento->tipo="Informe";
+                $documento->subtipo="Informe Academico";
+                $documento->nm="ia";
+                $documento->id_est=null;
+                $documento->id_doc=null;
+                $documento->id_user_m=Auth::user()->id;
+                $documento->save();
+            break;
+            case 'cd':
+                $documento->tipo="Citacion";
+                $documento->subtipo="Ninguno";
+                $documento->nm="cd";
+                $documento->id_est=null;
+                $documento->id_doc=null;
+                $documento->id_user_m=Auth::user()->id;
+                $documento->save();
+            break;
+            case 'orcm':
+                $documento->tipo="Orden";
+                $documento->subtipo="Orden de cancelacion matricula";
+                $documento->nm="orcm";
+                $documento->id_est=$request->numid;
+                $documento->id_doc=null;
+                $documento->id_user_m=Auth::user()->id;
+                $documento->save();
+            break;
+            case 'pys':
+                $documento->tipo="Paz y Salvo";
+                $documento->subtipo="Ninguno";
+                $documento->nm="pys";
+                $documento->id_est=$request->numid;
+                $documento->id_doc=null;
+                $documento->id_user_m=Auth::user()->id;
+                $documento->save();
+            break;
+            case 'ifp':
+                $documento->tipo="Informe";
+                $documento->subtipo="Informe de diploma";
+                $documento->nm="ifp";
+                $documento->id_est=null;
+                $documento->id_doc=null;
+                $documento->id_user_m=Auth::user()->id;
+                $documento->save();
+            break;
+            case 'acg':
+                $documento->tipo="Acta";
+                $documento->subtipo="Acta de grado";
+                $documento->nm="acg";
+                $documento->id_est=$request->numid;
+                $documento->id_doc=null;
+                $documento->id_user_m=Auth::user()->id;
+                $documento->save();
+            break;
+            case 'dp':
+                $documento->tipo="Diploma";
+                $documento->subtipo="Ninguno";
+                $documento->nm="dp";
+                $documento->id_est=$request->numid;
+                $documento->id_doc=null;
+                $documento->id_user_m=Auth::user()->id;
+                $documento->save();
+            break;
+            case 'rs':
+                $documento->tipo="Resolucion";
+                $documento->subtipo="Ninguno";
+                $documento->nm="rs";
+                $documento->id_est=null;
+                $documento->id_doc=null;
+                $documento->id_user_m=Auth::user()->id;
+                $documento->save();
+            break;
+            default:
                # code...
                break;
        }
-       $nombreDocumento = $$request->id.'.'.$archivo->extension();
-       $archivo->move(public_path('documentos'),$nombreDocumento);
+       
+      
+    }
+    public function update_file(request $request){
+        $documento= Documento::find($request->id_documento);
+        $archivo = $request->file('file');
+        $ext='.'.$archivo->extension();
+        $nombreDocumento = $documento->id.$ext;
+
+        $Fileexist= Storage::disk('public')->exists('documentos/'.$documento->id.$ext);
+       if($Fileexist){
+        $documento->ext=$ext;
+        Storage::disk('public')->delete('documentos/'.$documento->id.$ext);
+        $archivo->move(public_path('documentos/'),$nombreDocumento);
+       }
+       else{
+        $documento->ext=$ext;
+        $archivo->move(public_path('documentos/'),$nombreDocumento);
+       }
+
     }
         
     public function consultar_documento(request $request){
@@ -127,7 +248,7 @@ class DocumentosController extends Controller
                     'tipo' => "Constancia",
                     'subtipo'=> "Constancia de estudio",
                      'nm' =>"cone",
-                     'id_est'=>Estudiante::where('num_id',$request->numid)->first()->id,
+                     'id_est'=>$request->numid,
                      'id_doc'=>null,
                      'id_user_c' =>Auth::user()->id,
                      'id_user_m'=>null
@@ -141,7 +262,7 @@ class DocumentosController extends Controller
                     'tipo' => "Certificado",
                     'subtipo'=> "Certificado de notas",
                      'nm' =>"cen",
-                     'id_est'=>Estudiante::where('num_id',$request->numid)->first()->id,
+                     'id_est'=>$request->numid,
                      'id_doc'=>null,
                      'id_user_c' =>Auth::user()->id,
                      'id_user_m'=>null
@@ -155,7 +276,7 @@ class DocumentosController extends Controller
                         'subtipo'=> "Permiso docente",
                          'nm' =>"pd",
                          'id_est'=>null,
-                         'id_doc'=>Docente::where('num_id',$request->docid)->first()->id,
+                         'id_doc'=>$request->docid,
                          'id_user_c' =>Auth::user()->id,
                          'id_user_m'=>null
                       ]);
@@ -209,7 +330,7 @@ class DocumentosController extends Controller
                             'tipo' => "Orden",
                             'subtipo'=> "Orden de cancelacion matricula",
                              'nm' =>"orcm",
-                             'id_est'=>Estudiante::where('num_id',$request->numid)->first()->id,
+                             'id_est'=>$request->numid,
                              'id_doc'=>null,
                              'id_user_c' =>Auth::user()->id,
                              'id_user_m'=>null
@@ -222,7 +343,7 @@ class DocumentosController extends Controller
                             'tipo' => "Paz y salvo",
                             'subtipo'=> "Ninguno",
                              'nm' =>"pys",
-                             'id_est'=>Estudiante::where('num_id',$request->numid)->first()->id,
+                             'id_est'=>$request->numid,
                              'id_doc'=>null,
                              'id_user_c' =>Auth::user()->id,
                              'id_user_m'=>null
@@ -248,7 +369,7 @@ class DocumentosController extends Controller
                             'tipo' => "Acta",
                             'subtipo'=> "Acta de grado",
                              'nm' =>"acg",
-                             'id_est'=>Estudiante::where('num_id',$request->numid)->first()->id,
+                             'id_est'=>$request->numid,
                              'id_doc'=>null,
                              'id_user_c' =>Auth::user()->id,
                              'id_user_m'=>null
@@ -261,7 +382,7 @@ class DocumentosController extends Controller
                             'tipo' => "Diploma",
                             'subtipo'=> "Ninguno",
                              'nm' =>"dp",
-                             'id_est'=>Estudiante::where('num_id',$request->numid)->first()->id,
+                             'id_est'=>$request->numid,
                              'id_doc'=>null,
                              'id_user_c' =>Auth::user()->id,
                              'id_user_m'=>null
@@ -283,8 +404,8 @@ class DocumentosController extends Controller
             default:
                echo "i no es igual a 0, 1 ni 2";
         }
-
-
+        $nombreImagen = $file->id.$ext;
+        $archivo->move(public_path('documentos/'),$nombreImagen);
     }
 
 
@@ -299,6 +420,7 @@ class DocumentosController extends Controller
         switch ($request->nm) {
             case "acr":
             $subtipo= "Actas de reuniones";
+        
             break;
             case "cone":
             $subtipo= "Constancias de estudio";

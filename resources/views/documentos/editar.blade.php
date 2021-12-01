@@ -63,8 +63,8 @@
  
     </div>
     <br>
-    <button class="btn btn-primary  ml-4 ">  Guardar cambios  </button>
-    <br>
+    <button type="button" onclick="updated_data()" class="btn btn-primary  ml-4 ">  Guardar cambios  </button>
+    <br><br>
 </div>
 @include('documentos.modales.upload_modal')
 @endsection
