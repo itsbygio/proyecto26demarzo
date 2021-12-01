@@ -1,4 +1,6 @@
 <script>
+var id_documento = "<?php echo $documento->id ?>";
+
    $( "#btn_upload_modal" ).click(function() {
     $('#upload_modal').modal('show'); 
    });
@@ -54,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         maxFilesize: 50,
         parallelUploads: 1,
         maxFiles: 1,
-        url: "/save/document",
+        url: "/update/document",
         dictDefaultMessage: 'Sube aquí tu archivo',
         acceptedFiles: ".pdf",
         addRemoveLinks: true,
@@ -68,7 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         formData.append("nm", $('#td').val());
                         formData.append("numid", $('#est_id').val());
                         formData.append("docid", $('#doc_id').val());
+                        formData.append("id_documento", id_documento);
 
+                        
                 });
 
               this.on("queuecomplete", function () {
@@ -81,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.on("addedfile", function(file) { 
                   file.previewElement.classList.add('dz-complete');
                   });
-              $("#btn-upload").click(function(e){
+              $("#edit_btn_document").click(function(e){
+                  
                // e.preventDefault();
                 dropzoneUpload.processQueue();
                Swal.fire({
@@ -91,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
               }).then(function() {
             //  location.href="/tienda/administrador";
+            
                 });       
                
               }); 
