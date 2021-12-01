@@ -64,7 +64,7 @@
     </div>
     <br>
     <button type="button" id="edit_btn_document" class="btn btn-primary  ml-4 ">  Guardar cambios  </button>
-    <br>
+    <br><br>
 </div>
 @include('documentos.modales.upload_modal')
 @endsection
