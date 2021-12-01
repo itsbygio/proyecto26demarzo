@@ -14,7 +14,7 @@ class DocumentosSeeder extends Seeder
         DB::table('documentos')->insert([
             'id' =>'1',
             'titulo'=>'Acta de reunion',
-            'ruta'=>'1.pdf', 
+            'ext'=>'.pdf', 
             'tipo' =>'Acta',
             'subtipo' =>'Acta de reunion',
             'nm'=>'acr',
@@ -28,7 +28,7 @@ class DocumentosSeeder extends Seeder
         DB::table('documentos')->insert([
             'id' =>'2',
             'titulo'=>'Constancia',
-            'ruta'=>'2.pdf', 
+            'ext'=>'.pdf', 
             'tipo' =>'Constancia',
             'subtipo'=>'Constancia de estudio',
             'nm'=>'cone',
@@ -42,7 +42,7 @@ class DocumentosSeeder extends Seeder
         DB::table('documentos')->insert([
             'id' =>'3',
             'titulo'=>'Certificado',
-            'ruta'=>'3.pdf', 
+            'ext'=>'.pdf', 
             'tipo' =>'Certificado',
             'subtipo' =>'Certificado de notas',
             'nm'=>'cen',
@@ -56,7 +56,7 @@ class DocumentosSeeder extends Seeder
         DB::table('documentos')->insert([
             'id' =>'4',
             'titulo'=>'Permiso de docente',
-            'ruta'=>'4.pdf', 
+            'ext'=>'.pdf', 
             'tipo' =>'Permiso',
             'subtipo' =>'Permiso de docente',
             'nm'=>'pd',
@@ -70,7 +70,7 @@ class DocumentosSeeder extends Seeder
         DB::table('documentos')->insert([
             'id' => '5',
             'titulo'=> 'Formato de circulares',
-            'ruta'=>  '5.pdf', 
+            'ext'=>  '.pdf', 
             'tipo' => 'Circular',
             'subtipo'=> null,
             'nm'=>'cir',
@@ -84,7 +84,7 @@ class DocumentosSeeder extends Seeder
         DB::table('documentos')->insert([
             'id' =>'6',
             'titulo'=>'Informe academico',
-            'ruta'=>'6.pdf', 
+            'ext'=>'.pdf', 
             'tipo' => 'Informe',
             'subtipo'=>'Informe Academico',
             'nm' => 'ia',
@@ -98,8 +98,8 @@ class DocumentosSeeder extends Seeder
         DB::table('documentos')->insert([
             'id' =>'7',
             'titulo'=>'Citacion de docentes',
-            'ruta'=>'7.pdf', 
-            'tipo' => 'Citacion',
+            'ext'=>'.pdf', 
+            'ext' => 'Citacion',
             'subtipo' => 'Citacion de docentes',
             'nm' => 'cd',
             'id_est'=> null,
@@ -112,7 +112,7 @@ class DocumentosSeeder extends Seeder
         DB::table('documentos')->insert([
             'id' =>'8',
             'titulo'=>'Orden de cancelacion matricula',
-            'ruta'=>  '8.pdf', 
+            'ext'=>  '.pdf', 
             'tipo' => 'Orden ',
             'subtipo' => 'Orden de cancelacion matricula',
             'nm' => 'orcm',
@@ -126,7 +126,7 @@ class DocumentosSeeder extends Seeder
         DB::table('documentos')->insert([
             'id' =>'9',
             'titulo'=>'Paz y salvo estudiante',
-            'ruta'=>  '9.pdf', 
+            'ext'=>  '.pdf', 
             'tipo' => 'Paz y Salvo',
             'subtipo' => null,
             'nm' => 'pys',
@@ -140,7 +140,7 @@ class DocumentosSeeder extends Seeder
         DB::table('documentos')->insert([
             'id' =>'10',
             'titulo'=>'Informes de diplomas',
-            'ruta'=>  '10.pdf', 
+            'ext'=>  '.pdf', 
             'tipo' => 'Informe',
             'subtipo' => 'Informe de diplomas',
             'nm' => 'ifp',
@@ -154,7 +154,7 @@ class DocumentosSeeder extends Seeder
         DB::table('documentos')->insert([
             'id' =>'11',
             'titulo'=>'Acta de grado',
-            'ruta'=>  '10.pdf', 
+            'ext'=>  '10.pdf', 
             'tipo' => 'Acta',
             'subtipo'=>'Acta de grado',
             'nm' => 'acg',
@@ -168,7 +168,7 @@ class DocumentosSeeder extends Seeder
         DB::table('documentos')->insert([
             'id' =>'12',
             'titulo'=>'Diploma',
-            'ruta'=>  '11.pdf', 
+            'ext'=>  '11.pdf', 
             'tipo' => 'Diploma',
             'subtipo'=> null,
             'nm' => 'dp',
@@ -182,7 +182,7 @@ class DocumentosSeeder extends Seeder
         DB::table('documentos')->insert([
             'id' =>'13',
             'titulo'=>'Resolucion',
-            'ruta'=>  '12.pdf', 
+            'ext'=>  '12.pdf', 
             'tipo' => 'Resolucion',
             'subtipo'=> null,
             'nm' => 'rs',

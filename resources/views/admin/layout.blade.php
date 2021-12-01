@@ -422,6 +422,8 @@
 <script src="{{ asset('/js/vue.js')}}"></script>
 <script src="{{ asset('/js/axios.min.js')}}"></script>
  <script src="{{ asset('/js/bootbox.min.js')}}"></script>
+ <script src="{{ asset('/js/dropzone.min.js')}}"></script>
+
 @yield('scripts')
 
 </body>

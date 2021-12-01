@@ -26,46 +26,16 @@
              </tr>
          </thead>
          <tbody  >
-        <tr>
-            <td>ACTA DE REUNION SEMANA TECNICA </td>
-            <td>ACTA</td>
-            <td>ACTA DE REUNION</td>
-            <td>28-10-2021 12:30:00</td>
-            <td>28-10-2021 12:30:00</td>
-            <td style="text-align:center"><a href="/editar/documento" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
-        </tr>
-        <tr>
-            <td>ACTA DE REUNION SEMANA TECNICA </td>
-            <td>ACTA</td>
-            <td>ACTA DE REUNION</td>
-            <td>28-10-2021 12:30:00</td>
-            <td>28-10-2021 12:30:00</td>
-            <td style="text-align:center"><a href="/editar/documento" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
-        </tr>
-        <tr>
-            <td>ACTA DE REUNION SEMANA TECNICA </td>
-            <td>ACTA</td>
-            <td>ACTA DE REUNION</td>
-            <td>28-10-2021 12:30:00</td>
-            <td>28-10-2021 12:30:00</td>
-            <td style="text-align:center"><a href="/editar/documento" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
-        </tr>
-        <tr>
-            <td>ACTA DE REUNION SEMANA TECNICA </td>
-            <td>ACTA</td>
-            <td>ACTA DE REUNION</td>
-            <td>28-10-2021 12:30:00</td>
-            <td>28-10-2021 12:30:00</td>
-            <td style="text-align:center"><a href="/editar/documento" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
-        </tr>
-        <tr>
-            <td> CERTIFICADO DE TERMINACION DE PRACTICAS DEL ESTUDIANTE MIGUEL ANGEL OCAMPO CHAVARRO DE LA UNIVERSIDAD DE INVESTIGACION Y DESARROLLO </td>
-            <td>ACTA</td>
-            <td>ACTA DE REUNION</td>
-            <td>28-10-2021 12:30:00</td>
-            <td>28-10-2021 12:30:00</td>
-            <td style="text-align:center"><a href="/editar/documento" class='btn btn-primary' ><i class='fas fa-pen-alt'></i></a> <button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-minus-square'></i></button><button  class='btn btn-primary  ml-3' onclick="btn_drop('1')"><i class='far fa-eye'></i></button></td>
-        </tr>
+         @foreach($documentos as $documento)
+           <tr>
+            <td>{{$documento->titulo}}</td>
+            <td>{{$documento->tipo}}</td>
+            <td>{{$documento->subtipo}}</td>
+            <td>{{$documento->created_at}}</td>
+            <td>{{$documento->updated_at}}</td>
+            <td><a href="/editar/documento/{{$documento->id}}" class="btn btn-primary fas fa-pen-alt"></a></td>
+           </tr>
+          @endforeach
          </tbody>
 
      </table>

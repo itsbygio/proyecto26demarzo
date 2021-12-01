@@ -41,10 +41,12 @@ Route::get('/listar/documentos', 'DocumentosController@listar');
 Route::get('/estadisticas/documentos', 'DocumentosController@estadisticas');
 Route::get('/consultar/documentos', 'DocumentosController@consultar');
 Route::get('/dropzone/upload', 'DocumentosController@dropzone');
-Route::get('/editar/documento', 'DocumentosController@editar');
+Route::get('/editar/documento/{id}', 'DocumentosController@editar');
 Route::post('/generar/estadistica', 'DocumentosController@mostrar_estadistica');
 Route::post('/consultas/doc', 'DocumentosController@consultar_documento');
+Route::post('/update/document', 'DocumentosController@update_document');
 
+Route::post('/save/document', 'DocumentosController@guardar_documento');
 
 
 
