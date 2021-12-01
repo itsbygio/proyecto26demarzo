@@ -87,9 +87,6 @@ Editar docente </h4><br>
                 <option value="D">D</option>
                 @endif
                
-
-
-
         </select>
         </div>
      <div class="col-md-4 mb-4">

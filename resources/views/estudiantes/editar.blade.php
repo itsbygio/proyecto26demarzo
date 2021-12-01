@@ -75,6 +75,23 @@ Editar Estudiante </h4><br>
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>
+     <div class="col-md-4 mb-4">
+     <p>sede</p>
+
+     <select id="sede" name="sede"   type="text" class="form-control" id="exampleFormControlSelect1" >
+               <option value="{{$estudiantes->sede}}">{{$estudiantes->sede}}</option> 
+               @if($estudiantes->sede!="A")
+                <option value="A">A</option>
+                @endif
+                @if($estudiantes->sede!="B")
+                <option value="B">B</option>
+                @endif
+                @if($estudiantes->sede!="D")
+                <option value="D">D</option>
+                @endif
+               
+        </select>
+        </div>
  
      <div class="col-md-4 mb-4">
      <p>¿El estudiante es egresado?:</p>
