@@ -65,8 +65,21 @@
      </div>
      <div class="col-md-4 mb-4">
      <p>Direccion:</p>
-        <input id="direccion"  name="direccion" type="text" class="form-control" value="{{old('direccion')}}">
+     <input id="direccion"  name="direccion" type="text" class="form-control" value="{{old('direccion')}}">
+     
         @error('direccion')
+        <div   style="color:red;" >{{ $message }}*</div>
+        @enderror
+     </div>
+     <div class="col-md-4 mb-4">
+     <p>Sede:</p>
+     <select id="sede" name="sede"   type="text" class="form-control" id="exampleFormControlSelect1"  value="{{old('sede')}}">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="D">D</option>
+            
+        </select>
+        @error('sede')
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>

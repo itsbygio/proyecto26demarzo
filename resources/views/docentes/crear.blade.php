@@ -76,14 +76,11 @@
      <div class="col-md-4 mb-4">
      <p>sede</p>
 
-     <select id="sede" name="sede"   type="text" class="form-control" id="exampleFormControlSelect1"  value="{{old('escalafon')}}">
-                <option value="1">A</option>
-                <option value="2">B</option>
-                <option value="3">D</option>
-               
-
-
-
+     <select id="sede" name="sede"   type="text" class="form-control" id="exampleFormControlSelect1"  value="{{old('sede')}}">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="D">D</option>
+            
         </select>
         </div>
      <div class="col-md-4 mb-4">

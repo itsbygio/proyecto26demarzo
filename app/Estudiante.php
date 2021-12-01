@@ -13,7 +13,7 @@ class Estudiante extends Model
 
     public $fillable = [
         'id', 'nombre', 'apellidos','email','contacto', 'direccion' ,'tipo_doc', 
-        'num_id', 'estado', 'fecha_f','id_curso', 'created_at','updated_at'
+        'num_id','sede', 'estado', 'fecha_f','id_curso', 'created_at','updated_at'
     ];
     public function curso(){
         return $this->belongsTo('App\Curso','id_curso');
