@@ -20,6 +20,14 @@
                 <input type="text"  name="titulo" class="form-control" value="{{$cursos->titulo}}" aria-label="Recipient's username" aria-describedby="basic-addon2" >
                
         </div>        
+        
+      </div>
+      <div class="col-xl-4">
+        <h5>El curso en letras es:</h5>
+        <div class="input-group mb-3">
+                <input type="text"  name="titulo_letras" class="form-control" value="{{$cursos->titulo_letras}}" aria-label="Recipient's username" aria-describedby="basic-addon2" >
+              
+        </div>        
       </div>
       <div class="col-xl-4">
         <h5>El año del curso es:</h5>

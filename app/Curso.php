@@ -10,7 +10,7 @@ class Curso extends Model
     protected $table = 'cursos';  
 
     public $fillable = [
-        'id', 'titulo', 'año', 'created_at','updated_at'
+        'id', 'titulo', 'titulo_letras','año', 'created_at','updated_at'
     ];
     public function estudiantes(){
         return $this->hasMany('App\Estudiante','id');

@@ -63,6 +63,7 @@ class cursosController extends Controller
     public function store(Request $request){
         $validatedData = $request->validate([
             'titulo' => ['required'],
+            'titulo_letras' => ['required'],
             'año'    => ['required']
         
         ]);
@@ -71,6 +72,7 @@ class cursosController extends Controller
         $cursos=Curso::create([
 
             'titulo'=>$request->titulo,
+            'titulo_letras'=>$request->titulo_letras,
             'año'=>$request->año,
             'created_at'=>date('d-m-Y H:i:s'),
             'updated_at'=>date('d-m-Y H:i:s')
@@ -83,12 +85,14 @@ class cursosController extends Controller
         
         $validatedData = $request->validate([
             'titulo' => ['required'],
+            'titulo_letras' => ['required'],
             'año'    => ['required']
         
         ]);
 
         $curso=Curso::find($id);
         $curso->titulo=$request->titulo;
+        $curso->titulo_letras=$request->titulo_letras;
         $curso->año=$request->año;
         $curso->save();
 

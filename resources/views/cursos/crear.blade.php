@@ -20,6 +20,12 @@
         <input type="text" name="titulo" class="form-control" value="{{old('titulo')}}" >
         </div>
     </div>
+    <div class="row mb-3">
+        <div class="col-xl-4">
+        <p>Escriba el nombre  del curso en letras</p>
+        <input type="text" name="titulo_letras" class="form-control" value="{{old('titulo')}}" >
+        </div>
+    </div>
   <div class="row mb-3">
         <div class="col-xl-4">
                 <p>Escriba el año del  curso</p>
