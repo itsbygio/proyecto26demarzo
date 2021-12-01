@@ -33,7 +33,7 @@
             <td>{{$documento->subtipo}}</td>
             <td>{{$documento->created_at}}</td>
             <td>{{$documento->updated_at}}</td>
-            <td><a href="/editar/documento/{{$documento->id}}" class="btn btn-primary fas fa-pen-alt"></a></td>
+            <td><a href="/editar/documento/{{$documento->id}}" class="btn btn-primary fas fa-pen-alt"></a><button type="button" onclick="watchdocument('/documentos/{{$documento->id}}{{$documento->ext}}')"  class="btn btn-primary fas fa-eye ml-1"></button><a href="/documentos/{{$documento->id}}{{$documento->ext}}" class="btn btn-primary fas fa-download ml-1" download></a></td>
            </tr>
           @endforeach
          </tbody>
@@ -41,6 +41,7 @@
      </table>
     </div>
 </div>
+
 @endsection
 @section('scripts')
 <script>
@@ -97,6 +98,12 @@
         }
     }
 });
+    }
+
+    function watchdocument(url){
+        window.open(url);
+
+
     }
 </script>
 @endsection
