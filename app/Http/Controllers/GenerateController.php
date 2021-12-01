@@ -2,55 +2,85 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use PhpOffice\PhpWord\Element\TextRun;
+use PhpOffice\PhpWord\TemplateProcessor;
 
 class GenerateController extends Controller
 {
-    public function actas_reunion(request $request){
-        return response()->json([
-            'fecha_reunion' => $request->fecha_reunion,
-            'lugar_reunion' =>$request->lugar_reunion,
-            'hora_inicio' => $request->hora_inicio,
-            'hora_final' =>$request->hora_final,
-            'agenda'=>$request->agenda,
-            'objeto_reunion'=>$request->objeto_reunion,
-            'desarrollo'=>$request->desarrollo_reunion,
-            'descripcion'=>  $request->descripcion_reunion,
-            'nombre_doc'=>$request->nombre_doc    
-         ],200);
+    public function actas_reunion(request $request)
+    {
+
+
+        $filename = "nueva_acta.docx";
+        $templateProcessor = new TemplateProcessor('templates/acta.docx');
+
+        $fontStyle['name'] = 'Arial';
+        $fontStyle['size'] = 20;
+        
+        $inline = new TextRun();
+        $inline->addText(
+
+            htmlspecialchars($request->descripcion_reunion),
+            $fontStyle
+        );
+
+        $templateProcessor->setComplexValue('Descripcion', $inline);
+        $pathToSave = public_path() . '/generados/' . $filename;
+        $templateProcessor->saveAs($pathToSave);
+        return response()->download($pathToSave)
+            // ->deleteFileAfterSend(true)
+        ;
+
+        // return response()->json([
+        //     'fecha_reunion' => $request->fecha_reunion,
+        //     'lugar_reunion' => $request->lugar_reunion,
+        //     'hora_inicio' => $request->hora_inicio,
+        //     'hora_final' => $request->hora_final,
+        //     'agenda' => $request->agenda,
+        //     'objeto_reunion' => $request->objeto_reunion,
+        //     'desarrollo' => $request->desarrollo_reunion,
+        //     'descripcion' =>  $request->descripcion_reunion,
+        //     'nombre_doc' => $request->nombre_doc
+        // ], 200);
     }
-    public function permisos_docentes(request $request){
+    public function permisos_docentes(request $request)
+    {
         return response()->json([
             'identificacion' => $request->cedula_docente,
-            'nombre_doc'=>$request->nombre_doc    
+            'nombre_doc' => $request->nombre_doc
 
-    
-         ],200);
+
+        ], 200);
     }
-    public function certificado_notas(request $request){
+    public function certificado_notas(request $request)
+    {
         return response()->json([
             'identificacion' => $request->id_cer_est,
-            'nombre_doc'=>$request->nombre_doc    
+            'nombre_doc' => $request->nombre_doc
 
-    
-         ],200);
+
+        ], 200);
     }
-    public function constancia_estudio(request $request){
+    public function constancia_estudio(request $request)
+    {
         return response()->json([
             'identificacion' => $request->id_con_est,
-            'nombre_doc'=>$request->nombre_doc    
+            'nombre_doc' => $request->nombre_doc
 
-    
-         ],200);
+
+        ], 200);
     }
-    public function circular(request $request){
+    public function circular(request $request)
+    {
         return response()->json([
             'para' => $request->para,
-            'de'=> $request->de,
-            'asunto'=>$request->asunto,
-            'descripcion' =>$request->descripcion,
-            'nombre_doc'=>$request->nombre_doc    
+            'de' => $request->de,
+            'asunto' => $request->asunto,
+            'descripcion' => $request->descripcion,
+            'nombre_doc' => $request->nombre_doc
 
-         ],200);
+        ], 200);
     }
 }
