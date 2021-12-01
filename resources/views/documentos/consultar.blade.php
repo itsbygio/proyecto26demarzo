@@ -16,7 +16,7 @@
             <div id="inputsdate"></div>
             <br>
             <p>Seleccione el documento:</p>
-            <select id="td" name="td" class="form-control">
+            <select onchange="ChangeConsultDocument(this)" id="td" name="td" class="form-control">
                     <option value="">Seleccione un  documento</option>
                     <option value="acr">Acta de reunion</option>
                     <option value="cone">Constancia de estudio</option>
@@ -32,6 +32,18 @@
                     <option value="dp">Diplomas</option>
                     <option value="rs">Resoluciones</option>
             </select>
+    </div><br>
+    <div style="display:none" id="seccion_upload_constancia" class="row  ml-1 mb-2">
+        <div class="col-xl-5">
+            <p>Ingrese el numero de identificacion del estudiante</p>
+          <input id="est_num" type="text" class="form-control" placeholder="Porfavor Ingrese el numero de identificacion">
+        </div>
+    </div>
+    <div style="display:none" id="seccion_upload_permiso" class="row  ml-1 mb-2">
+        <div class="col-xl-5">
+            <p>Ingrese el numero de identificacion del docente</p>
+          <input id="doc_num" type="text" class="form-control" placeholder="Porfavor Ingrese el numero de identificacion">
+        </div>
     </div>
     <br>
     <div class="row">

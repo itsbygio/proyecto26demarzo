@@ -31,7 +31,8 @@ function consultar(){
     formData.append('dia',dia);
     formData.append('year',year);
     formData.append('mes',mes);
-    formData.append('nm',$('#td').val());
+    formData.append('num_est',$('#est_num')val());
+    formData.append('num_doc',$('#doc_num').val());
     console.log($('#dia').val());
     
     axios.post(url,formData).then(response =>{
@@ -73,8 +74,42 @@ function asignarvalores(){
 
     break;
   default:
- 
+}
+}
+function ChangeConsultDocument(data){
+switch (data.value) {
+  case "cone":
+         $("#seccion_upload_constancia").show();
+         $("#seccion_upload_permiso").hide();
+          break;
+        case "cen": 
+          $("#seccion_upload_permiso").hide();
+          $("#seccion_upload_constancia").show();
+          break;
+        case "pd": 
+          $("#seccion_upload_constancia").hide();
+          $("#seccion_upload_permiso").show();
+          break; 
+         case "orcm": 
+           $("#seccion_upload_permiso").hide();
+           $("#seccion_upload_constancia").show();
 
+          break; 
+          case "pys": 
+           $("#seccion_upload_permiso").hide();
+           $("#seccion_upload_constancia").show();
+          break; 
+          case "acg": 
+           $("#seccion_upload_permiso").hide();
+           $("#seccion_upload_constancia").show();
+          break; 
+          case "dp": 
+           $("#seccion_upload_permiso").hide();
+           $("#seccion_upload_constancia").show();
+          break;
+         default:
+          $("#seccion_upload_constancia").hide();
+          $("#seccion_upload_permiso").hide();
 }
 }
 
