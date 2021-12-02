@@ -26,56 +26,7 @@ input2.setAttribute("id","mes");
 input4.setAttribute("type","text");
 input4.setAttribute("class","form-control");
 input4.setAttribute("id","year");
-function consultar(){ 
-    asignarvalores();
-    formData.append('dia',dia);
-    formData.append('year',year);
-    formData.append('mes',mes);
-    formData.append('num_est',$('#est_num')val());
-    formData.append('num_doc',$('#doc_num').val());
-    console.log($('#dia').val());
-    
-    axios.post(url,formData).then(response =>{
 
-       if(response.data.result==0){
-        sweetalert('No se han encontrado registros');
-        datatabla.clear().draw();
-        $('#tablaconsulta').hide();
-       }
-       else{
-            tabledata=localStorage.getItem('tabledata');
-            if(tabledata=="1"){
-              datatabla.clear().draw();
-              datatabla.rows.add(response.data.result);
-              datatabla.columns.adjust().draw();
-              $('#tablaconsulta').show();
-
-            }
-            else{
-            localStorage.setItem('tabledata', '1');
-            datatable(response.data.result);
-            $('#tablaconsulta').show();
-
-            }
-       }
-        });
-  
-}
-function asignarvalores(){
-  switch ($('#selectconsulta').val()) {
-  case 'dia':
-    dia= $('#dia').val();
-    break;
-  case 'mes':
-    mes= $('#mes').val();
-    break;
-  case 'year':
-    year= $('#year').val();
-
-    break;
-  default:
-}
-}
 function ChangeConsultDocument(data){
 switch (data.value) {
   case "cone":
@@ -113,6 +64,60 @@ switch (data.value) {
 }
 }
 
+function consultar(){ 
+    asignarvalores();
+    formData.append('dia',dia);
+    formData.append('year',year);
+    formData.append('mes',mes);
+    formData.append('num_est',$('#est_num').val());
+    formData.append('num_doc',$('#doc_num').val());
+    formData.append('nm',$('#td').val());
+
+    axios.post(url,formData).then(response =>{
+
+       if(response.data.result==0){
+        sweetalert('No se han encontrado registros');
+        datatabla.clear().draw();
+        $('#tablaconsulta').hide();
+       }
+       else{
+            tabledata=localStorage.getItem('tabledata');
+            if(tabledata=="1"){
+              datatabla.clear().draw();
+              datatabla.rows.add(response.data.result);
+              datatabla.columns.adjust().draw();
+              $('#tablaconsulta').show();
+
+            }
+            else{
+            localStorage.setItem('tabledata', '1');
+            datatable(response.data.result);
+            $('#tablaconsulta').show();
+
+            }
+       }
+        });
+  
+}
+
+
+function asignarvalores(){
+  switch ($('#selectconsulta').val()) {
+  case 'dia':
+    dia= $('#dia').val();
+    break;
+  case 'mes':
+    mes= $('#mes').val();
+    break;
+  case 'year':
+    year= $('#year').val();
+
+    break;
+  default:
+}
+}
+
+
 
 function sweetalert(mensaje){
   Swal.fire({
@@ -149,6 +154,7 @@ function ChangeDateSelect(data){
 
     }
     }
+
  function datatable(data){
   datatabla= $('#table_id').DataTable(
             
@@ -173,11 +179,25 @@ function ChangeDateSelect(data){
                     { "data": "titulo" },
                     { "data": "tipo" },
                     { "data": "subtipo" },
-                    { "defaultContent": " <button  class='btn btn-primary mr-3 fas fa-eye' ></button>"},
+                    { "data": "ext" },
+
+                    { "defaultContent": "<button  class='btn btn-primary  fas fa-eye WhatchDocument ' ></button><button  class='btn btn-primary ml-3 fas fa-pen-alt editDocument ' ></button>","className":"text-center"},
 
                     ]
 
             }
             );
+          
  }
+ $('#table_id tbody').on('click', 'button.WhatchDocument', function(){
+        var data= datatabla.row($(this).parents("tr")).data();
+        window.open("/documentos/"+data.id+data.ext);
+
+});
+$('#table_id tbody').on('click', 'button.editDocument', function(){
+  var data= datatabla.row($(this).parents("tr")).data();
+
+location.href="/editar/documento/"+data.id;
+
+});
 </script>

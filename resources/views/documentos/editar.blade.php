@@ -12,9 +12,9 @@
         <div class="col-xl-5 ml-4">
         <p>Nombre del documento:</p>
         <div class="input-group mb-3">
-                    <input type="text" class="form-control " placeholder="Por favor, Eliga el curso" aria-label="Recipient's username" aria-describedby="basic-addon2"  value="{{$documento->titulo}}">
+                    <input type="text" class="form-control"  id="titulo"    value="{{$documento->titulo}}">
                     <div class="input-group-append">
-                        <button class="fas fa-eye btn btn-primary"></button>
+                        <button class="fas fa-eye btn btn-primary" id="WhatDocument"></button>
                     </div>
                 </div>
         </div>

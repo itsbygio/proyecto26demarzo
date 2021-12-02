@@ -61,7 +61,7 @@
                 "type": "GET"
                      },                    
                     "columns": [
-                    { "data": "id" ,"className":"hidden"},
+                    { "data": "id" ,"className":"d-none"},
                     { "data": "nombre" },
                     { "data": "apellidos" },
                     { "data": "num_id" },

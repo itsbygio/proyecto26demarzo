@@ -46,6 +46,7 @@ class DocumentosController extends Controller
         $documento= Documento::find($request->id_documento);
        switch ($request->nm) {
            case 'acr':
+                $documento->titulo=$request->titulo;
                 $documento->tipo="Acta";
                 $documento->subtipo="Acta de reunion";
                 $documento->nm="acr";
@@ -53,44 +54,81 @@ class DocumentosController extends Controller
                 $documento->id_doc=null;
                 $documento->id_user_m=Auth::user()->id;
                 $documento->save();
+                return response()->json([
+                'result' =>"OK"],200);
           break;
           case 'cone':
-                $documento->tipo="Constancia";
-                $documento->subtipo="Constancia de estudio";
-                $documento->nm="cone";
-                $documento->id_est=$request->numid;
-                $documento->id_doc=null;
-                $documento->id_user_m=Auth::user()->id;
-                $documento->save();
+           $registro= Estudiante::where('num_id',$request->numid)->first();
+           if($registro!=null){
+            $documento->titulo=$request->titulo;
+            $documento->tipo="Constancia";
+            $documento->subtipo="Constancia de estudio";
+            $documento->nm="cone";
+            $documento->id_est=$registro->id;
+            $documento->id_doc=null;
+            $documento->id_user_m=Auth::user()->id;
+            $documento->save();
+            return response()->json([
+                'result' =>"OK"],200);
+           }
+           else{
+            return response()->json([
+                'result' =>"No se encuentra el numero de identificacion"],200);
+           }
+
            break;
            case 'cen':
+            $registro= Estudiante::where('num_id',$request->numid)->first();
+            if($registro!=null){
+                $documento->titulo=$request->titulo;
                 $documento->tipo="Certificado";
                 $documento->subtipo="Certificado de notas";
                 $documento->nm="cen";
-                $documento->id_est=$request->numid;
+                $documento->id_est=$registro->id;
                 $documento->id_doc=null;
                 $documento->id_user_m=Auth::user()->id;
                 $documento->save();
+                return response()->json([
+                    'result' =>"OK"],200);
+            }
+            else{
+                return response()->json([
+                    'result' =>"No se encuentra el numero de identificacion"],200);
+              }
          break;
             case 'pd':
-                $documento->tipo="Permiso";
-                $documento->subtipo="Permiso de docente";
-                $documento->nm="pd";
-                $documento->id_est=null;
-                $documento->id_doc=$request->docid;
-                $documento->id_user_m=Auth::user()->id;
-                $documento->save();
+                $registro= Docente::where('num_id',$request->docid)->first();
+                if($registro!=null){
+                    $documento->titulo=$request->titulo;
+                    $documento->tipo="Permiso";
+                    $documento->subtipo="Permiso de docente";
+                    $documento->nm="pd";
+                    $documento->id_est=null;
+                    $documento->id_doc=$registro->id;
+                    $documento->id_user_m=Auth::user()->id;
+                    $documento->save();
+                    return response()->json([
+                    'result' =>"OK"],200);
+                }
+                else{
+                    return response()->json([
+                    'result' =>"No se encuentra el numero de identificacion"],200);
+                }
             break;
             case 'cir':
+                $documento->titulo=$request->titulo;
                 $documento->tipo="Circular";
                 $documento->subtipo="Ninguno";
-                $documento->nm="pd";
-                $documento->id_est=$request->numid;
+                $documento->nm="cir";
+                $documento->id_est=null;
                 $documento->id_doc=null;
                 $documento->id_user_m=Auth::user()->id;
                 $documento->save();
+                return response()->json([
+                    'result' =>"OK"],200);
             break;
             case 'ia':
+                $documento->titulo=$request->titulo;
                 $documento->tipo="Informe";
                 $documento->subtipo="Informe Academico";
                 $documento->nm="ia";
@@ -98,8 +136,11 @@ class DocumentosController extends Controller
                 $documento->id_doc=null;
                 $documento->id_user_m=Auth::user()->id;
                 $documento->save();
+                return response()->json([
+                    'result' =>"OK"],200);
             break;
             case 'cd':
+                $documento->titulo=$request->titulo;
                 $documento->tipo="Citacion";
                 $documento->subtipo="Ninguno";
                 $documento->nm="cd";
@@ -107,26 +148,51 @@ class DocumentosController extends Controller
                 $documento->id_doc=null;
                 $documento->id_user_m=Auth::user()->id;
                 $documento->save();
+                return response()->json([
+                    'result' =>"OK"],200);
             break;
             case 'orcm':
-                $documento->tipo="Orden";
-                $documento->subtipo="Orden de cancelacion matricula";
-                $documento->nm="orcm";
-                $documento->id_est=$request->numid;
-                $documento->id_doc=null;
-                $documento->id_user_m=Auth::user()->id;
-                $documento->save();
+                $registro= Estudiante::where('num_id',$request->numid)->first();
+                if($registro!=null){
+                    $documento->titulo=$request->titulo;
+                    $documento->tipo="Orden";
+                    $documento->subtipo="Orden de cancelacion matricula";
+                    $documento->nm="orcm";
+                    $documento->id_est=$registro->id;
+                    $documento->id_doc=null;
+                    $documento->id_user_m=Auth::user()->id;
+                    $documento->save();
+                    return response()->json([
+                        'result' =>"OK"],200);
+                }
+                else{
+                    return response()->json([
+                    'result' =>"No se encuentra el numero de identificacion"],200);
+                }
             break;
             case 'pys':
+                $registro= Estudiante::where('num_id',$request->numid)->first();
+                if($registro!=null){
+                $documento->titulo=$request->titulo;
                 $documento->tipo="Paz y Salvo";
                 $documento->subtipo="Ninguno";
                 $documento->nm="pys";
-                $documento->id_est=$request->numid;
+                $documento->id_est=$registro->id;
                 $documento->id_doc=null;
                 $documento->id_user_m=Auth::user()->id;
                 $documento->save();
+                return response()->json([
+                    'result' =>"OK"],200);
+                }
+                else{
+                    return response()->json([
+                        'result' =>"No se encuentra el numero de identificacion"],200);
+                }
+
             break;
             case 'ifp':
+    
+                $documento->titulo=$request->titulo;
                 $documento->tipo="Informe";
                 $documento->subtipo="Informe de diploma";
                 $documento->nm="ifp";
@@ -134,26 +200,51 @@ class DocumentosController extends Controller
                 $documento->id_doc=null;
                 $documento->id_user_m=Auth::user()->id;
                 $documento->save();
+                    return response()->json([
+                    'result' =>"OK"],200);
+
             break;
             case 'acg':
+                $registro= Estudiante::where('num_id',$request->numid)->first();
+                if($registro!=null){
+                $documento->titulo=$request->titulo;
                 $documento->tipo="Acta";
                 $documento->subtipo="Acta de grado";
                 $documento->nm="acg";
-                $documento->id_est=$request->numid;
+                $documento->id_est=$registro->id;
                 $documento->id_doc=null;
                 $documento->id_user_m=Auth::user()->id;
                 $documento->save();
+                   return response()->json([
+                    'result' =>"OK"],200);
+                }
+                else{
+                    return response()->json([
+                     'result' =>"No se encuentra el numero de identificacion"],200);
+                }
             break;
             case 'dp':
+                $registro= Estudiante::where('num_id',$request->numid)->first();
+                if($registro!=null){
+                $documento->titulo=$request->titulo;
                 $documento->tipo="Diploma";
                 $documento->subtipo="Ninguno";
                 $documento->nm="dp";
-                $documento->id_est=$request->numid;
+                $documento->id_est=$registro->id;
                 $documento->id_doc=null;
                 $documento->id_user_m=Auth::user()->id;
                 $documento->save();
+                    return response()->json([
+                    'result' =>"OK"],200);
+                }
+                else{
+                    return response()->json([
+                        'result' =>"No se encuentra el numero de identificacion"],200);
+                 }
             break;
             case 'rs':
+
+                $documento->titulo=$request->titulo;
                 $documento->tipo="Resolucion";
                 $documento->subtipo="Ninguno";
                 $documento->nm="rs";
@@ -161,12 +252,14 @@ class DocumentosController extends Controller
                 $documento->id_doc=null;
                 $documento->id_user_m=Auth::user()->id;
                 $documento->save();
+                return response()->json([
+                    'result' =>"OK"],200);
             break;
             default:
                # code...
                break;
        }
-       
+   
       
     }
     public function update_file(request $request){
@@ -185,7 +278,7 @@ class DocumentosController extends Controller
         $documento->ext=$ext;
         $archivo->move(public_path('documentos/'),$nombreDocumento);
        }
-
+   
     }
         
     public function consultar_documento(request $request){
@@ -195,28 +288,83 @@ class DocumentosController extends Controller
      $mes=$request->mes;
      $year= $request->year;
      $nm= $request->nm;
-     
-     if($dia!=null){
-      $result= Documento::where('nm',$request->nm)->whereDate('created_at',$request->dia)->get();
-      return response()->json([
-        'result' =>$result],200);
-       
+     if($request->num_est==null && $request->num_doc==null){
+            if($dia!=null){
+            $result= Documento::where('nm',$request->nm)->whereDate('created_at',$request->dia)->get();
+            return response()->json([
+                'result' =>$result],200);
+            }
 
-     }
-     else if($mes!=null){
-        $mes=substr($request->mes, -2, 3);
-        $añom =substr($request->mes, 0, 4);
-        $result= Documento::where('nm',$request->nm)->whereYear('created_at',$añom)->whereMonth('created_at',$mes)->get();
-        return response()->json([
-            'result' =>$result],200);
+            else if($mes!=null){
+                $mes=substr($request->mes, -2, 3);
+                $añom =substr($request->mes, 0, 4);
+                $result= Documento::where('nm',$request->nm)->whereYear('created_at',$añom)->whereMonth('created_at',$mes)->get();
+                return response()->json([
+                    'result' =>$result],200);
+            }
+            else{
+                $result= Documento::where('nm',$request->nm)->whereYear('created_at',$request->year)->get();
+                return response()->json([
+                    'result' =>$result],200);
+            }
      }
      else{
-        $result= Documento::where('nm',$request->nm)->whereYear('created_at',$request->year)->get();
-        return response()->json([
-            'result' =>$result],200);
+           if($nm=="cone" || $nm=="cen" || $nm="orcm" || $nm=="pys" || $nm=="acg" || $nm=="dp" ){
+            $registro=Estudiante::where('num_id',$request->num_est)->get();
+            if($registro->count()==0){
+                $id_est= null;
+            }
+            else{  
+            $id_est= Estudiante::where('num_id',$request->num_est)->first()->id;
+            }
+            if($dia!=null){
+                $result= Documento::where('nm',$request->nm)->whereDate('created_at',$request->dia)->where('id_est',$id_est)->get();
+                return response()->json([
+                    'result' =>$result],200);
+                }
+    
+                else if($mes!=null){
+                    $mes=substr($request->mes, -2, 3);
+                    $añom =substr($request->mes, 0, 4);
+                    $result= Documento::where('nm',$request->nm)->whereYear('created_at',$añom)->whereMonth('created_at',$mes)->where('id_est',$id_est)->get();
+                    return response()->json([
+                        'result' =>$result],200);
+                }
+                else{
+                    $result= Documento::where('nm',$request->nm)->whereYear('created_at',$request->year)->where('id_est',$id_est)->get();
+                    return response()->json([
+                        'result' =>$result],200);
+                }
+
+           }
+           else{
+               $registro2=Docente::where('num_id',$request->num_doc)->get();
+               if($registro2->count()==0){
+                   $id_doc==null;
+               }
+               else{
+               $id_doc= Docente::where('num_id',$request->num_doc)->first()->id;
+               }
+            if($dia!=null){
+                $result= Documento::where('nm',$request->nm)->whereDate('created_at',$request->dia)->where('id_doc',$id_doc)->get();
+                return response()->json([
+                    'result' =>$result],200);
+                }
+    
+                else if($mes!=null){
+                    $mes=substr($request->mes, -2, 3);
+                    $añom =substr($request->mes, 0, 4);
+                    $result= Documento::where('nm',$request->nm)->whereYear('created_at',$añom)->whereMonth('created_at',$mes)->where('id_doc',$id_doc)->get();
+                    return response()->json([
+                        'result' =>$result],200);
+                }
+                else{
+                    $result= Documento::where('nm',$request->nm)->whereYear('created_at',$request->year)->where('id_doc',$id_doc)->get();
+                    return response()->json([
+                        'result' =>$result],200);
+                }
+           }
      }
-     
-     
 
     }
     public function guardar_documento(request $request ){

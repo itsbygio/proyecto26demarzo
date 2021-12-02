@@ -60,6 +60,7 @@
                     <th>titulo del documento</th>
                     <th>tipo</th>
                     <th>subtipo</th>
+                    <th>ext</th>
                     <th>Opciones</th>
 
                 </tr>         

@@ -1,10 +1,14 @@
 <script>
 var id_documento = "<?php echo $documento->id ?>";
+var ext = "<?php echo $documento->ext ?>";
 
    $( "#btn_upload_modal" ).click(function() {
     $('#upload_modal').modal('show'); 
    });
-
+   $( "#WhatDocument" ).click(function() {
+    window.open("/documentos/"+id_documento+ext);  
+   });
+   
 function changeselectedit(data){
     switch (data.value) {
         case "cone":
@@ -45,17 +49,49 @@ function changeselectedit(data){
       }
 }
 
+function sweetalertsuccess(mensaje){
+  Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: mensaje,
+            showConfirmButton: false,
+            timer: 1500
+           })
+}
+function sweetalertwarning(mensaje){
+  Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: mensaje,
+            showConfirmButton: false,
+            timer: 1500
+           })
+}
 function updated_data(){
+  if( $('#td').val()!=""){
  var url="/update/document";
   var formData = new FormData();
   formData.append("nm", $('#td').val());
   formData.append("numid", $('#est_id').val());
   formData.append("docid", $('#doc_id').val());
-  formData.append("id_documento", id_documento);
- axios.post(url,formData).then(response =>{
+  formData.append("id_documento",id_documento);
+  formData.append("titulo", $('#titulo').val());
 
-  console.log(response.data);
+ axios.post(url,formData).then(response =>{
+     if(response.data.result=="OK"){
+      sweetalertsuccess("Se han guardado los cambios correctamente");
+     }
+     else{
+      sweetalertwarning("No se ha encontrado el numero de identificacion");
+
+
+     }
+ 
    });
+  }
+  else{
+    sweetalertwarning("Por favor elija un documento");
+  }
 }
 
 Dropzone.autoDiscover = false;
@@ -101,16 +137,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 dropzoneUpload.processQueue();
                Swal.fire({
                    icon: 'success',
-                   title: 'Su ha archivo ha sido subido',
+                   title: 'Su ha archivo ha sido reemplazado',
                    timer: 2000
         
               }).then(function() {
-            //  location.href="/tienda/administrador";
-            
+                location.href="/editar/documento/"+id_documento;
                 });       
                
               }); 
             
+            },
+            maxfilesexceeded: function (files) {
+                this.removeAllFiles();
+                this.addFile(files);
             },
             success: function(file, response) {
                 console.log(response);
@@ -118,14 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             },
             error: function(file, response) {
-                    Swal.fire({
-                   icon: 'error',
-                   title: 'Ops',
-                   html:
-                   '<span style="color:white"> Solo puedes subir archivos pdf </span>,'
-                    })
-                
-
+              this.removeFile(file);
             },
     
   });
