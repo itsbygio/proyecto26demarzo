@@ -119,6 +119,7 @@ if(myRadio.value=="2"){
     $('#btn-next').show();
     $('#upload').hide();
     $('#generate').show();
+    $('#nombre_document_upload').hide();
     $('#selectgenerate').prop('selectedIndex',0);
 }
 else{
@@ -129,6 +130,8 @@ else{
     $('#upload').show();
     $('#generate_btn').hide();
     $('#seccion_acta_reunion').hide();
+    $('#nombre_document_upload').show();
+
 
 }
 }

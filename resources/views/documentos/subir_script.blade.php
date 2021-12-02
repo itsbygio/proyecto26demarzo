@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         formData.append("nm", $('#td').val());
                         formData.append("numid", $('#est_id').val());
                         formData.append("docid", $('#doc_id').val());
+                        formData.append("titulo_document_upload", $('#nombre_documento_upload').val());
 
                 });
 
@@ -96,15 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
                
 
             },
+            maxfilesexceeded: function (files) {
+                this.removeAllFiles();
+                this.addFile(files);
+            },
             error: function(file, response) {
-                    Swal.fire({
-                   icon: 'error',
-                   title: 'Ops',
-                   html:
-                   '<span style="color:white"> Solo puedes subir archivos pdf </span>,'
-                    })
-                
+              this.removeFile(file);
 
+                
             },
     
   });

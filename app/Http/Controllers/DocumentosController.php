@@ -370,14 +370,14 @@ class DocumentosController extends Controller
     public function guardar_documento(request $request ){
         
         
-        
+        $titulo_documento= $request->titulo_document_upload;
         $archivo = $request->file('file');
         $ext='.'.$archivo->extension();
 
         switch ($request->nm) {
             case "acr":
                 $file=Documento::create([
-                    'titulo'=>$archivo->getClientOriginalName(),
+                    'titulo'=>$titulo_documento,
                     'ext'=> $ext,
                     'tipo' => "Acta",
                     'subtipo'=> "Acta de reunion",
@@ -391,7 +391,7 @@ class DocumentosController extends Controller
                 break;
             case "cone":
                 $file=Documento::create([
-                    'titulo'=>$archivo->getClientOriginalName(),
+                    'titulo'=>$titulo_documento,
                     'ext'=> $ext,
                     'tipo' => "Constancia",
                     'subtipo'=> "Constancia de estudio",
@@ -405,7 +405,7 @@ class DocumentosController extends Controller
             case "cen":
 
                 $file=Documento::create([
-                    'titulo'=>$archivo->getClientOriginalName(),
+                    'titulo'=>$titulo_documento,
                     'ext'=> $ext,
                     'tipo' => "Certificado",
                     'subtipo'=> "Certificado de notas",
@@ -418,7 +418,7 @@ class DocumentosController extends Controller
                 break;
                 case "pd":
                     $file=Documento::create([
-                        'titulo'=>$archivo->getClientOriginalName(),
+                        'titulo'=>$titulo_documento,
                         'ext'=> $ext,
                         'tipo' => "Permiso",
                         'subtipo'=> "Permiso docente",
@@ -432,7 +432,7 @@ class DocumentosController extends Controller
                 break;
                 case "cir":
                     $file=Documento::create([
-                        'titulo'=>$archivo->getClientOriginalName(),
+                        'titulo'=>$titulo_documento,
                         'ext'=> $ext,
                         'tipo' => "Circular",
                         'subtipo'=> "Ninguno",
@@ -446,7 +446,7 @@ class DocumentosController extends Controller
                 break;
                 case "ia":
                     $file=Documento::create([
-                        'titulo'=>$archivo->getClientOriginalName(),
+                        'titulo'=>$titulo_documento,
                         'ext'=> $ext,
                         'tipo' => "Informe",
                         'subtipo'=> "Informe Academico",
@@ -460,7 +460,7 @@ class DocumentosController extends Controller
                 break;
                     case "cd":
                         $file=Documento::create([
-                            'titulo'=>$archivo->getClientOriginalName(),
+                            'titulo'=>$titulo_documento,
                             'ext'=> $ext,
                             'tipo' => "Citacion",
                             'subtipo'=> "Ninguno",
@@ -473,7 +473,7 @@ class DocumentosController extends Controller
                     break;
                     case "orcm":
                         $file=Documento::create([
-                            'titulo'=>$archivo->getClientOriginalName(),
+                            'titulo'=>$titulo_documento,
                             'ext'=> $ext,
                             'tipo' => "Orden",
                             'subtipo'=> "Orden de cancelacion matricula",
@@ -486,7 +486,7 @@ class DocumentosController extends Controller
                     break;
                     case "pys":
                         $file=Documento::create([
-                            'titulo'=>$archivo->getClientOriginalName(),
+                            'titulo'=>$titulo_documento,
                             'ext'=> $ext,
                             'tipo' => "Paz y salvo",
                             'subtipo'=> "Ninguno",
@@ -499,7 +499,7 @@ class DocumentosController extends Controller
                     break;
                     case "ifp":
                         $file=Documento::create([
-                            'titulo'=>$archivo->getClientOriginalName(),
+                            'titulo'=>$titulo_documento,
                             'ext'=> $ext,
                             'tipo' => "Informe",
                             'subtipo'=> "Informe de diplomas",
@@ -512,7 +512,7 @@ class DocumentosController extends Controller
                     break;
                     case "acg":
                         $file=Documento::create([
-                            'titulo'=>$archivo->getClientOriginalName(),
+                            'titulo'=>$titulo_documento,
                             'ext'=> $ext,
                             'tipo' => "Acta",
                             'subtipo'=> "Acta de grado",
@@ -525,7 +525,7 @@ class DocumentosController extends Controller
                     break;
                     case "dp":
                         $file=Documento::create([
-                            'titulo'=>$archivo->getClientOriginalName(),
+                            'titulo'=>$titulo_documento,
                             'ext'=> $ext,
                             'tipo' => "Diploma",
                             'subtipo'=> "Ninguno",
@@ -538,7 +538,7 @@ class DocumentosController extends Controller
                     break;
                     case "rs":
                         $file=Documento::create([
-                            'titulo'=>$archivo->getClientOriginalName(),
+                            'titulo'=>$titulo_documento,
                             'ext'=> $ext,
                             'tipo' => "Resolucion",
                             'subtipo'=> "Ninguno",
