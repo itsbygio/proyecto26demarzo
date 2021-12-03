@@ -33,7 +33,7 @@
             <td>{{$documento->subtipo}}</td>
             <td>{{$documento->created_at}}</td>
             <td>{{$documento->updated_at}}</td>
-            <td><a href="/editar/documento/{{$documento->id}}" class="btn btn-primary fas fa-pen-alt"></a><button type="button" onclick="watchdocument('/documentos/{{$documento->id}}{{$documento->ext}}')"  class="btn btn-primary fas fa-eye ml-1"></button><a href="/documentos/{{$documento->id}}{{$documento->ext}}" class="btn btn-primary fas fa-download ml-1" download></a></td>
+            <td><a href="/editar/documento/{{$documento->id}}" class="btn btn-primary fas fa-pen-alt"></a><button type="button" onclick="watchdocument('/documentos/{{$documento->id}}{{$documento->ext}}','{{$documento->id}}')"  class="btn btn-primary fas fa-eye ml-1"></button> <!--<a href="/documentos/{{$documento->id}}{{$documento->ext}}" class="btn btn-primary fas fa-download ml-1" download></a>!--><button class="btn btn-primary far fa-minus-square ml-1" onclick="btn_drop('{{$documento->id}}{{$documento->ext}}','{{$documento->id}}')"></button></td>
            </tr>
           @endforeach
          </tbody>
@@ -66,7 +66,7 @@
 
             }
             );
-    function btn_drop(){
+    function btn_drop(archivo,id){
         bootbox.confirm({
     message: "¿Estas seguro de eliminar este documento?",
     centerVertical:true,
@@ -90,11 +90,12 @@
             title: 'Registro eliminado',
             showConfirmButton: false,
             timer: 1500
-           })
-        
-        }
-        else{
-
+           });
+           var url="/delete/documento";
+           axios.post(url,
+           {"id":id,"archivo":archivo}).then(response =>{
+           location.href="/listar/documentos";
+             });
         }
     }
 });

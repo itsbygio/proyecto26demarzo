@@ -47,7 +47,7 @@ Route::post('/consultas/doc', 'DocumentosController@consultar_documento');
 Route::post('/update/document', 'DocumentosController@update_document');
 Route::post('/update/file', 'DocumentosController@update_file');
 Route::post('/save/document', 'DocumentosController@guardar_documento');
-
+Route::post('/delete/documento', 'DocumentosController@DeleteDocument');
 
 
 /*Generacion*/

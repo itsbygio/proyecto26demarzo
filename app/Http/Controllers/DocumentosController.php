@@ -34,6 +34,7 @@ class DocumentosController extends Controller
             'documentos'=>Documento::all()
         ]);
     }
+    
     public function editar($id){
         $documento=Documento::findOrfail($id);
 
@@ -556,13 +557,6 @@ class DocumentosController extends Controller
         $archivo->move(public_path('documentos/'),$nombreImagen);
     }
 
-
-
-
-
-
-
-
     public function mostrar_estadistica(request $request){
         $subtipo="12";
         switch ($request->nm) {
@@ -612,8 +606,16 @@ class DocumentosController extends Controller
          return response()->json([
              'count' => $documentos->count(),
               'subtipo'=>$subtipo],200); 
-
-          
     }
-   
+    public function DeleteDocument(request $request){
+      $archivo= $request->archivo;
+      $path="/documentos/".$archivo;
+      $id =$request->id;
+      $documento=Documento::findOrfail($id);
+      $documento->delete();
+      $Fileexist= Storage::disk('public')->exists($path);
+      if($Fileexist){
+      Storage::disk('public')->delete($path);
+      }
+    }
 }
