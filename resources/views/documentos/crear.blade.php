@@ -95,14 +95,14 @@
         <div class="col-xl-5 ml-4">
         @csrf
 
-       
+
                            <div id="dropzoneUpload" class="dropzone rounded bg-gray-100 dotted"></div>
 
         </div>
     </div>
-    
+
     <button id="btn-next"  type="button"   class="btn btn-primary  ml-4 ">  Siguiente  </button>
-    <button id="btn-upload"style="display:none" class="btn btn-primary  ml-4 ">  Subir documento  </button>
+    <button id="btn-upload"style="display:none" class="btn btn-primary  ml-4 ">  Subir documento </button>
 
 </div>
 <br>
