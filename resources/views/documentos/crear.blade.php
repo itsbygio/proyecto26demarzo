@@ -24,7 +24,6 @@
         </div>
 
     </div>
-    <br>
     <div class="row">
     </div><br>
     <div id="generate" class="row">
@@ -40,6 +39,8 @@
          </select>
         </div>
     </div>
+    <br>
+
     <div style="display:none" id="seccion_acta_reunion" class="ml-4 ">
      @include('documentos.generacion.actareunion')
    </div>
@@ -55,11 +56,12 @@
    <div style="display:none" id="seccion_per_doc" class="ml-4 ">
      @include('documentos.generacion.permiso_doc')
    </div>
-   <div  style="display:none" class="row ml-4 mb-3" id="nombre_document_upload">
-   <div class="col-xl-12 ">
-     <p>Nombre  del documento:</p>
-    </div>
-     <input type="text" id="nombre_documento_upload" class="form-control col-xl-5" >
+   <div style="display:none" id="s_nombre_upload" class="ml-4 mb-3">
+   <div class="col-xl-12">
+   <p>Nombre del documento</p>
+
+   </div>
+     <input type="text" id="nombre_upload" class="form-control col-xl-5">
    </div>
     <div style="display:none" id="upload" class="row mb-3">
         <div class="col-xl-5 ml-4">
@@ -99,14 +101,14 @@
         <div class="col-xl-5 ml-4">
         @csrf
 
-       
+
                            <div id="dropzoneUpload" class="dropzone rounded bg-gray-100 dotted"></div>
 
         </div>
     </div>
-    
+
     <button id="btn-next"  type="button"   class="btn btn-primary  ml-4 ">  Siguiente  </button>
-    <button id="btn-upload"style="display:none" class="btn btn-primary  ml-4 ">  Subir documento  </button>
+    <button id="btn-upload"style="display:none" class="btn btn-primary  ml-4 ">  Subir documento </button>
 
 </div>
 <br>

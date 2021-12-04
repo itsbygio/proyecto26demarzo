@@ -4,7 +4,6 @@ function changeDocumentUpload(data){
         case "cone":
        $("#seccion_upload_constancia").show();
        $("#seccion_upload_permiso").hide();
-
           break;
         case "cen": 
           $("#seccion_upload_permiso").hide();
@@ -17,7 +16,6 @@ function changeDocumentUpload(data){
          case "orcm": 
            $("#seccion_upload_permiso").hide();
            $("#seccion_upload_constancia").show();
-
           break; 
           case "pys": 
            $("#seccion_upload_permiso").hide();
@@ -34,14 +32,9 @@ function changeDocumentUpload(data){
         default:
         $("#seccion_upload_constancia").hide();
         $("#seccion_upload_permiso").hide();
-
-
       }
 }
-
-
 Dropzone.autoDiscover = false;
-
 document.addEventListener('DOMContentLoaded', () => {
   
   const dropzoneUpload = new Dropzone('#dropzoneUpload', {
@@ -60,13 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             init: function() {
               this.on("sending", function(file, xhr, formData){
+                      formData.append("titulo_document_upload", $('#nombre_upload').val());
                         formData.append("nm", $('#td').val());
                         formData.append("numid", $('#est_id').val());
                         formData.append("docid", $('#doc_id').val());
-                        formData.append("titulo_document_upload", $('#nombre_documento_upload').val());
-
                 });
-
               this.on("queuecomplete", function () {
             this.options.autoProcessQueue = false;
               });
@@ -95,22 +86,17 @@ document.addEventListener('DOMContentLoaded', () => {
             success: function(file, response) {
                 console.log(response);
                
-
-            },
-            maxfilesexceeded: function (files) {
-                this.removeAllFiles();
-                this.addFile(files);
             },
             error: function(file, response) {
-              this.removeFile(file);
-
+                    Swal.fire({
+                   icon: 'error',
+                   title: 'Ops',
+                   html:
+                   '<span style="color:white"> Solo puedes subir archivos pdf </span>,'
+                    })
                 
             },
     
   });
-
 });
-
-
-
 </script>

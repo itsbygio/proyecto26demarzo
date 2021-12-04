@@ -374,6 +374,8 @@ class DocumentosController extends Controller
         $titulo_documento= $request->titulo_document_upload;
         $archivo = $request->file('file');
         $ext='.'.$archivo->extension();
+        $registro_estudiante= Estudiante::where('num_id', $request->numid)->first();
+        $registro_docente= Docente::where('num_id', $request->docid)->first();
 
         switch ($request->nm) {
             case "acr":
@@ -388,36 +390,45 @@ class DocumentosController extends Controller
                      'id_user_c' =>Auth::user()->id,
                      'id_user_m'=>null
                   ]);
-                  
+                  $nombreImagen = $file->id.$ext;
+                  $archivo->move(public_path('documentos/'),$nombreImagen);
                 break;
             case "cone":
+                if($registro_estudiante!=null){
                 $file=Documento::create([
                     'titulo'=>$titulo_documento,
                     'ext'=> $ext,
                     'tipo' => "Constancia",
                     'subtipo'=> "Constancia de estudio",
                      'nm' =>"cone",
-                     'id_est'=>$request->numid,
+                     'id_est'=>$registro_estudiante->id,
                      'id_doc'=>null,
                      'id_user_c' =>Auth::user()->id,
                      'id_user_m'=>null
                   ]);
+                  $nombreImagen = $file->id.$ext;
+                  $archivo->move(public_path('documentos/'),$nombreImagen);
+                }
                 break;
             case "cen":
-
+                if($registro_estudiante!=null){
                 $file=Documento::create([
                     'titulo'=>$titulo_documento,
                     'ext'=> $ext,
                     'tipo' => "Certificado",
                     'subtipo'=> "Certificado de notas",
                      'nm' =>"cen",
-                     'id_est'=>$request->numid,
+                     'id_est'=>$registro_estudiante->id,
                      'id_doc'=>null,
                      'id_user_c' =>Auth::user()->id,
                      'id_user_m'=>null
                   ]);
+                  $nombreImagen = $file->id.$ext;
+                  $archivo->move(public_path('documentos/'),$nombreImagen);
+                }
                 break;
                 case "pd":
+                    if($registro_docente!=null){
                     $file=Documento::create([
                         'titulo'=>$titulo_documento,
                         'ext'=> $ext,
@@ -425,11 +436,13 @@ class DocumentosController extends Controller
                         'subtipo'=> "Permiso docente",
                          'nm' =>"pd",
                          'id_est'=>null,
-                         'id_doc'=>$request->docid,
+                         'id_doc'=>$registro_docente->id,
                          'id_user_c' =>Auth::user()->id,
                          'id_user_m'=>null
                       ]);
-                 
+                      $nombreImagen = $file->id.$ext;
+                      $archivo->move(public_path('documentos/'),$nombreImagen);
+                    }
                 break;
                 case "cir":
                     $file=Documento::create([
@@ -443,6 +456,8 @@ class DocumentosController extends Controller
                          'id_user_c' =>Auth::user()->id,
                          'id_user_m'=>null
                       ]);
+                      $nombreImagen = $file->id.$ext;
+                      $archivo->move(public_path('documentos/'),$nombreImagen);
                  
                 break;
                 case "ia":
@@ -457,6 +472,8 @@ class DocumentosController extends Controller
                          'id_user_c' =>Auth::user()->id,
                          'id_user_m'=>null
                       ]);
+                      $nombreImagen = $file->id.$ext;
+                      $archivo->move(public_path('documentos/'),$nombreImagen);
                  
                 break;
                     case "cd":
@@ -471,32 +488,42 @@ class DocumentosController extends Controller
                              'id_user_c' =>Auth::user()->id,
                              'id_user_m'=>null
                           ]);
+                          $nombreImagen = $file->id.$ext;
+                          $archivo->move(public_path('documentos/'),$nombreImagen);
                     break;
                     case "orcm":
+                        if($registro_estudiante!=null){
                         $file=Documento::create([
                             'titulo'=>$titulo_documento,
                             'ext'=> $ext,
                             'tipo' => "Orden",
                             'subtipo'=> "Orden de cancelacion matricula",
                              'nm' =>"orcm",
-                             'id_est'=>$request->numid,
+                             'id_est'=>$registro_estudiante->id,
                              'id_doc'=>null,
                              'id_user_c' =>Auth::user()->id,
                              'id_user_m'=>null
                           ]);
+                          $nombreImagen = $file->id.$ext;
+                          $archivo->move(public_path('documentos/'),$nombreImagen);
+                        }
                     break;
                     case "pys":
+                    if($registro_estudiante!=null){
                         $file=Documento::create([
                             'titulo'=>$titulo_documento,
                             'ext'=> $ext,
                             'tipo' => "Paz y salvo",
                             'subtipo'=> "Ninguno",
                              'nm' =>"pys",
-                             'id_est'=>$request->numid,
+                             'id_est'=>$registro_estudiante->id,
                              'id_doc'=>null,
                              'id_user_c' =>Auth::user()->id,
                              'id_user_m'=>null
                           ]);
+                          $nombreImagen = $file->id.$ext;
+                          $archivo->move(public_path('documentos/'),$nombreImagen);
+                        }
                     break;
                     case "ifp":
                         $file=Documento::create([
@@ -510,32 +537,42 @@ class DocumentosController extends Controller
                              'id_user_c' =>Auth::user()->id,
                              'id_user_m'=>null
                           ]);
+                          $nombreImagen = $file->id.$ext;
+                          $archivo->move(public_path('documentos/'),$nombreImagen);
                     break;
                     case "acg":
+                    if($registro_estudiante!=null){
                         $file=Documento::create([
                             'titulo'=>$titulo_documento,
                             'ext'=> $ext,
                             'tipo' => "Acta",
                             'subtipo'=> "Acta de grado",
                              'nm' =>"acg",
-                             'id_est'=>$request->numid,
+                             'id_est'=>$registro_estudiante->id,
                              'id_doc'=>null,
                              'id_user_c' =>Auth::user()->id,
                              'id_user_m'=>null
                           ]);
+                          $nombreImagen = $file->id.$ext;
+                          $archivo->move(public_path('documentos/'),$nombreImagen);
+                        }
                     break;
                     case "dp":
-                        $file=Documento::create([
-                            'titulo'=>$titulo_documento,
-                            'ext'=> $ext,
-                            'tipo' => "Diploma",
-                            'subtipo'=> "Ninguno",
-                             'nm' =>"dp",
-                             'id_est'=>$request->numid,
-                             'id_doc'=>null,
-                             'id_user_c' =>Auth::user()->id,
-                             'id_user_m'=>null
-                          ]);
+                        if($registro_estudiante!=null){
+                            $file=Documento::create([
+                                'titulo'=>$titulo_documento,
+                                'ext'=> $ext,
+                                'tipo' => "Diploma",
+                                'subtipo'=> "Ninguno",
+                                'nm' =>"dp",
+                                'id_est'=>$registro_estudiante->id,
+                                'id_doc'=>null,
+                                'id_user_c' =>Auth::user()->id,
+                                'id_user_m'=>null
+                            ]);
+                            $nombreImagen = $file->id.$ext;
+                            $archivo->move(public_path('documentos/'),$nombreImagen);
+                        }
                     break;
                     case "rs":
                         $file=Documento::create([
@@ -549,12 +586,13 @@ class DocumentosController extends Controller
                              'id_user_c' =>Auth::user()->id,
                              'id_user_m'=>null
                           ]);
+                          $nombreImagen = $file->id.$ext;
+                          $archivo->move(public_path('documentos/'),$nombreImagen);
                     break;
             default:
                echo "i no es igual a 0, 1 ni 2";
         }
-        $nombreImagen = $file->id.$ext;
-        $archivo->move(public_path('documentos/'),$nombreImagen);
+
     }
 
     public function mostrar_estadistica(request $request){

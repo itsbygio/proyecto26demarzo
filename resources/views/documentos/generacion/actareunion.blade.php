@@ -50,7 +50,7 @@
 
 </div>
 <div class="col-xl-12 ">
-    <button   id="btn_acta_est" type="button"  class="btn btn-primary ">  Generar documento  </button>
+    <button   id="btn_acta_est" type="button"  class="btn btn-primary ">  Generar documento.  </button>
 
     </form>
 </div>
