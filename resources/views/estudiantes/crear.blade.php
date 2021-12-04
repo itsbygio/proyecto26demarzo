@@ -74,6 +74,7 @@
      <div class="col-md-4 mb-4">
      <p>Sede:</p>
      <select id="sede" name="sede"   type="text" class="form-control" id="exampleFormControlSelect1"  value="{{old('sede')}}">
+                <option value=""></option>            
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="D">D</option>
@@ -83,6 +84,32 @@
         <div   style="color:red;" >{{ $message }}*</div>
         @enderror
      </div>
+     <div class="col-md-4 mb-4">
+     <p>Nivel:</p>
+     <select id="nivel" name="nivel"   type="text" class="form-control" id="exampleFormControlSelect1"  value="{{old('sede')}}">
+                <option value=""></option> 
+                <option value="preescolar">Preescolar</option>
+                <option value="primaria">Primaria</option>
+                <option value="secundaria">Secundaria</option>
+                <option value="media">Media</option>
+            
+        </select>
+        @error('nivel')
+        <div   style="color:red;" >{{ $message }}*</div>
+        @enderror
+     </div>
+     <div class="col-md-4 mb-4">
+     <p>Jornada:</p>
+     <select id="jornada" name="jornada"   type="text" class="form-control" id="exampleFormControlSelect1"  value="{{old('sede')}}">
+                <option value=""></option> 
+                <option value="mañana">Mañana</option>
+                <option value="tarde">Tarde</option>
+        </select>
+        @error('jornada')
+        <div   style="color:red;" >{{ $message }}*</div>
+        @enderror
+     </div>
+
      <div class="col-md-4 mb-4">
      <p>¿El estudiante es egresado?:</p>
               <div class="form-check">

@@ -21,7 +21,9 @@ class CreateDocentesTable extends Migration
             $table->string('contacto',25)->nullable();
             $table->string('direccion',150)->nullable();
             $table->string('tipo_doc',50)->nullable();
-            $table->string('sede',50)->nullable();
+            $table->string('sede',30)->nullable();
+            $table->string('nivel',30)->nullable();
+            $table->string('jornada',30)->nullable();
             $table->string('estado',50)->nullable();
             $table->string('escalafon',30)->nullable();
             $table->string('num_id',30)->nullable();
