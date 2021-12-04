@@ -20,7 +20,6 @@ class CreateEstudiantesTable extends Migration
             $table->string('email',150)->nullable();
             $table->string('contacto',25)->nullable();
             $table->string('tipo_doc',50)->nullable();
-            $table->string('escalafon',50)->nullable();
             $table->string('direccion',150)->nullable();
             $table->string('num_id',30)->nullable();
             $table->string('sede',30)->nullable();

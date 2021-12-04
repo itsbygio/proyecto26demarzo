@@ -42,7 +42,9 @@ class EstudiantesController extends Controller
             'email'=> ['required', 'email'],
             'contacto'=>['required', 'numeric','min:6'],
             'direccion'=> ['required'],
-            'sede'=>['required']
+            'sede'=>['required'],
+            'nivel'=>['required'],
+            'jornada'=>['required']
             
             
         ]);
@@ -57,6 +59,8 @@ class EstudiantesController extends Controller
             'direccion'=> $request->direccion,
             'num_id'=> $request->num_id,
             'sede'=> $request->sede,
+            'nivel'=> $request->nivel,
+            'jornada'=> $request->jornada,
             'estado'=>$request->estado,
             'tipo_doc'=>$request->tipo_doc,
             'fecha_f'=> $request->fecha_f,
@@ -84,7 +88,9 @@ class EstudiantesController extends Controller
             'email'=> ['required', 'email'],
             'contacto'=>['required', 'numeric','min:6'],
             'direccion'=> ['required'],
-            'sede'=>['required']
+            'sede'=>['required'],
+            'nivel'=>['required'],
+            'jornada'=>['required']
             
         ]);
         
@@ -98,6 +104,8 @@ class EstudiantesController extends Controller
         $estudiantes->direccion=$request->direccion;
         $estudiantes->num_id=$request->num_id;
         $estudiantes->sede=$request->sede;
+        $estudiantes->nivel=$request->nivel;
+        $estudiantes->jornada=$request->jornada;
         $estudiantes->estado=$request->estado;
         $estudiantes->tipo_doc=$request->tipo_doc;
         $estudiantes->fecha_f=$request->fecha_f;

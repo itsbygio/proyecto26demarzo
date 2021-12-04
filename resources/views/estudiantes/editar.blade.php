@@ -76,8 +76,7 @@ Editar Estudiante </h4><br>
         @enderror
      </div>
      <div class="col-md-4 mb-4">
-     <p>sede</p>
-
+     <p>Sede:</p>
      <select id="sede" name="sede"   type="text" class="form-control" id="exampleFormControlSelect1" >
                <option value="{{$estudiantes->sede}}">{{$estudiantes->sede}}</option> 
                @if($estudiantes->sede!="A")
@@ -89,6 +88,40 @@ Editar Estudiante </h4><br>
                 @if($estudiantes->sede!="D")
                 <option value="D">D</option>
                 @endif
+               
+        </select>
+        </div>
+        <div class="col-md-4 mb-4">
+     <p>Nivel:</p>
+     <select id="nivel" name="nivel"   type="text" class="form-control" id="exampleFormControlSelect1" >
+               <option value="{{$estudiantes->nivel}}">{{$estudiantes->nivel}}</option> 
+               @if($estudiantes->nivel!="preescolar")
+                <option value="preescolar">Preescolar</option>
+                @endif
+                @if($estudiantes->nivel!="primaria")
+                <option value="primaria">Primaria</option>
+                @endif
+                @if($estudiantes->nivel!="secundaria")
+                <option value="secundaria">Secundaria</option>
+                @endif
+                @if($estudiantes->nivel!="media")
+                <option value="media">Media</option>
+                @endif
+               
+               
+        </select>
+        </div>
+        <div class="col-md-4 mb-4">
+     <p>Jornada:</p>
+     <select id="jornada" name="jornada"   type="text" class="form-control" id="exampleFormControlSelect1" >
+               <option value="{{$estudiantes->jornada}}">{{$estudiantes->jornada}}</option> 
+               @if($estudiantes->jornada!="mañana")
+                <option value="mañana">Mañana</option>
+                @endif
+                @if($estudiantes->jornada!="tarde")
+                <option value="tarde">Tarde</option>
+                @endif
+               
                
         </select>
         </div>
