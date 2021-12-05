@@ -7,13 +7,15 @@ use Illuminate\Http\Request;
 use App\Documento;
 use App\Estudiante;
 use App\Docente;
+use App\Curso;
 class DocumentosController extends Controller
 {
 
   
     public function crear(){
         return view('documentos.crear',[
-            'crear_documento'=>'active'
+            'crear_documento'=>'active',
+            'cursos'=>Curso::all()
         ]);
     }
     public function estadisticas(){

@@ -33,11 +33,11 @@ lengthMenu: [[5], [5]],
             $('#aeg').hide(); 
          }
    }
-   function RadioModalClick(myRadio){
-       var separa= myRadio.value.split(".",2);
-        var string= separa[0];
-       $("#ca").val(string);
-       $("#idcurso").val(separa[1]);
+   function RadioModalClick(titulo,id){
+     //  var separa= myRadio.value.split(".",2);
+    //    var string= separa[0];
+       $("#ca").val(titulo);
+       $("#idcurso").val(id);
 
    }
    function Radio2ModalClick(myRadio){

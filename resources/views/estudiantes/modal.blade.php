@@ -15,8 +15,8 @@
         <thead>
              <tr>
                 <th></th>
-                <th  class="text-center">id</th>
                  <th  class="text-center">curso</th>
+                 <th  class="text-center">nombre</th>
                  <th  class="text-center">año</th>
              </tr>
          </thead>
@@ -26,13 +26,13 @@
             
             <td class="text-center">
             <div class="form-check form-check-inline ">
-                <input class="form-check-input" onclick="RadioModalClick(this);"
-                 value=" {{$curso->titulo}}.{{$curso->id}} " type="radio" name="inlineRadioOptions" id="inlineRadio1">
+                <input class="form-check-input" onclick="RadioModalClick('{{$curso->titulo}}','{{$curso->id}}')"
+                 value="" type="radio" name="inlineRadioOptions" id="inlineRadio1">
               
             </div>
             </td>
-            <th class="text-center">{{$curso->id}}</th>
-            <td class="text-center">{{$curso->titulo}}</td>
+            <th class="text-center">{{$curso->titulo}}</th>
+            <td class="text-center">{{$curso->titulo_letras}}</td>
             <td class="text-center">{{$curso->año}}</td>
          
         </tr>

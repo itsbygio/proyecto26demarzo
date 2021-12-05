@@ -112,6 +112,7 @@
 
 </div>
 <br>
+@include('estudiantes.modal')
 
 @endsection
 

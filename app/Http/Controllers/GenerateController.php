@@ -21,7 +21,7 @@ class GenerateController extends Controller
     public function actas_reunion(request $request)
     {
 
-        $filename = $request->nombre_doc . '.docx';
+        $filename =strtr($request->nombre_doc, " ", "_").'.docx';
         $redactadopor=Auth::user()->nombre.''.Auth::user()->apellidos;
         $templateProcessor = new TemplateProcessor('templates/acta2.docx');
         
@@ -136,7 +136,7 @@ class GenerateController extends Controller
         $data['Mes'] = $date->month;
         $data['Dia'] = $date->day;
 
-        $filename = 'Permisos' . '.xls';
+        $filename = strtr($request->nombre_doc, " ", "_").'.xls';
         $spreadsheet = IOFactoryExcel::load('templates/FORMATO PERMISOS NUEVO PROPUESTO.xlsx');
         $worksheet = $spreadsheet->getActiveSheet();
         $worksheet->getCell('A11')->setValue($data['Docente']);
@@ -156,14 +156,16 @@ class GenerateController extends Controller
     }
     public function certificado_notas(request $request)
     {
+
+
         $meses = [1 =>'Enero', 2=>'Febrero', 3 =>'Marzo', 4 =>'Abril', 5=>'Mayo', 6=>'Junio', 7 =>'Julio', 8 =>'Agosto', 9 =>'Septiembre', 10=>'Octubre', 11 =>'Noviembre', 12=>'Diciembre'];
-         
+         $id_curso_modal= $request->id_curso_modal;
         $estudiante =  Estudiante::firstWhere('num_id', $request->id_cer_est);
         //$notas =  Nota::with(['materia'])->where('id_est', $estudiante->id)->get();
-        $curso= Curso::find(1);
+        $curso= Curso::find($id_curso_modal);
         
-        $notas = Nota::where('id_est',$estudiante->id)->where('id_curso', 1)->get();
-        $filename = 'Certificado' . '.docx';
+        $notas = Nota::where('id_est',$estudiante->id)->where('id_curso', $id_curso_modal)->get();
+        $filename = strtr($request->nombre_doc, " ", "_").'.docx';
         $templateProcessor = new TemplateProcessor('templates/certificado 26 actualizado.docx');
         $fontStyle['name'] = 'Verdana';
         $fontStyle['size'] = 10;
@@ -242,7 +244,7 @@ class GenerateController extends Controller
         $data['Mes'] = $date->month;
         $data['Dia'] = $date->day;
 
-        $filename = 'Constancia' . '.docx';
+        $filename = strtr($request->nombre_doc, " ", "_").'.docx';
         $templateProcessor = new TemplateProcessor('templates/constancia.docx');
         $fontStyle['name'] = 'Verdana';
         $fontStyle['size'] = 10;
@@ -312,7 +314,7 @@ class GenerateController extends Controller
     {
           //  return response()->json($request->all());
         $idcircular= Documento::where('nm','cir')->get()->count()+1;
-        $filename = $request->nombre_doc . '.docx';
+        $filename = strtr($request->nombre_doc, " ", "_").'.docx';
         $templateProcessor = new TemplateProcessor('templates/FORMATOCIRCULARES.docx');
         $fontStyle['name'] = 'Arial';
         $fontStyle['size'] = 11;
