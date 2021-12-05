@@ -23,20 +23,54 @@
         <div class="col-xl-5 ml-4">
         <p>Tipo documento:</p>
         <select onchange="changeselectedit(this)" id="td" name="td" class="form-control">
-                  <option value="">Seleccione un  documento</option>
+        <option value="{{$documento->nm}}">
+        @if($documento->subtipo!="Ninguno")     
+        {{$documento->subtipo}}
+        @else
+        {{$documento->tipo}}
+        
+        @endif
+        </option> 
+
+               @if($documento->nm!="acr")
                     <option value="acr">Acta de reunion</option>
+               @endif
+               @if($documento->nm!="cone")
                     <option value="cone">Constancia de estudio</option>
+               @endif
+               @if($documento->nm!="cen")
                     <option value="cen">Certificado de nota</option>
+               @endif
+               @if($documento->nm!="pd")
                     <option value="pd">Permiso de docente</option>
+               @endif
+               @if($documento->nm!="cir")
                     <option value="cir">Circular</option>
+               @endif
+               @if($documento->nm!="ia")
                     <option value="ia">Informes Academico</option>
+               @endif
+               @if($documento->nm!="cd")
                     <option value="cd">Citaciones</option>
+               @endif
+               @if($documento->nm!="orcm")
                     <option value="orcm">Ordenes de cancelacion de matricula </option>
+               @endif
+               @if($documento->nm!="pys")
                     <option value="pys">Paz y salvo estudiante </option>
+               @endif
+               @if($documento->nm!="ifp")
                     <option value="ifp">Informes de diplomas otorgado</option>
+               @endif
+               @if($documento->nm!="acg")
                     <option value="acg">Acta de grado</option>
+               @endif
+               @if($documento->nm!="dp")
                     <option value="dp">Diploma</option>
+                @endif
+                @if($documento->nm!="rs")
                     <option value="rs">Resoluciones</option>
+                @endif
 
             </select>
         </div>

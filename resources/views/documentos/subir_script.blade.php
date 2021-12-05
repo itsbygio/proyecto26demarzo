@@ -105,16 +105,23 @@ document.addEventListener('DOMContentLoaded', () => {
               }); 
             },
             success: function(file, response) {
+              if(response=="404"){
+                Swal.fire({
+                   icon: 'warning',
+                   title: 'No se encuentra la identificacion',
+                   timer: 2000
+        
+              });
+              }
+              else{
               Swal.fire({
                    icon: 'success',
                    title: 'Su ha archivo ha sido subido',
                    timer: 2000
         
-              }).then(function() {
-            //  location.href="/tienda/administrador";
-                }); 
-                console.log(response);
-               
+              }); 
+             console.log(response);
+              }
             },
             error: function(file, response) {
                 

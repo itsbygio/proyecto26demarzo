@@ -411,6 +411,10 @@ class DocumentosController extends Controller
                   $nombreImagen = $file->id.$ext;
                   $archivo->move(public_path('documentos/'),$nombreImagen);
                 }
+                else{
+                    return response()->json("404");
+                    
+                }
                 break;
             case "cen":
                 if($registro_estudiante!=null){
@@ -428,6 +432,10 @@ class DocumentosController extends Controller
                   $nombreImagen = $file->id.$ext;
                   $archivo->move(public_path('documentos/'),$nombreImagen);
                 }
+                else{
+                    return response()->json("404");
+
+                }
                 break;
                 case "pd":
                     if($registro_docente!=null){
@@ -444,6 +452,10 @@ class DocumentosController extends Controller
                       ]);
                       $nombreImagen = $file->id.$ext;
                       $archivo->move(public_path('documentos/'),$nombreImagen);
+                    }
+                    else{
+                        return response()->json("404");
+
                     }
                 break;
                 case "cir":
@@ -509,6 +521,10 @@ class DocumentosController extends Controller
                           $nombreImagen = $file->id.$ext;
                           $archivo->move(public_path('documentos/'),$nombreImagen);
                         }
+                        else{
+                            return response()->json("404");
+
+                        }
                     break;
                     case "pys":
                     if($registro_estudiante!=null){
@@ -525,6 +541,10 @@ class DocumentosController extends Controller
                           ]);
                           $nombreImagen = $file->id.$ext;
                           $archivo->move(public_path('documentos/'),$nombreImagen);
+                        }
+                        else{
+                            return response()->json("404");
+
                         }
                     break;
                     case "ifp":
@@ -558,6 +578,10 @@ class DocumentosController extends Controller
                           $nombreImagen = $file->id.$ext;
                           $archivo->move(public_path('documentos/'),$nombreImagen);
                         }
+                        else{
+                            return response()->json("404");
+
+                        }
                     break;
                     case "dp":
                         if($registro_estudiante!=null){
@@ -574,6 +598,10 @@ class DocumentosController extends Controller
                             ]);
                             $nombreImagen = $file->id.$ext;
                             $archivo->move(public_path('documentos/'),$nombreImagen);
+                        }
+                        else{
+                            return response()->json("404");
+
                         }
                     break;
                     case "rs":

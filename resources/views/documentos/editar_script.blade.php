@@ -79,8 +79,16 @@ function updated_data(){
 
  axios.post(url,formData).then(response =>{
      if(response.data.result=="OK"){
-      sweetalertsuccess("Se han guardado los cambios correctamente");
-     }
+      Swal.fire({
+                   icon: 'success',
+                   title: 'Se han guardado los cambios',
+                   timer: 2000
+        
+              }).then(function() {
+                location.href="/editar/documento/"+id_documento;
+                });    
+                
+         }
      else{
       sweetalertwarning("No se ha encontrado el numero de identificacion");
 
