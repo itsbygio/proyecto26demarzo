@@ -95,16 +95,16 @@ Editar Estudiante </h4><br>
      <p>Nivel:</p>
      <select id="nivel" name="nivel"   type="text" class="form-control" id="exampleFormControlSelect1" >
                <option value="{{$estudiantes->nivel}}">{{$estudiantes->nivel}}</option> 
-               @if($estudiantes->nivel!="preescolar")
+               @if($estudiantes->nivel!="Preescolar")
                 <option value="preescolar">Preescolar</option>
                 @endif
-                @if($estudiantes->nivel!="primaria")
+                @if($estudiantes->nivel!="Primaria")
                 <option value="primaria">Primaria</option>
                 @endif
-                @if($estudiantes->nivel!="secundaria")
+                @if($estudiantes->nivel!="Secundaria")
                 <option value="secundaria">Secundaria</option>
                 @endif
-                @if($estudiantes->nivel!="media")
+                @if($estudiantes->nivel!="Media")
                 <option value="media">Media</option>
                 @endif
                
@@ -115,10 +115,10 @@ Editar Estudiante </h4><br>
      <p>Jornada:</p>
      <select id="jornada" name="jornada"   type="text" class="form-control" id="exampleFormControlSelect1" >
                <option value="{{$estudiantes->jornada}}">{{$estudiantes->jornada}}</option> 
-               @if($estudiantes->jornada!="mañana")
+               @if($estudiantes->jornada!="Mañana")
                 <option value="mañana">Mañana</option>
                 @endif
-                @if($estudiantes->jornada!="tarde")
+                @if($estudiantes->jornada!="Tarde")
                 <option value="tarde">Tarde</option>
                 @endif
                

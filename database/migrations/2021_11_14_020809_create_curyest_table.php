@@ -18,12 +18,12 @@ class CreateCuryestTable extends Migration
             $table->foreignId('id_est')
             ->nullable()
             ->constrained('estudiantes')
-            ->onDelete('no action')
+            ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->foreignId('id_cur')
             ->nullable()
             ->constrained('cursos')
-            ->onDelete('no action')
+            ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->timestamps();
         });

@@ -10,7 +10,9 @@
         <thead>
              <tr>
                 
-                 <th>nombre del curso</th>
+                 <th>Curso</th>
+                 <th>Nombre</th>
+                 <th>Año del curso</th>
                  <th> fecha de creacion</th>
                  <th> fecha de actualizacion</th>
                  <th> Opciones</th>
@@ -23,6 +25,9 @@
         <tr>
             
               <td>{{$curso->titulo}} </td>
+              <td>{{$curso->titulo_letras}} </td>
+              <td>{{$curso->año}} </td>
+
               <td>{{$curso->created_at}} </td>
               <td>{{$curso->updated_at}} </td>
               <td><a href="/editar/curso/{{$curso->id}}" class='btn btn-primary mr-3' > <i class='fas fa-pen-alt'></i></a>

@@ -88,10 +88,10 @@
      <p>Nivel:</p>
      <select id="nivel" name="nivel"   type="text" class="form-control" id="exampleFormControlSelect1"  value="{{old('sede')}}">
                 <option value=""></option> 
-                <option value="preescolar">Preescolar</option>
-                <option value="primaria">Primaria</option>
-                <option value="secundaria">Secundaria</option>
-                <option value="media">Media</option>
+                <option value="Preescolar">Preescolar</option>
+                <option value="Primaria">Primaria</option>
+                <option value="Secundaria">Secundaria</option>
+                <option value="Media">Media</option>
             
         </select>
         @error('nivel')
@@ -102,8 +102,8 @@
      <p>Jornada:</p>
      <select id="jornada" name="jornada"   type="text" class="form-control" id="exampleFormControlSelect1"  value="{{old('sede')}}">
                 <option value=""></option> 
-                <option value="mañana">Mañana</option>
-                <option value="tarde">Tarde</option>
+                <option value="Mañana">Mañana</option>
+                <option value="Tarde">Tarde</option>
         </select>
         @error('jornada')
         <div   style="color:red;" >{{ $message }}*</div>

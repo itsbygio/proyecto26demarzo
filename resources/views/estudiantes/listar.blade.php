@@ -48,8 +48,8 @@
                 @endif</td>
                 <td>{{$estudiante->created_at}} </td>
               <td>{{$estudiante->updated_at}} </td>
-              <td><a href="/editar/estudiante/{{$estudiante->id}}" class='btn btn-primary mr-3' > <i class='fas fa-pen-alt'></i></a><br>
-              <button  class='btn btn-primary mr-3' onclick="btn_drop('{{$estudiante->id}}')"><i class='far fa-minus-square'></i></button></td>
+              <td><a href="/editar/estudiante/{{$estudiante->id}}" class='btn btn-primary  btn-sm fas fa-pen-alt' > </a>
+              <button  class='btn btn-primary far fa-minus-square btn-sm' onclick="btn_drop('{{$estudiante->id}}')"></button></td>
         </tr>
             @endforeach
         

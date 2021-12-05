@@ -165,8 +165,10 @@ class GenerateController extends Controller
         $notas = Nota::where('id_est',$estudiante->id)->where('id_curso', 1)->get();
         $filename = 'Certificado' . '.docx';
         $templateProcessor = new TemplateProcessor('templates/certificado 26 actualizado.docx');
-        $fontStyle['name'] = 'Arial';
-        $fontStyle['size'] = 11;
+        $fontStyle['name'] = 'Verdana';
+        $fontStyle['size'] = 10;
+        $fontStyle['bold'] = true;
+
         $inline = new TextRun();
            
         $templateProcessor->setComplexValue('nombre', $inline->addText(
@@ -178,7 +180,7 @@ class GenerateController extends Controller
             $fontStyle
         ));
         $templateProcessor->setComplexValue('anio', $inline->addText(
-            htmlspecialchars(date("Y")),
+            htmlspecialchars($curso->año),
             $fontStyle
         ));
         $templateProcessor->setComplexValue('year', $inline->addText(
@@ -194,7 +196,7 @@ class GenerateController extends Controller
             $fontStyle
         ));
         $templateProcessor->setComplexValue('titulo', $inline->addText(
-            htmlspecialchars($curso->titulo),
+            htmlspecialchars($curso->titulo_letras),
             $fontStyle
         ));
         $templateProcessor->setComplexValue('titulocurso', $inline->addText(
@@ -247,7 +249,14 @@ class GenerateController extends Controller
         $fontStyle['bold'] = true;
 
         $inline = new TextRun();
-
+        $templateProcessor->setComplexValue('nivel', $inline->addText(
+            htmlspecialchars($estudiante->nivel),
+            $fontStyle
+        ));
+        $templateProcessor->setComplexValue('jornada', $inline->addText(
+            htmlspecialchars($estudiante->jornada),
+            $fontStyle
+        ));
         $templateProcessor->setComplexValue('Estudiante', $inline->addText(
             htmlspecialchars($data['Estudiante']),
             $fontStyle
