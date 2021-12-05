@@ -13,7 +13,6 @@ class cursosController extends Controller
         return view('cursos.crear',
         [
          'crear_curso'=>'active',
-         'cursos'=>curso::all()
     ]);
     }
     public function listar(){

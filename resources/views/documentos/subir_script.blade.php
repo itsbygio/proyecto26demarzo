@@ -1,4 +1,5 @@
 <script>
+  var file_upload=null;
 function changeDocumentUpload(data){
       switch (data.value) {
         case "cone":
@@ -61,39 +62,61 @@ document.addEventListener('DOMContentLoaded', () => {
               this.on("queuecomplete", function () {
             this.options.autoProcessQueue = false;
               });
-   
+
               this.on("processing", function () {
                   this.options.autoProcessQueue = true;
                 });
                 this.on("addedfile", function(file) { 
                   file.previewElement.classList.add('dz-complete');
+                  file_upload= file;
                   });
+              this.on("removedfile", function(file) { 
+                   file_upload= null;
+                });
               $("#btn-upload").click(function(e){
-               // e.preventDefault();
+                if($("#nombre_upload").val()==""){
+                  Swal.fire({
+                   icon: 'warning',
+                   title: 'Ingrese un nombre al documento',
+                   timer: 2000
+        
+                 });
+                }
+              else if($("#td").val()==""){
+                Swal.fire({
+                   icon: 'warning',
+                   title: 'Seleccione un documento',
+                   timer: 2000
+        
+                 });
+               }
+               else if(file_upload == null){
+                Swal.fire({
+                   icon: 'warning',
+                   title: 'Adjunte un documento pdf',
+                   timer: 2000
+        
+                 });
+               }
+               else{
+               e.preventDefault();
                 dropzoneUpload.processQueue();
-               Swal.fire({
+                }
+              }); 
+            },
+            success: function(file, response) {
+              Swal.fire({
                    icon: 'success',
                    title: 'Su ha archivo ha sido subido',
                    timer: 2000
         
               }).then(function() {
             //  location.href="/tienda/administrador";
-                });       
-               
-              }); 
-            
-            },
-            success: function(file, response) {
+                }); 
                 console.log(response);
                
             },
             error: function(file, response) {
-                    Swal.fire({
-                   icon: 'error',
-                   title: 'Ops',
-                   html:
-                   '<span style="color:white"> Solo puedes subir archivos pdf </span>,'
-                    })
                 
             },
     

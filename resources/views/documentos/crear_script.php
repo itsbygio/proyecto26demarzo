@@ -182,23 +182,37 @@
 
   function handleClick(myRadio) {
     if (myRadio.value == "2") {
+      $('#est_id').val("");
+      $('#doc_id').val("");
       $('#s_nombre_upload').hide();
       $('#dropzoneitem').hide();
       $('#btn-upload').hide();
+      $('#seccion_upload_constancia').hide();
+      $('#seccion_upload_permiso').hide();
       $('#btn-next').show();
       $('#upload').hide();
       $('#generate').show();
-
       $('#selectgenerate').prop('selectedIndex', 0);
     } else {
-      $('#dropzoneitem').show();
+      document.getElementById('form_acta_reunion').reset();
+      document.getElementById('form_cer_nota').reset();
+      document.getElementById('form_circular').reset();
+      document.getElementById('form_constancia').reset();
+      document.getElementById('form_per_doc').reset();
       $('#btn-next').hide();
-      $('#btn-upload').show();
       $('#generate').hide();
-      $('#upload').show();
       $('#generate_btn').hide();
       $('#seccion_acta_reunion').hide();
+      $('#seccion_constancia').hide();
+      $('#seccion_cer_nota').hide();
+      $('#seccion_circular').hide();
+      $('#seccion_per_doc').hide();
+      $('#s_nombre_upload').hide();
+      $('#dropzoneitem').show();
+      $('#upload').show();
+      $('#btn-upload').show();
       $('#s_nombre_upload').show();
+      $('#td').prop('selectedIndex', 0);
 
 
     }
@@ -231,6 +245,6 @@ function RadioModalClick(titulo,id){
     //    var string= separa[0];
        $("#ca").val(titulo);
        $("#id_curso_modal").val(id);
-
+        
    }
 </script>
