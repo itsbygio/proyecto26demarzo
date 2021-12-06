@@ -240,6 +240,52 @@ lengthMenu: [[5], [5]],
 
 }
 );
+$('#table_modal_estudiantes').DataTable(
+
+{
+    pageLength : 5,
+lengthMenu: [[5], [5]],
+    "language": {
+        "lengthMenu": "Mostrar _MENU_ registros por pagina",
+        "zeroRecords": "No hay registros",
+        "info": "Mostrando pagina _PAGE_ de _PAGES_",
+        "infoEmpty": "No registros disponibles",
+        "infoFiltered": "(filtrado de _MAX_ total de registros)",
+        "search":         "Buscar:",
+        "paginate": {
+            "first":      "First",
+            "last":       "Last",
+            "next":       "Siguiente",
+            "previous":   "Anterior"
+        },
+    },
+    
+
+}
+);
+$('#table_modal_docentes').DataTable(
+
+{
+    pageLength : 5,
+lengthMenu: [[5], [5]],
+    "language": {
+        "lengthMenu": "Mostrar _MENU_ registros por pagina",
+        "zeroRecords": "No hay registros",
+        "info": "Mostrando pagina _PAGE_ de _PAGES_",
+        "infoEmpty": "No registros disponibles",
+        "infoFiltered": "(filtrado de _MAX_ total de registros)",
+        "search":         "Buscar:",
+        "paginate": {
+            "first":      "First",
+            "last":       "Last",
+            "next":       "Siguiente",
+            "previous":   "Anterior"
+        },
+    },
+    
+
+}
+);
 function RadioModalClick(titulo,id){
      //  var separa= myRadio.value.split(".",2);
     //    var string= separa[0];
@@ -247,4 +293,22 @@ function RadioModalClick(titulo,id){
        $("#id_curso_modal").val(id);
         
    }
+
+   function AbrirModalEstudiantes(){
+         $('#modal_estudiantes').modal('show'); 
+    }
+    function Addstudent(titulo,id){
+      $("#titulo_modal_est").val(titulo);
+       $("#id_est_modal").val(id);
+
+    }
+    function AbrirModalDocentes(){
+      $('#modal_docentes').modal('show'); 
+
+    }
+
+    function Adddocente(titulo,id){
+      $("#titulo_modal_doc").val(titulo);
+       $("#id_doc_modal").val(id);
+    }
 </script>

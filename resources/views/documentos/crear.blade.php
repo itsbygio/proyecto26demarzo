@@ -34,8 +34,8 @@
                     <option value="acr">Acta de reunion</option>
                     <option value="cone">Constancia de estudio</option>
                     <option value="cen">Certificados de notas</option>
-                    <option value="pd">Permisos de docentes</option>
-                    <option value="cir">Circulares</option>
+                    <option value="pd">Permiso docente</option>
+                    <option value="cir">Circular </option>
          </select>
         </div>
     </div>
@@ -71,29 +71,52 @@
                     <option value="acr">Acta de reunion</option>
                     <option value="cone">Constancia de estudio</option>
                     <option value="cen">Certificados de notas</option>
-                    <option value="pd">Permisos de docentes</option>
-                    <option value="cir">Circulares</option>
-                    <option value="ia">Informes Academicos</option>
-                    <option value="cd">Citaciones</option>
-                    <option value="orcm">Ordenes de cancelacion de matricula  </option>
-                    <option value="pys">Paz y salvo estudiante </option>
-                    <option value="ifp">Informes de diplomas otorgados</option>
+                    <option value="pd">Permiso docente</option>
+                    <option value="cir">Circular </option>
+                    <option value="ia">Informe Academico</option>
+                    <option value="cd">Citacion </option>
+                    <option value="orcm">Orden de cancelacion matricula  </option>
+                    <option value="pys">Paz y salvo </option>
+                    <option value="ifp">Informe de diploma</option>
                     <option value="acg">Acta de grado</option>
-                    <option value="dp">Diplomas</option>
-                    <option value="rs">Resoluciones</option>
+                    <option value="dp">Diploma</option>
+                    <option value="rs">Resolucion</option>
             </select>
         </div>
     </div>
     <div style="display:none" id="seccion_upload_constancia" class="row  ml-3 mb-2">
         <div class="col-xl-5">
+        <p>Elija  el estudiante:</p>
+
+        <div class="input-group  " >
+
+                    <input type="text" id="titulo_modal_est"  name="titulo_modal_est "class="form-control" placeholder="Por favor, Eliga el estudiante" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled >
+                    <input  style="display:none"  type="text" id="id_est_modal" name="id_est_modal" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2"  >
+
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-primary"  onclick="AbrirModalEstudiantes()">+</button>
+                    </div>
+                </div>
+     <!--
             <p>Ingrese el numero de identificacion del estudiante</p>
-          <input id="est_id" type="text" class="form-control" placeholder="Porfavor Ingrese el numero de identificacion">
+          <input id="est_id" type="text" class="form-control" placeholder="Porfavor Ingrese el numero de identificacion">!-->
         </div>
     </div>
     <div style="display:none" id="seccion_upload_permiso" class="row  ml-3 mb-2">
         <div class="col-xl-5">
+        <p>Elija  el docente:</p>
+        <div class="input-group  " >
+
+            <input type="text" id="titulo_modal_doc"  name="titulo_modal_doc "class="form-control" placeholder="Por favor, Eliga el docente" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled >
+            <input  style="display:none"  type="text" id="id_doc_modal" name="id_doc_modal" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2"  >
+
+            <div class="input-group-append">
+                <button type="button" class="btn btn-primary"  onclick="AbrirModalDocentes()">+</button>
+            </div>
+          </div>
+          <!--
             <p>Ingrese el numero de identificacion del docente</p>
-          <input id="doc_id" type="text" class="form-control" placeholder="Porfavor Ingrese el numero de identificacion">
+          <input id="doc_id" type="text" class="form-control" placeholder="Porfavor Ingrese el numero de identificacion">!-->
         </div>
     </div>
     <br>
@@ -113,7 +136,8 @@
 </div>
 <br>
 @include('estudiantes.modal')
-
+@include('documentos.modales.estudiantes_modal')
+@include('documentos.modales.docentes_modal')
 @endsection
 
 @section('scripts')

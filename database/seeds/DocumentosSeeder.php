@@ -13,6 +13,7 @@ class DocumentosSeeder extends Seeder
 
     public function run()
     {
+        /*
      
         DB::table('documentos')->insert([
             'id' =>'1',
@@ -56,5 +57,6 @@ class DocumentosSeeder extends Seeder
             'created_at'=>date('Y-m-d H:i:s'),
             'updated_at'=>date('Y-m-d H:i:s') 
         ]);
+        */
     }
 }

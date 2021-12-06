@@ -124,7 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
               }
             },
             error: function(file, response) {
-                
+              this.removeFile(file);
+
             },
     
   });

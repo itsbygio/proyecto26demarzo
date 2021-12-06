@@ -39,10 +39,10 @@
                     <option value="cone">Constancia de estudio</option>
                @endif
                @if($documento->nm!="cen")
-                    <option value="cen">Certificado de nota</option>
+                    <option value="cen">Certificado de notas</option>
                @endif
                @if($documento->nm!="pd")
-                    <option value="pd">Permiso de docente</option>
+                    <option value="pd">Permiso docente</option>
                @endif
                @if($documento->nm!="cir")
                     <option value="cir">Circular</option>
@@ -51,16 +51,16 @@
                     <option value="ia">Informes Academico</option>
                @endif
                @if($documento->nm!="cd")
-                    <option value="cd">Citaciones</option>
+                    <option value="cd">Citacion</option>
                @endif
                @if($documento->nm!="orcm")
-                    <option value="orcm">Ordenes de cancelacion de matricula </option>
+                    <option value="orcm">Orden de cancelacion matriculaa </option>
                @endif
                @if($documento->nm!="pys")
-                    <option value="pys">Paz y salvo estudiante </option>
+                    <option value="pys">Paz y salvo </option>
                @endif
                @if($documento->nm!="ifp")
-                    <option value="ifp">Informes de diplomas otorgado</option>
+                    <option value="ifp">Informe de diploma</option>
                @endif
                @if($documento->nm!="acg")
                     <option value="acg">Acta de grado</option>
@@ -69,7 +69,7 @@
                     <option value="dp">Diploma</option>
                 @endif
                 @if($documento->nm!="rs")
-                    <option value="rs">Resoluciones</option>
+                    <option value="rs">Resolucion</option>
                 @endif
 
             </select>

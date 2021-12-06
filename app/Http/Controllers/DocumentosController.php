@@ -15,7 +15,9 @@ class DocumentosController extends Controller
     public function crear(){
         return view('documentos.crear',[
             'crear_documento'=>'active',
-            'cursos'=>Curso::all()
+            'cursos'=>Curso::all(),
+            'estudiantes'=>Estudiante::all(),
+            'docentes'=>Docente::all()
         ]);
     }
     public function estadisticas(){
@@ -104,7 +106,7 @@ class DocumentosController extends Controller
                 if($registro!=null){
                     $documento->titulo=$request->titulo;
                     $documento->tipo="Permiso";
-                    $documento->subtipo="Permiso de docente";
+                    $documento->subtipo="Permiso docente";
                     $documento->nm="pd";
                     $documento->id_est=null;
                     $documento->id_doc=$registro->id;
@@ -177,7 +179,7 @@ class DocumentosController extends Controller
                 $registro= Estudiante::where('num_id',$request->numid)->first();
                 if($registro!=null){
                 $documento->titulo=$request->titulo;
-                $documento->tipo="Paz y Salvo";
+                $documento->tipo="Paz y salvo";
                 $documento->subtipo="Ninguno";
                 $documento->nm="pys";
                 $documento->id_est=$registro->id;
@@ -552,7 +554,7 @@ class DocumentosController extends Controller
                             'titulo'=>$titulo_documento,
                             'ext'=> $ext,
                             'tipo' => "Informe",
-                            'subtipo'=> "Informe de diplomas",
+                            'subtipo'=> "Informe de diploma",
                              'nm' =>"ifp",
                              'id_est'=>null,
                              'id_doc'=>null,
