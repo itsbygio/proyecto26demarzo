@@ -144,6 +144,83 @@ class GenerateController extends Controller
         $worksheet->getCell('F12')->setValue($data['Contacto']);
         $worksheet->getCell('A14')->setValue($data['Sede']);
         $worksheet->getCell('D14')->setValue($data['Cargo']);
+        if($request->tipo_reporte=="ausencia"){
+            $worksheet->getCell('A17')->setValue("x");
+        }
+        else if($request->tipo_reporte=="permiso"){
+            $worksheet->getCell('B17')->setValue("x");
+
+        }
+        if($request->fecha_inicial!=""){
+            $worksheet->getCell('C16')->setValue($request->fecha_inicial);
+
+        }
+        if($request->fecha_final!=""){
+            $worksheet->getCell('D16')->setValue($request->fecha_final);
+
+        }
+        if($request->hora_salida!=""){
+            $worksheet->getCell('E16')->setValue($request->hora_salida);
+
+        }
+        if($request->hora_ingreso!=""){
+            $worksheet->getCell('F16')->setValue($request->hora_ingreso);
+        }
+        if($request->total_dias!=""){
+            $worksheet->getCell('B18')->setValue($request->total_dias);
+        }
+        if($request->plan_trabajo=="si"){
+            $worksheet->getCell('F18')->setValue("SI  X");
+            $worksheet->getCell('G18')->setValue("NO");
+
+
+        }
+        else if($request->plan_trabajo=="no"){
+            $worksheet->getCell('G18')->setValue("NO  X");
+            $worksheet->getCell('F18')->setValue("SI");
+
+        }
+        if($request->motivo=="ce"){
+            $worksheet->getCell('C20')->setValue($request->motivo);
+            $worksheet->getCell('D20')->setValue($request->soporte);
+
+        }
+        else if($request->motivo=="cd"){
+            $worksheet->getCell('C21')->setValue($request->motivo);
+            $worksheet->getCell('D21')->setValue($request->soporte);
+        }
+        else if($request->motivo=="ef"){
+            $worksheet->getCell('C22')->setValue($request->motivo);
+            $worksheet->getCell('D22')->setValue($request->soporte);
+        }
+        else if($request->motivo=="tm"){
+            $worksheet->getCell('C23')->setValue($request->motivo);
+            $worksheet->getCell('D23')->setValue($request->soporte);
+        }
+        else if($request->motivo=="lc"){
+            $worksheet->getCell('C24')->setValue($request->motivo);
+            $worksheet->getCell('D24')->setValue($request->soporte);
+        }
+        else if($request->motivo=="ed"){
+            $worksheet->getCell('C25')->setValue($request->motivo);
+            $worksheet->getCell('D25')->setValue($request->soporte);
+        }
+        else if($request->motivo=="cap"){
+            $worksheet->getCell('C26')->setValue($request->motivo);
+            $worksheet->getCell('D26')->setValue($request->soporte);
+        }
+        else if($request->motivo=="pjd"){
+            $worksheet->getCell('C27')->setValue($request->motivo);
+            $worksheet->getCell('D27')->setValue($request->soporte);
+        }
+        else if($request->motivo=="pdv"){
+            $worksheet->getCell('C28')->setValue($request->motivo);
+            $worksheet->getCell('D28')->setValue($request->soporte);
+        }
+        else if($request->motivo=="per"){
+            $worksheet->getCell('C29')->setValue($request->motivo);
+            $worksheet->getCell('D29')->setValue($request->soporte);
+        }
         $pathToSave = public_path() . '/generados/' . $filename;
         $writer = IOFactoryExcel::createWriter($spreadsheet, 'Xls');
         $writer->save($pathToSave);
