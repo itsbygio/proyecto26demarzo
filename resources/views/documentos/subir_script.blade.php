@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
               this.on("sending", function(file, xhr, formData){
                       formData.append("titulo_document_upload", $('#nombre_upload').val());
                         formData.append("nm", $('#td').val());
-                        formData.append("numid", $('#est_id').val());
-                        formData.append("docid", $('#doc_id').val());
+                        formData.append("id_est_modal", $('#id_est_modal').val());
+                        formData.append("id_doc_modal", $('#id_doc_modal').val());
                 });
               this.on("queuecomplete", function () {
             this.options.autoProcessQueue = false;
@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                    file_upload= null;
                 });
               $("#btn-upload").click(function(e){
+               $td= $("#td").val();
                 if($("#nombre_upload").val()==""){
                   Swal.fire({
                    icon: 'warning',
@@ -98,6 +99,32 @@ document.addEventListener('DOMContentLoaded', () => {
         
                  });
                }
+               else if($("#td").val()=="pd"){
+                      if($("#id_doc_modal").val()!=""){
+                        e.preventDefault();
+                         dropzoneUpload.processQueue();
+                      }
+                      else{
+                        Swal.fire({
+                        icon: 'warning',
+                        title: 'Seleccione un docente',
+                        timer: 2000
+                       });
+                      }
+               }
+               else if($td!="pd" && $td!="acr" && $td!="cir" && $td!="ia" && $td!="cd" && $td!="ifp" && $td!="rs"  ){
+                      if($("#titulo_modal_est").val()!=""){
+                        e.preventDefault();
+                         dropzoneUpload.processQueue();
+                      }
+                      else{
+                        Swal.fire({
+                        icon: 'warning',
+                        title: 'Seleccione un estudiante',
+                        timer: 2000
+                       });
+                      }
+               }
                else{
                e.preventDefault();
                 dropzoneUpload.processQueue();
@@ -118,9 +145,18 @@ document.addEventListener('DOMContentLoaded', () => {
                    icon: 'success',
                    title: 'Su ha archivo ha sido subido',
                    timer: 2000
-        
+
               }); 
-             console.log(response);
+              this.removeFile(file);
+              $('#td').prop('selectedIndex', 0);
+              $('#nombre_upload').val("");
+              $('#seccion_upload_constancia').hide();
+              $('#seccion_upload_permiso').hide();
+              $('#id_est_modal').val("");
+              $('#id_doc_modal').val("");
+              $('#titulo_modal_est').val("");
+              $('#titulo_modal_doc').val("");
+
               }
             },
             error: function(file, response) {

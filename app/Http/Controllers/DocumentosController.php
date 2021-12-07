@@ -378,8 +378,8 @@ class DocumentosController extends Controller
         $titulo_documento= $request->titulo_document_upload;
         $archivo = $request->file('file');
         $ext='.'.$archivo->extension();
-        $registro_estudiante= Estudiante::where('num_id', $request->numid)->first();
-        $registro_docente= Docente::where('num_id', $request->docid)->first();
+        $registro_estudiante= $request->id_est_modal;;
+        $registro_docente=  $request->id_doc_modal;
 
         switch ($request->nm) {
             case "acr":
@@ -405,7 +405,7 @@ class DocumentosController extends Controller
                     'tipo' => "Constancia",
                     'subtipo'=> "Constancia de estudio",
                      'nm' =>"cone",
-                     'id_est'=>$registro_estudiante->id,
+                     'id_est'=> $registro_estudiante,
                      'id_doc'=>null,
                      'id_user_c' =>Auth::user()->id,
                      'id_user_m'=>null
@@ -426,7 +426,7 @@ class DocumentosController extends Controller
                     'tipo' => "Certificado",
                     'subtipo'=> "Certificado de notas",
                      'nm' =>"cen",
-                     'id_est'=>$registro_estudiante->id,
+                     'id_est'=> $registro_estudiante,
                      'id_doc'=>null,
                      'id_user_c' =>Auth::user()->id,
                      'id_user_m'=>null
@@ -448,7 +448,7 @@ class DocumentosController extends Controller
                         'subtipo'=> "Permiso docente",
                          'nm' =>"pd",
                          'id_est'=>null,
-                         'id_doc'=>$registro_docente->id,
+                         'id_doc'=>$registro_docente,
                          'id_user_c' =>Auth::user()->id,
                          'id_user_m'=>null
                       ]);
@@ -515,7 +515,7 @@ class DocumentosController extends Controller
                             'tipo' => "Orden",
                             'subtipo'=> "Orden de cancelacion matricula",
                              'nm' =>"orcm",
-                             'id_est'=>$registro_estudiante->id,
+                             'id_est'=>$registro_estudiante,
                              'id_doc'=>null,
                              'id_user_c' =>Auth::user()->id,
                              'id_user_m'=>null
@@ -536,7 +536,7 @@ class DocumentosController extends Controller
                             'tipo' => "Paz y salvo",
                             'subtipo'=> "Ninguno",
                              'nm' =>"pys",
-                             'id_est'=>$registro_estudiante->id,
+                             'id_est'=>$registro_estudiante,
                              'id_doc'=>null,
                              'id_user_c' =>Auth::user()->id,
                              'id_user_m'=>null
@@ -572,7 +572,7 @@ class DocumentosController extends Controller
                             'tipo' => "Acta",
                             'subtipo'=> "Acta de grado",
                              'nm' =>"acg",
-                             'id_est'=>$registro_estudiante->id,
+                             'id_est'=>$registro_estudiante,
                              'id_doc'=>null,
                              'id_user_c' =>Auth::user()->id,
                              'id_user_m'=>null
@@ -593,7 +593,7 @@ class DocumentosController extends Controller
                                 'tipo' => "Diploma",
                                 'subtipo'=> "Ninguno",
                                 'nm' =>"dp",
-                                'id_est'=>$registro_estudiante->id,
+                                'id_est'=>$registro_estudiante,
                                 'id_doc'=>null,
                                 'id_user_c' =>Auth::user()->id,
                                 'id_user_m'=>null

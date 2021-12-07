@@ -16,8 +16,6 @@
                  <th>numero de identificacion</th>
                  <th>curso actual</th>
                  <th>¿egresado?</th>
-                 <th>Fecha de creacion</th>
-                 <th>Fecha de modificación</th>
                  <th>Opciones</th>
 
              </tr>
@@ -26,12 +24,12 @@
              @foreach($estudiantes as $estudiante)
         <tr>
              
-              <td>{{$estudiante->nombre}} </td>
-              <td> {{$estudiante->apellidos}} </td>
-              <td>{{$estudiante->tipo_doc}} </td>
-              <td>{{$estudiante->num_id}}</td>
+              <td >{{$estudiante->nombre}} </td>
+              <td > {{$estudiante->apellidos}} </td>
+              <td class="text-center">{{$estudiante->tipo_doc}} </td>
+              <td  >{{$estudiante->num_id}}</td>
               
-              <td>
+              <td  class="text-center">
                   @if(isset($estudiante->curso->titulo))
                   {{$estudiante->curso->titulo}}
                   
@@ -40,16 +38,15 @@
                 @endif
               
             </td>
-            <td>@if(isset($estudiante->curso->titulo))
+            <td  class="text-center"> @if(isset($estudiante->curso->titulo))
                  NO
                   
                   @else
                   SI
                 @endif</td>
-                <td>{{$estudiante->created_at}} </td>
-              <td>{{$estudiante->updated_at}} </td>
-              <td><a href="/editar/estudiante/{{$estudiante->id}}" class='btn btn-primary  btn-sm fas fa-pen-alt' > </a>
-              <button  class='btn btn-primary far fa-minus-square btn-sm' onclick="btn_drop('{{$estudiante->id}}')"></button></td>
+      
+              <td><a href="/editar/estudiante/{{$estudiante->id}}" class='btn btn-primary fas fa-pen-alt mr-1' > </a>
+              <button  class='btn btn-primary far fa-minus-square' onclick="btn_drop('{{$estudiante->id}}')"></button></td>
         </tr>
             @endforeach
         

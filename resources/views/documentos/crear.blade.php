@@ -105,7 +105,7 @@
     <div style="display:none" id="seccion_upload_permiso" class="row  ml-3 mb-2">
         <div class="col-xl-5">
         <p>Elija  el docente:</p>
-        <div class="input-group  " >
+        <div class="input-group">
 
             <input type="text" id="titulo_modal_doc"  name="titulo_modal_doc "class="form-control" placeholder="Por favor, Eliga el docente" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled >
             <input  style="display:none"  type="text" id="id_doc_modal" name="id_doc_modal" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2"  >
