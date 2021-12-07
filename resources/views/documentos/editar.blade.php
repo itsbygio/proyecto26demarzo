@@ -51,13 +51,13 @@
                     <option value="cir">Circular</option>
                @endif
                @if($documento->nm!="ia")
-                    <option value="ia">Informes Academico</option>
+                    <option value="ia">Informe Academico</option>
                @endif
                @if($documento->nm!="cd")
                     <option value="cd">Citacion</option>
                @endif
                @if($documento->nm!="orcm")
-                    <option value="orcm">Orden de cancelacion matriculaa </option>
+                    <option value="orcm">Orden de cancelacion matricula </option>
                @endif
                @if($documento->nm!="pys")
                     <option value="pys">Paz y salvo </option>
