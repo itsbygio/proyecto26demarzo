@@ -35,8 +35,23 @@
     </div><br>
     <div style="display:none" id="seccion_upload_constancia" class="row  ml-1 mb-2">
         <div class="col-xl-5">
+        
             <p>Ingrese el numero de identificacion del estudiante</p>
           <input id="est_num" type="text" class="form-control" placeholder="Porfavor Ingrese el numero de identificacion">
+       
+          <!--
+          <p>Seleccione el estudiante</p>
+                <div class="input-group">
+                        <input type="text" id="titulo_modal_doc"  name="titulo_modal_doc "class="form-control" placeholder="Por favor, Eliga el docente" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled >
+                        <input  style="display:none"  type="text" id="id_doc_modal" name="id_doc_modal" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2"  >
+
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-primary"  onclick="AbrirModalDocentes()">+</button>
+                            <button type="button" class="btn btn-light fas fa-eraser"  onclick="AbrirModalDocentes()"></button>
+
+                        </div>
+                </div>
+            !-->
         </div>
     </div>
     <div style="display:none" id="seccion_upload_permiso" class="row  ml-1 mb-2">

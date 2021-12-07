@@ -17,7 +17,7 @@ class estudiantesSeeder extends Seeder
             'apellidos'=>'Hernandez',
             'email'=>'ramirezhernandez@gmail.com',
             'contacto' =>'902129121',
-            'tipo_doc'=>'TI',
+            'tipo_doc'=>'Tarjeta de identidad',
             'num_id'=>'3021923232',
             'estado' =>'activo',
             'sede' =>'A',
@@ -41,7 +41,7 @@ class estudiantesSeeder extends Seeder
             'apellidos'=>'ortega',
             'email'=>'ricardortega@gmail.com',
             'contacto' =>'320923292',
-            'tipo_doc'=>'TI',
+            'tipo_doc'=>'Tarjeta de identidad',
             'num_id'=>'1012102121',
             'estado' =>'activo',
             'sede' =>'A',
@@ -64,7 +64,7 @@ class estudiantesSeeder extends Seeder
             'apellidos'=>'Suarez',
             'email'=>'andressuarez@gmail.com',
             'contacto' =>'312123221',
-            'tipo_doc'=>'TI',
+            'tipo_doc'=>'Tarjeta de identidad',
             'num_id'=>'192392312',
             'estado' =>'activo',
             'sede' =>'A',
@@ -87,7 +87,7 @@ class estudiantesSeeder extends Seeder
             'apellidos'=>'Mendez',
             'email'=>'juanmendez@example.com',
             'contacto' =>'3029120921',
-            'tipo_doc'=>'TI',
+            'tipo_doc'=>'Tarjeta de identidad',
             'num_id'=>'1092812355',
             'estado' =>'activo',
             'sede' =>'A',
@@ -110,7 +110,7 @@ class estudiantesSeeder extends Seeder
             'apellidos'=> 'hernandez',
             'email'=>'carloshernandez@gmail.com',
             'contacto' =>'31726328123',
-            'tipo_doc'=>'TI',
+            'tipo_doc'=>'Tarjeta de identidad',
             'num_id'=>'9921821234',
             'estado' =>'activo',
             'sede' =>'A',
@@ -133,7 +133,7 @@ class estudiantesSeeder extends Seeder
             'apellidos'=>'Sanchez',
             'email'=>'juliansanchez@gmail.com',
             'contacto' =>'3182712123',
-            'tipo_doc'=>'TI',
+            'tipo_doc'=>'Tarjeta de identidad',
             'num_id'=>'9821912345',
             'estado' =>'activo',
             'sede' =>'A',
@@ -156,7 +156,7 @@ class estudiantesSeeder extends Seeder
             'apellidos'=>'Rodriguez',
             'email'=>'andresodriguez@example.com',
             'contacto' =>'3172192123',
-            'tipo_doc'=>'TI',
+            'tipo_doc'=>'Tarjeta de identidad',
             'num_id'=>'9901929123',
             'estado' =>'activo',
             'sede' =>'A',
@@ -173,6 +173,7 @@ class estudiantesSeeder extends Seeder
             'created_at'=>date('Y-m-d H:i:s'),
             'updated_at'=>date('Y-m-d H:i:s') 
         ]);
+    /*
         DB::table('estudiantes')->insert([
             'id' =>'8',
             'nombre'=>'Cielo Gissell',
@@ -196,6 +197,8 @@ class estudiantesSeeder extends Seeder
             'created_at'=>date('Y-m-d H:i:s'),
             'updated_at'=>date('Y-m-d H:i:s') 
         ]);
+        
+        
         DB::table('estudiantes')->insert([
             'id' =>'9',
             'nombre'=>'Carlos Alberto',
@@ -219,5 +222,6 @@ class estudiantesSeeder extends Seeder
             'created_at'=>date('Y-m-d H:i:s'),
             'updated_at'=>date('Y-m-d H:i:s') 
         ]);
+        */
     }   
 }

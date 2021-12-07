@@ -27,7 +27,7 @@
               <td >{{$estudiante->nombre}} </td>
               <td > {{$estudiante->apellidos}} </td>
               <td class="text-center">{{$estudiante->tipo_doc}} </td>
-              <td  >{{$estudiante->num_id}}</td>
+              <td class="text-center"  >{{$estudiante->num_id}}</td>
               
               <td  class="text-center">
                   @if(isset($estudiante->curso->titulo))

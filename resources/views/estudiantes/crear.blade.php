@@ -33,8 +33,9 @@
      <div class="col-md-4 mb-4">
      <p>Tipo de documento:</p>
         <select id="tipo_doc" name="tipo_doc" class="form-control" id="exampleFormControlSelect1"  value="{{old('tipo_doc')}}">
-                <option value="tarjeta de identidad">Tarjeta de identidad</option>
-                <option value="cedula de ciudadania">Cedula de ciudadania</option>
+                <option value="Numero registro civil">Numero registro civil</option>
+                <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+                <option value="Cedula de ciudadania">Cedula de ciudadania</option>
 
         </select>
         @error('tipo_doc')

@@ -34,11 +34,14 @@ Editar Estudiante </h4><br>
      <p>Tipo de documento:</p>
         <select id="tipo_doc" name="tipo_doc" class="form-control" id="exampleFormControlSelect1" >
         <option value="{{$estudiantes->tipo_doc}}">{{$estudiantes->tipo_doc}}</option> 
-                @if($estudiantes->tipo_doc!="ti")
-                <option value="tarjeta de identidad">Tarjeta de identidad</option>
+                @if($estudiantes->tipo_doc!="Numero registro civil")
+                <option value="Numero registro civil">Numero registro civil</option>
                 @endif
-                @if($estudiantes->tipo_doc!="cc")
-                <option value="cedula de ciudadania">Cedula de ciudadania</option>
+                @if($estudiantes->tipo_doc!="Tarjeta de identidad")
+                <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+                @endif
+                @if($estudiantes->tipo_doc!="Cedula de ciudadania")
+                <option value="Cedula de ciudadania">Cedula de ciudadania</option>
                 @endif
 
         </select>
