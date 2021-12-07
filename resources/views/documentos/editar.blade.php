@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="container">
-<h4 class="ml-4"><i class="fas fa-plus mr-3"></i>Editar documento</h4>
+<h4 class="ml-4"><i class="fas fa-edit mr-3"></i>Editar documento</h4>
 
  
     <br>

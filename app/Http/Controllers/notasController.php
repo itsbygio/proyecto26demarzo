@@ -64,9 +64,7 @@ class notasController extends Controller
 
         $validatedData = $request->validate([
             'nota' => ['required'],
-            
-           
-            
+              
         ]);
 
 
