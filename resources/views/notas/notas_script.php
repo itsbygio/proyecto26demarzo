@@ -89,17 +89,51 @@ $('#table_cursos_modal').DataTable({
         break;
        }
    }
-   function SubirNota(value,id)
+   function SubirNota()
    {    
-    var url;       
-       if(value=="subir"){
-        url="/nota/save";
-        }
-        else{
-         url="/nota/update";
-        }
+        var idcurso= $('#id_curso').val();
+        var idestudiante= $('#id_estudiante').val();
+        var idmateria=$('#id_materia').val();
+        var nota=$('#nota').val();
+        var url="/nota/save";
         var formData = new FormData();
-        formData.append('id_nota',id);
+       if(idcurso==""){
+        Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Seleccione un curso',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+       }
+       else if(idestudiante==""){
+        Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Seleccione un estudiante',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+       }
+       else if(idmateria==""){
+        Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Seleccione una materia',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+       }
+       else if(nota==""){
+        Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Ingrese la nota',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+       }
+       else{
         formData.append('id_curso', $('#id_curso').val());
         formData.append('id_estudiante', $('#id_estudiante').val());
         formData.append('id_materia', $('#id_materia').val());
@@ -127,6 +161,7 @@ $('#table_cursos_modal').DataTable({
          }).catch(function(err) {
             alert("Error de conexion a internet");
          });
+       }
    }
 function EditarNota(value,id){
     var url;       

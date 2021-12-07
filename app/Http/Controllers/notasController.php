@@ -77,7 +77,7 @@ class notasController extends Controller
             $nota->nota=$request->nota;
             $nota->save();
              
-            return redirect('/editar/nota/'.$id)->with('status','Estudiante modificado exitosamente');
+            return redirect('/editar/nota/'.$id)->with('status','Nota modificada exitosamente');
         
      }
   
