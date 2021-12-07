@@ -4,11 +4,14 @@
 @endsection
 @section('content')
 <div class="container">
-<h4 class="ml-4"><i class="fas fa-edit mr-3"></i>Editar documento</h4>
-
- 
-    <br>
-    <div class="row">
+<h4 class="ml-4"><i class="fas fa-edit mr-3 mb-2"></i>Editar documento</h4>
+@if($documento->id_est!= null )
+<p class="ml-4 mt-4 mb-4"> Documento asociado al estudiante: {{$documento->estudiante->nombre}} {{$documento->estudiante->apellidos}}</p>
+@elseif($documento->id_doc!= null)
+<p class="ml-4 mt-4 mb-4"> Documento asociado al docente:{{$documento->docente->nombre}} {{$documento->docente->apellidos}}</p>
+@else
+@endif
+     <div class="row">
         <div class="col-xl-5 ml-4">
         <p>Nombre del documento:</p>
         <div class="input-group mb-3">
