@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class notasController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function subir(){
         return view('notas.crear',[
             'subir_nota'=>'active',

@@ -11,11 +11,14 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        /*
         DB::table('users')->insert([
-            'nombre' =>'Administrador',
+            'nombre' =>'Miguel Angel',
+            'apellidos' =>'Ocampo Chavarro',
             'rol'=>'Administrador',
             'nrol'=>'1',
-            'email' =>'administrador@inst26demarzo.com',
+            'estado'=>'activo',
+            'email' =>'miguelocampoc@inst26demarzo.com',
             'password' => Hash::make('administrador12345'),
             'created_at' =>date('Y-m-d H:i:s'),
             'updated_at' =>date('Y-m-d H:i:s'),  
@@ -47,5 +50,6 @@ class UserSeeder extends Seeder
             'created_at' =>date('Y-m-d H:i:s'),
             'updated_at' =>date('Y-m-d H:i:s'), 
         ]);
+        */
     }
 }

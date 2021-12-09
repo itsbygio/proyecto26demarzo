@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class cursosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function crear(){
         return view('cursos.crear',
         [

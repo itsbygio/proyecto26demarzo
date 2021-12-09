@@ -36,43 +36,81 @@
         </option> 
 
                @if($documento->nm!="acr")
+               @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="3" )
                     <option value="acr">Acta de reunion</option>
                @endif
+
+               @endif
                @if($documento->nm!="cone")
+               @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="4" )
                     <option value="cone">Constancia de estudio</option>
                @endif
+               @endif
+
                @if($documento->nm!="cen")
+                   @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="4" )
+
                     <option value="cen">Certificado de notas</option>
+                   @endif
                @endif
                @if($documento->nm!="pd")
+                     @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" )
                     <option value="pd">Permiso docente</option>
+                    @endif
                @endif
+
                @if($documento->nm!="cir")
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="3")
                     <option value="cir">Circular</option>
+                    @endif
                @endif
                @if($documento->nm!="ia")
+                   @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" )
                     <option value="ia">Informe Academico</option>
+                    @endif
+
                @endif
                @if($documento->nm!="cd")
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2"  )
                     <option value="cd">Citacion</option>
+                    @endif
+
                @endif
                @if($documento->nm!="orcm")
+                   @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="3" )
+
                     <option value="orcm">Orden de cancelacion matricula </option>
+                    @endif
                @endif
                @if($documento->nm!="pys")
+                     @if( Auth::user()->nrol=="1"|| Auth::user()->nrol=="3" )
                     <option value="pys">Paz y salvo </option>
+                    @endif
                @endif
                @if($documento->nm!="ifp")
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" )
                     <option value="ifp">Informe de diploma</option>
+                    @endif
+
                @endif
+
                @if($documento->nm!="acg")
+                  @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="3" )
                     <option value="acg">Acta de grado</option>
+                    @endif
+
                @endif
                @if($documento->nm!="dp")
+                  @if( Auth::user()->nrol=="1" ||  Auth::user()->nrol=="3")
                     <option value="dp">Diploma</option>
+                  @endif
+
                 @endif
                 @if($documento->nm!="rs")
+                   @if( Auth::user()->nrol=="1"|| Auth::user()->nrol=="2" )
                     <option value="rs">Resolucion</option>
+                    @endif
+
                 @endif
 
             </select>

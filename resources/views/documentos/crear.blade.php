@@ -31,11 +31,22 @@
         <p>Seleccione el documento:</p>
          <select onchange="generar_elementos(this)" id="selectgenerate" class="form-control">
                     <option value="">Seleccione un  documento</option>
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="3" )
                     <option value="acr">Acta de reunion</option>
+                    @endif
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="4" )
                     <option value="cone">Constancia de estudio</option>
+                    @endif
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="4" )
                     <option value="cen">Certificados de notas</option>
+                    @endif
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" )
                     <option value="pd">Permiso docente</option>
+                    @endif
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="3")
                     <option value="cir">Circular </option>
+                    @endif
+
          </select>
         </div>
     </div>
@@ -68,19 +79,46 @@
         <p>Seleccione el documento:</p>
         <select  onchange="changeDocumentUpload(this)" id="td" name="td" class="form-control">
                     <option value="">Seleccione un  documento</option>
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="3" )
                     <option value="acr">Acta de reunion</option>
+                    @endif
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="4" )
                     <option value="cone">Constancia de estudio</option>
+                    @endif
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="4" )
                     <option value="cen">Certificados de notas</option>
+                    @endif
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" )
                     <option value="pd">Permiso docente</option>
+                    @endif
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="3")
                     <option value="cir">Circular </option>
+                    @endif
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" )
                     <option value="ia">Informe Academico</option>
+                    @endif
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2"  )
                     <option value="cd">Citacion </option>
+                    @endif
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="3" )
                     <option value="orcm">Orden de cancelacion matricula  </option>
+                    @endif
+                    @if( Auth::user()->nrol=="1"|| Auth::user()->nrol=="3" )
                     <option value="pys">Paz y salvo </option>
+                    @endif
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" )
                     <option value="ifp">Informe de diploma</option>
+                    @endif
+                    @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="3" )
                     <option value="acg">Acta de grado</option>
+                    @endif
+                    @if( Auth::user()->nrol=="1" ||  Auth::user()->nrol=="3")
                     <option value="dp">Diploma</option>
+                    @endif
+                    @if( Auth::user()->nrol=="1"|| Auth::user()->nrol=="2" )
                     <option value="rs">Resolucion</option>
+                    @endif
+
             </select>
         </div>
     </div>
