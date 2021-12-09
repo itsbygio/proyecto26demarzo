@@ -56,17 +56,17 @@
      <div class="col-md-4 mb-4">
      <p>Rol:</p>
         <select id="rol" name="rol" class="form-control" id="exampleFormControlSelect1"  >
-        <option value="{{$user->rol}}">{{$user->rol}}</option>        
-                @if($user->rol!="administrador")
+        <option value="{{$user->nrol}}">{{$user->rol}}</option>        
+                @if($user->nrol!="1")
                 <option value="administrador">administrador</option>
                 @endif
-                @if($user->nrol!="coordinador")
+                @if($user->nrol!="2")
                 <option value="coordinador" >coordinador</option>
                 @endif
-                @if($user->nrol!="secretaria de rectoria")
+                @if($user->nrol!="3 de rectoria")
                 <option value="secretaria de rectoria">secretaria de rectoria</option>
                 @endif
-                @if($user->rol!="archivo")
+                @if($user->rol!="4")
                 <option value="archivo">archivo</option>
                 @endif
         </select>
