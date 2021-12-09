@@ -4,7 +4,7 @@
 
 <div class="container ">
 <h4 class="ml-4"><i class="fas fa-list mr-3"></i>Listar docentes del sistema</h4><br>
-   <div class="ml-4 mr-4">
+   <div class="ml-1 ">
     <table id="table_id" class="table table-striped table-bordered" style="width:100%">
         
         <thead>
@@ -14,8 +14,8 @@
                  <th>Apellidos</th>
                  <th>cedula</th>
                  <th>Email</th>
-                 <th>Fecha de creación</th>
-                 <th>Fecha de modificación</th>
+                 <th>Fecha  creación</th>
+                 <th>Fecha  modificación</th>
                  <th>Opciones</th>
 
              </tr>
@@ -31,8 +31,8 @@
              <td>{{$docente->email}}</td>
              <td>{{$docente->created_at}} </td>
               <td>{{$docente->updated_at}} </td>
-             <td><a href="/editar/docente/{{$docente->id}}" class='btn btn-primary mr-3' >
-             <i class='fas fa-pen-alt'></i></a><button  class='btn btn-primary mr-3' onclick="btn_drop('{{$docente->id}}')">
+             <td><a href="/editar/docente/{{$docente->id}}" class='btn btn-primary mr-1' >
+             <i class='fas fa-pen-alt'></i></a><button  class='btn btn-primary ' onclick="btn_drop('{{$docente->id}}')">
              <i class='far fa-minus-square'></i></button></td>
             
          </tr> 
