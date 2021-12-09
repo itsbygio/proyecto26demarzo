@@ -106,5 +106,26 @@
 @include('documentos.modales.upload_modal')
 @endsection
 @section('scripts')
+<script>
+var id_est="<?php echo $documento->id_est ?>";
+var id_doc="<?php echo $documento->id_doc ?>";
+console.log(typeof id_doc);
+if(id_doc!=""){
+$('#seccion_upload_permiso').show();
+$('#doc_id').val("<?php if(isset($documento->docente->num_id)){
+echo $documento->docente->num_id;
+}
+?>");
+}
+else if(id_est!=""){
+$('#seccion_upload_constancia').show();
+$('#est_id').val("<?php if(isset($documento->estudiante->num_id)){
+echo $documento->estudiante->num_id;
+}
+?>");
+
+}
+
+</script>
 @include('documentos.editar_script')
 @endsection
