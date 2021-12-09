@@ -17,20 +17,48 @@
             <br>
             <p>Seleccione el documento:</p>
             <select onchange="ChangeConsultDocument(this)" id="td" name="td" class="form-control">
+                @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="3" )
                     <option value="">Seleccione un  documento</option>
+               @endif
+               @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="4" )
                     <option value="acr">Acta de reunion</option>
+               @endif
+               @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="4" )
                     <option value="cone">Constancia de estudio</option>
+               @endif
+               @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="4" )
                     <option value="cen">Certificados de notas</option>
+               @endif
+               @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" )
                     <option value="pd">Permisos de docentes</option>
+              @endif
+              @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="3")     
                     <option value="cir">Circulares</option>
+              @endif
+              @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" )
                     <option value="ia">Informes Academicos</option>
+              @endif
+              @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2"  )      
                     <option value="cd">Citaciones</option>
-                    <option value="orcm">Ordenes de cancelacion de matricula  </option>
+              @endif
+              @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="3" )
+                    <option value="orcm">Ordenes de cancelacion de matricula </option>
+              @endif
+              @if( Auth::user()->nrol=="1"|| Auth::user()->nrol=="3" )
                     <option value="pys">Paz y salvo estudiante </option>
+              @endif   
+              @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" )
                     <option value="ifp">Informes de diplomas otorgados</option>
+              @endif 
+              @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="3" )
                     <option value="acg">Acta de grado</option>
+              @endif 
+              @if( Auth::user()->nrol=="1" ||  Auth::user()->nrol=="3")    
                     <option value="dp">Diplomas</option>
+              @endif
+              @if( Auth::user()->nrol=="1"|| Auth::user()->nrol=="2" )
                     <option value="rs">Resoluciones</option>
+              @endif
             </select>
     </div><br>
     <div style="display:none" id="seccion_upload_constancia" class="row  ml-1 mb-2">

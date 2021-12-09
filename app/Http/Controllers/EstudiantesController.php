@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class EstudiantesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function crear(){
       return view('estudiantes.crear',[
           'crear_estudiante'=>'active',

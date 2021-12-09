@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Materia;
 class materiasController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function crear(){
         return view('materias.crear',['crear_materia'=>'active',
         'materias'=>Materia::all()

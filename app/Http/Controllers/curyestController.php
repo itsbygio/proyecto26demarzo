@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class curyestController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function asignar(request $request){
        $id_estudiante= $request->idestudiante;
        $id_curso= $request->idcurso;

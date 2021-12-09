@@ -10,7 +10,10 @@ use App\Docente;
 use App\Curso;
 class DocumentosController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
   
     public function crear(){
         return view('documentos.crear',[

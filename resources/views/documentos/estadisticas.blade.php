@@ -9,20 +9,45 @@
     <div class="col-xl-4 mb-4">
         <p>Filtrar por:</p>
             <select  name="documento" class="form-control"  onchange='changevent(this)' >
+            @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="3" )
                     <option value="acr">Acta de reunion</option>
+            @endif
+            @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="4" )
                     <option value="cone">Constancia de estudio</option>
+            @endif
+            @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" || Auth::user()->nrol=="4" )
                     <option value="cen">Certificado de notas</option>
+            @endif
+            @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" )
                     <option value="pd">Permisos de docentes</option>
+            @endif
+            @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="3")
                     <option value="cir">Circulares</option>
+            @endif
+            @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" )
                     <option value="ia">Informe Academico</option>
+            @endif
+            @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2"  )        
                     <option value="cd">Citaciones de docentes</option>
+            @endif
+            @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="3" )       
                     <option value="orcm">Ordenes de cancelacion de matricula</option>
+            @endif
+            @if( Auth::user()->nrol=="1"|| Auth::user()->nrol=="3" )
                     <option value="pys">Paz y salvo estudiante</option>
+            @endif
+            @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="2" )
                     <option value="ifp">Informes de diplomas</option>
+            @endif
+            @if( Auth::user()->nrol=="1" || Auth::user()->nrol=="3" )
                     <option value="acg">Acta de grado</option>
+            @endif
+            @if( Auth::user()->nrol=="1" ||  Auth::user()->nrol=="3")
                     <option value="dp">Diploma</option>
+            @endif
+            @if( Auth::user()->nrol=="1"|| Auth::user()->nrol=="2" )       
                     <option value="rs">Resolucion</option>
-
+            @endif
             </select>
     </div>
 </div>

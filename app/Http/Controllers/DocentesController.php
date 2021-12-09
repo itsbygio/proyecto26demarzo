@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Auth;
 use App\Rules\ImageEdit;
 class DocentesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function crear(){
         return view('docentes.crear',[
             'crear_docente'=>'active'
